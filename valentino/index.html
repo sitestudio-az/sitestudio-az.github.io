@@ -165,7 +165,7 @@ window.SITE = {
   onHome: (root, { wa }) => {
     const clock = root.querySelector('#vClock');
     const fmt = new Intl.DateTimeFormat('az-AZ', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Baku' });
-    const tick = () => { if (!document.hidden && clock.isConnected) clock.textContent = fmt.format(new Date()); };
+    const tick = () => { if (clock.isConnected) clock.textContent = fmt.format(new Date()); };
     tick(); const t = setInterval(() => { if (!clock.isConnected) clearInterval(t); else tick(); }, 15000);
     const Z = [['♈', 'Qoç'], ['♉', 'Buğa'], ['♊', 'Əkizlər'], ['♋', 'Xərçəng'], ['♌', 'Şir'], ['♍', 'Qız'], ['♎', 'Tərəzi'], ['♏', 'Əqrəb'], ['♐', 'Oxatan'], ['♑', 'Oğlaq'], ['♒', 'Dolça'], ['♓', 'Balıqlar']];
     const g = root.querySelector('#zgrid'), res = root.querySelector('#zres');
