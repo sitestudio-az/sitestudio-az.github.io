@@ -75,6 +75,7 @@
       <a class="nav-wa" href="${wa('Salam! Sifariş vermək istəyirəm.')}" target="_blank" rel="noopener">${I.wa} WhatsApp</a>
     </nav>
     <div class="hdr-actions">
+      <a class="icon-btn" id="favBtn" href="#/sevimliler" aria-label="Sevimlilər">${I.heart}<span class="badge" id="favN">0</span></a>
       <a class="icon-btn" id="cartBtn" href="#/sebet" aria-label="Səbət">${I.bag}<span class="badge" id="cartN">0</span></a>
       <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menyunu aç" aria-expanded="false" aria-controls="nav">${I.menu}</button>
     </div>
@@ -94,9 +95,11 @@
 
   const main = $('#main');
   function updateBadge() { const n = cartCount(); const b = $('#cartN'); b.textContent = n; b.classList.toggle('on', n > 0); }
-  updateBadge();
-  function toast(t, withLink) {
-    const el = $('#toast'); el.innerHTML = `${I.check}<span>${esc(t)}</span>${withLink ? '<a href="#/sebet">Səbətə bax</a>' : ''}`;
+  function updateFav() { likes = likes.filter((id) => byId(id)); const b = $('#favN'); b.textContent = likes.length; b.classList.toggle('on', likes.length > 0); }
+  updateBadge(); updateFav();
+  function toast(t, link) {
+    const lk = link === true ? { href: '#/sebet', label: 'Səbətə bax' } : link;
+    const el = $('#toast'); el.innerHTML = `${I.check}<span>${esc(t)}</span>${lk ? `<a href="${lk.href}">${lk.label}</a>` : ''}`;
     el.classList.add('show'); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove('show'), 2600);
   }
   $('#menuBtn').addEventListener('click', () => { const o = document.body.classList.toggle('nav-open'); $('#menuBtn').setAttribute('aria-expanded', o); });
@@ -120,8 +123,14 @@
   document.addEventListener('click', (e) => {
     const a = e.target.closest('[data-add]'); if (a) { addToCart(a.dataset.add); return; }
     const l = e.target.closest('[data-like]');
-    if (l) { const id = l.dataset.like; likes = likes.includes(id) ? likes.filter((x) => x !== id) : [...likes, id]; store.set('likes', likes);
-      $$(`[data-like="${id}"]`).forEach((b) => { b.classList.toggle('on', likes.includes(id)); b.setAttribute('aria-pressed', likes.includes(id)); }); }
+    if (l) {
+      const id = l.dataset.like, added = !likes.includes(id);
+      likes = added ? [...likes, id] : likes.filter((x) => x !== id); store.set('likes', likes); updateFav();
+      $$(`[data-like="${id}"]`).forEach((b) => { b.classList.toggle('on', added); b.setAttribute('aria-pressed', added); });
+      const fb = $('#favBtn'); fb.classList.remove('bump'); void fb.offsetWidth; fb.classList.add('bump');
+      if (document.body.dataset.page === 'favs') pages.favs();
+      else toast(added ? `${byId(id).name} sevimlilərə əlavə olundu` : 'Sevimlilərdən çıxarıldı', added ? { href: '#/sevimliler', label: 'Sevimlilərə bax' } : null);
+    }
   });
 
   /* ---------- səhifələr ---------- */
@@ -431,6 +440,21 @@
     </section>`;
   };
 
+  pages.favs = () => {
+    const list = likes.map(byId).filter(Boolean);
+    main.innerHTML = `
+    <section class="sec favs">
+      <nav class="crumbs" aria-label="Səhifə yolu"><a href="#/">Ana səhifə</a><span>/</span><span>Sevimlilər</span></nav>
+      <div class="shop-head"><h1 class="h-page">Sevimlilər <small>(${list.length})</small></h1>
+        ${list.length ? `<button class="btn btn-sm" id="favAll">${I.bag}<span>Hamısını səbətə at</span></button>` : ''}</div>
+      ${list.length ? `<p class="lead favs-lead">Ürək qoyduğunuz buketlər burada saxlanır. Ürəyə yenidən toxunsanız, siyahıdan çıxır.</p>
+        <div class="pgrid pgrid-4">${list.map(card).join('')}</div>`
+      : `<div class="empty favs-empty"><span class="favs-ic">${I.heart}</span><p><b>Hələ sevimli buketiniz yoxdur.</b><br>Bəyəndiyiniz buketin üstündəki ürəyə toxunun, burada görünəcək.</p><a class="btn" href="#/magaza">Mağazaya keç ${I.arrow}</a></div>`}
+    </section>`;
+    const all = $('#favAll');
+    if (all) all.addEventListener('click', () => { list.forEach((p) => { const l = cart.find((x) => x.id === p.id && x.size === 'std'); if (l) l.qty++; else cart.push({ id: p.id, size: 'std', qty: 1 }); }); saveCart(); toast(`${list.length} buket səbətə əlavə olundu`, true); });
+  };
+
   pages.notFound = () => { main.innerHTML = `<section class="sec narrow center"><h1 class="h-page">Səhifə tapılmadı</h1><a class="btn" href="#/">Ana səhifə</a></section>`; };
 
   /* ---------- marşrut ---------- */
@@ -441,7 +465,7 @@
     const q = new URLSearchParams(qs || '');
     const seg = path.split('/').filter(Boolean);
     document.body.classList.remove('nav-open', 'lock');
-    const name = !seg.length ? 'home' : seg[0] === 'magaza' ? 'shop' : seg[0] === 'mehsul' ? 'product' : seg[0] === 'sebet' ? 'cart'
+    const name = !seg.length ? 'home' : seg[0] === 'magaza' ? 'shop' : seg[0] === 'mehsul' ? 'product' : seg[0] === 'sebet' ? 'cart' : seg[0] === 'sevimliler' ? 'favs'
       : seg[0] === 'sifaris' ? 'checkout' : seg[0] === 'ugurlu' ? 'success' : 'notFound';
     document.body.dataset.page = name;
     $$('[data-nav]').forEach((a) => a.classList.toggle('on', (a.dataset.nav === 'home' && name === 'home' && !anchor) || (a.dataset.nav === 'shop' && ['shop', 'product'].includes(name))));

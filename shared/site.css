@@ -35,7 +35,14 @@ svg { width: 20px; height: 20px; flex: none; }
 .badge { position: absolute; top: 5px; right: 3px; min-width: 19px; height: 19px; border-radius: 10px; background: var(--accent); color: var(--accent-ink);
          font-size: 11px; font-weight: 700; display: grid; place-items: center; padding: 0 5px; transform: scale(0); transition: transform .3s var(--ease); }
 .badge.on { transform: scale(1); }
-#cartBtn.bump { animation: bump .5s var(--ease); }
+#cartBtn.bump, #favBtn.bump { animation: bump .5s var(--ease); }
+#favBtn .badge { background: var(--sale, #C9362F); color: #fff; }
+.favs { padding-top: clamp(28px, 4vw, 48px); }
+.favs .shop-head { margin-bottom: 8px; align-items: center; }
+.favs-lead { margin-bottom: 30px; font-size: 16px; }
+.favs-empty { margin-top: 28px; padding: 64px 20px; }
+.favs-ic { width: 72px; height: 72px; border-radius: 50%; background: var(--soft); display: grid; place-items: center; color: var(--sale, #C9362F); }
+.favs-ic svg { width: 32px; height: 32px; }
 @keyframes bump { 30% { transform: scale(1.18); } }
 .menu-btn { display: none; }
 
@@ -59,7 +66,7 @@ svg { width: 20px; height: 20px; flex: none; }
 /* tipoqrafiya */
 .eyebrow { font-size: 12.5px; letter-spacing: .3em; text-transform: uppercase; font-weight: 650; color: var(--accent-text); display: flex; align-items: center; gap: 14px; }
 .eyebrow::before { content: ""; width: 34px; height: 1.5px; background: currentColor; }
-h1, h2, h3, .h-page { font-family: var(--f-head); font-weight: var(--w-head, 500); line-height: 1.04; letter-spacing: var(--ls-head, -.012em); }
+h1, h2, h3, .h-page { font-variant-numeric: lining-nums; font-family: var(--f-head); font-weight: var(--w-head, 500); line-height: 1.04; letter-spacing: var(--ls-head, -.012em); }
 h2 { font-size: clamp(34px, 4.4vw, 58px); margin-top: 14px; }
 h2 em, h1 em, .h-page em { font-style: var(--em-style, italic); color: var(--accent-text); font-weight: inherit; }
 .h-page { font-size: clamp(34px, 4.6vw, 56px); }

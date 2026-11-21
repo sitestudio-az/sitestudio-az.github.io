@@ -54,7 +54,7 @@
 
   /* kateqoriya möhürləri */
   .cat-img { background: var(--accent); box-shadow: inset 0 0 0 6px var(--bg), 0 0 0 1px var(--line-strong); }
-  .cats { --cat-cols: 5; }
+  .cats { --cat-cols: 6; }
 
   /* mağazaya gəlin bandı */
   .b-store { background: var(--accent); color: var(--accent-ink); }
@@ -89,29 +89,75 @@ window.SITE = {
   sizes: [{ id: 'std', label: 'Standart', k: 1, note: 'Şəkildəki kimi' }, { id: 'big', label: 'Böyük', k: 1.25, note: 'Daha çox gül' }, { id: 'lux', label: 'Lüks', k: 1.5, note: 'Premium qutu ilə' }],
   categories: [
     { id: 'toy', label: 'Toy buketi', image: 'img/ic-toy.jpg' },
-    { id: 'mono', label: 'Monobuket', image: 'img/ic-monobuket.jpg' },
+    { id: 'buket', label: 'Buketlər', image: 'img/ic-monobuket.jpg' },
     { id: 'vaza', label: 'Vaza', image: 'img/ic-vaza.jpg' },
     { id: 'sebet', label: 'Səbət', image: 'img/ic-sebet.jpg' },
+    { id: 'qutu', label: 'Qutuda', image: 'img/ic-qutu.jpg' },
     { id: 'yeniil', label: 'Yeni il', image: 'img/ic-yeniil.jpg' },
   ],
   colors: [
     { id: 'ag', label: 'Ağ', hex: '#F3EFE6' }, { id: 'cehrayi', label: 'Çəhrayı', hex: '#EFA5B5' }, { id: 'benovseyi', label: 'Bənövşəyi', hex: '#A98BC9' },
-    { id: 'qirmizi', label: 'Qırmızı', hex: '#C4273A' }, { id: 'yasil', label: 'Yaşıl', hex: '#5E8C5A' },
+    { id: 'qirmizi', label: 'Qırmızı', hex: '#C4273A' }, { id: 'narinci', label: 'Narıncı', hex: '#E8833A' }, { id: 'mavi', label: 'Mavi', hex: '#6F8FD8' },
+    { id: 'yasil', label: 'Yaşıl', hex: '#5E8C5A' },
   ],
   products: [
-    { id: 'lavanda-orxideya', name: 'Lavanda orxideya kompozisiyası', cats: ['vaza'], colors: ['benovseyi', 'ag'], price: 245, badge: 'Bestseller', featured: true, image: 'img/p4.jpg',
+    { id: 'gelin-pion', name: 'Ağ pion gəlin buketi', cats: ['toy', 'buket'], colors: ['ag'], price: 210, badge: 'Bestseller', featured: true, image: 'img/n-gelin-pion.jpg',
+      desc: 'İri ağ pionlar və krem güllərdən klassik gəlin buketi, atlaz lentlə bağlanır.' },
+    { id: 'yuz-bir-qizilgul', name: '101 qırmızı qızılgül', cats: ['buket'], colors: ['qirmizi'], price: 250, badge: 'Lüks', featured: true, image: 'img/n-101-qizilgul.jpg',
+      desc: 'Sıx yığılmış 101 tünd qırmızı qızılgül, Bouquet & Co imzalı lentlə.' },
+    { id: 'neheng-hortenziya', name: 'Nəhəng çəhrayı hortenziya', cats: ['buket'], colors: ['cehrayi'], price: 245, badge: 'Yeni', featured: true, image: 'img/n-hortenziya.jpg',
+      desc: 'Çəhrayı hortenziya və güllərdən böyük, buludvari buket.' },
+    { id: 'lavanda-orxideya', name: 'Lavanda orxideya kompozisiyası', cats: ['vaza'], colors: ['benovseyi', 'ag'], price: 245, featured: true, image: 'img/p4.jpg',
       desc: 'Ağ və lavanda rəngli orxideyalar, pastel vazalarda pillə-pillə yığılıb. Ev, ofis və ya xüsusi tədbir üçün.' },
-    { id: 'qis-nagili', name: 'Qış nağılı', cats: ['yeniil'], colors: ['ag', 'yasil'], price: 185, badge: 'Yeni', featured: true, image: 'img/p3.jpg',
+    { id: 'orxideya-kaskad', name: 'Ağ orxideya kaskad buketi', cats: ['toy'], colors: ['ag'], price: 240, image: 'img/n-orxideya-kaskad.jpg',
+      desc: 'Aşağı axan ağ orxideyalardan zərif kaskad gəlin buketi.' },
+    { id: 'toy-kompozisiya', name: 'Ağ toy kompozisiyaları', cats: ['toy', 'vaza'], colors: ['ag'], price: 230, image: 'img/n-toy-kompozisiya.jpg',
+      desc: 'Toy masaları və zal dekoru üçün eyni üslubda ağ gül kompozisiyaları.' },
+    { id: 'ag-cehrayi-pion', name: 'Ağ-çəhrayı pion buketi', cats: ['buket'], colors: ['cehrayi', 'ag'], price: 190, image: 'img/n-ag-cehrayi-pion.jpg',
+      desc: 'Açıq çəhrayı pion qızılgüllər, çəhrayı qablaşdırmada.' },
+    { id: 'pion-buket', name: 'Çəhrayı pion-qızılgül buketi', cats: ['buket'], colors: ['cehrayi', 'benovseyi'], price: 180, image: 'img/n-pion-buket.jpg',
+      desc: 'Çəhrayı və yasəmən tonlu pion qızılgüllərdən iri buket.' },
+    { id: 'narinci-pion', name: 'Narıncı pion buketi', cats: ['buket'], colors: ['narinci', 'cehrayi'], price: 160, image: 'img/n-narinci-pion.jpg',
+      desc: 'Şaftalı və narıncı pionlar, isti payız tonlarında.' },
+    { id: 'saftali-qizilgul', name: 'Şaftalı qızılgül buketi', cats: ['buket'], colors: ['narinci', 'cehrayi'], price: 150, image: 'img/n-saftali-qizilgul.jpg',
+      desc: 'Şaftalı və çəhrayı qızılgüllər, ağ qablaşdırmada.' },
+    { id: 'qladiolus', name: 'Qırmızı qladiolus buketi', cats: ['buket'], colors: ['qirmizi'], price: 165, image: 'img/n-qladiolus.jpg',
+      desc: 'Hündür qırmızı qladioluslar və güllərdən təsirli buket.' },
+    { id: 'fusya-qizilgul', name: 'Fuşya qızılgül buketi', cats: ['buket'], colors: ['cehrayi'], price: 135, image: 'img/n-fusya-qizilgul.jpg',
+      desc: 'Parlaq fuşya qızılgüllər, tünd çəhrayı qablaşdırmada.' },
+    { id: 'hundur-vaza', name: 'Hündür çəhrayı vaza', cats: ['vaza'], colors: ['cehrayi', 'ag'], price: 225, image: 'img/n-hundur-vaza.jpg',
+      desc: 'Hündür vazada çəhrayı və ağ güllər, orxideyalar. Zal və ofis üçün.' },
+    { id: 'mavi-bahar', name: 'Mavi bahar kompozisiyası', cats: ['vaza'], colors: ['mavi', 'cehrayi'], price: 175, image: 'img/n-mavi-bahar.jpg',
+      desc: 'Mavi delfinium, hortenziya və çəhrayı güllərlə rəngarəng vaza.' },
+    { id: 'cehrayi-payiz-vaza', name: 'Çəhrayı payız vazası', cats: ['vaza'], colors: ['cehrayi'], price: 185, image: 'img/n-cehrayi-payiz-vaza.jpg',
+      desc: 'Çəhrayı balqabaq vazada pastel güllər və hortenziya.' },
+    { id: 'boyuk-sebet', name: 'Qırmızı-yaşıl böyük səbət', cats: ['sebet'], colors: ['qirmizi', 'yasil'], price: 240, image: 'img/n-boyuk-sebet.jpg',
+      desc: 'Qırmızı güllər, qladioluslar və yaşıl hortenziya, iri səbətdə.' },
+    { id: 'payiz-sebeti', name: 'Payız səbəti', cats: ['sebet'], colors: ['narinci'], price: 130, image: 'img/n-payiz-sebeti.jpg',
+      desc: 'Balqabaqlar, narıncı güllər və payız yarpaqları hörmə səbətdə.' },
+    { id: 'horme-sebet', name: 'Hörmə səbət, Tiffany lent', cats: ['sebet'], colors: ['cehrayi', 'qirmizi'], price: 90, old: 110, badge: 'Endirim', image: 'img/n-horme-sebet.jpg',
+      desc: 'Kiçik hörmə səbətdə qızılgüllər, firuzəyi lentlə. Korporativ hədiyyə üçün də.' },
+    { id: 'burc-qutusu', name: 'Bürc qutusu: Əqrəb', cats: ['qutu'], colors: ['qirmizi'], price: 175, badge: 'Yeni', image: 'img/n-burc-qutusu.jpg',
+      desc: 'Qırmızı qutuda qırmızı qızılgüllər və bürc nişanı. Hər bürc üçün hazırlanır.' },
+    { id: 'bayram-qutusu', name: 'Qırmızı bayram qutusu', cats: ['qutu', 'yeniil'], colors: ['qirmizi', 'yasil'], price: 160, image: 'img/n-bayram-qutusu.jpg',
+      desc: 'Qırmızı qutuda şam budaqları, qırmızı güllər və bayram bəzəkləri.' },
+    { id: 'qirmizi-qutu-yeniil', name: 'Qırmızı qutuda Yeni il', cats: ['qutu', 'yeniil'], colors: ['qirmizi'], price: 150, image: 'img/n-qirmizi-qutu-yeniil.jpg',
+      desc: 'Qırmızı qızılgüllər, giləmeyvə və şam budaqları, imzalı qutuda.' },
+    { id: 'gumusu-qis', name: 'Gümüşü qış kompozisiyası', cats: ['yeniil', 'vaza'], colors: ['ag', 'yasil'], price: 220, image: 'img/n-gumusu-qis.jpg',
+      desc: 'Gümüşü budaqlar, ağ güllər və şam, vazada bayram kompozisiyası.' },
+    { id: 'qirmizi-qis-vaza', name: 'Qırmızı qış vazası', cats: ['yeniil', 'vaza'], colors: ['qirmizi'], price: 195, image: 'img/n-qirmizi-qis-vaza.jpg',
+      desc: 'Qırmızı anturium, giləmeyvə və şam budaqları, hündür vazada.' },
+    { id: 'qis-nagili', name: 'Qış nağılı', cats: ['yeniil'], colors: ['ag', 'yasil'], price: 185, image: 'img/p3.jpg',
       desc: 'Şam budaqları, ağ güllər və qızılı bəzəklər. Yeni il masası və ya hədiyyə üçün hazır kompozisiya.' },
-    { id: 'yeni-il-agaci', name: 'Masaüstü Yeni il ağacı', cats: ['yeniil'], colors: ['yasil', 'qirmizi'], price: 210, old: 240, badge: 'Endirim', featured: true, image: 'img/p6.jpg',
+    { id: 'yeni-il-agaci', name: 'Masaüstü Yeni il ağacı', cats: ['yeniil'], colors: ['yasil', 'qirmizi'], price: 210, old: 240, badge: 'Endirim', image: 'img/p6.jpg',
       desc: 'Canlı şam budaqlarından masaüstü ağac və çələng. Bayram boyu təzə qalır.' },
-    { id: 'ag-gul-sebeti', name: 'Ağ gül səbəti', cats: ['sebet'], colors: ['ag'], price: 120, featured: true, image: 'img/p2.jpg',
+    { id: 'ag-gul-sebeti', name: 'Ağ gül səbəti', cats: ['sebet'], colors: ['ag'], price: 120, image: 'img/p2.jpg',
       desc: 'Hörmə səbətdə ağ güllər və Tiffany lent. Tədbirlər üçün eyni üslubda bir neçə ədəd də hazırlayırıq.' },
     { id: 'benovseyi-vaza', name: 'Bənövşəyi orxideya vazası', cats: ['vaza'], colors: ['benovseyi'], price: 165, image: 'img/p5.jpg',
       desc: 'Əl ilə rənglənmiş vazada canlı bənövşəyi orxideyalar. Həftələrlə gözəl qalır.' },
     { id: 'ag-orxideya-beton', name: 'Ağ orxideya, beton vaza', cats: ['vaza'], colors: ['ag'], price: 135, image: 'img/p1.jpg',
       desc: 'Minimalist interyer üçün: ağ orxideya və boz beton vaza.' },
-    { id: 'saftali-monobuket', name: 'Şaftalı qızılgül monobuket', cats: ['mono'], colors: ['cehrayi'], price: 55, badge: 'Yeni', image: 'img/hero.jpg',
+    { id: 'saftali-monobuket', name: 'Şaftalı qızılgül monobuket', cats: ['buket'], colors: ['cehrayi', 'narinci'], price: 55, image: 'img/hero.jpg',
       desc: 'Tək, iri şaftalı rəngli qızılgül. Sadə, amma yadda qalan jest.' },
   ],
   featuredTitle: 'Bu həftənin <em>sevimliləri</em>',
@@ -141,7 +187,7 @@ window.SITE = {
   categoriesHtml: (I, wa) => `
     <section class="sec">
       <div class="sec-head center"><p class="eyebrow center-eyebrow">Kateqoriyalar</p><h2>Hər an üçün <em>öz buketi</em></h2></div>
-      <div class="cats">${window.SITE.categories.map((c) => c.id === 'toy'
+      <div class="cats">${window.SITE.categories.map((c) => !window.SITE.products.some((p) => p.cats.includes(c.id))
         ? `<a class="cat" href="${wa('Salam! Toy buketi sifariş etmək istəyirəm.')}" target="_blank" rel="noopener"><span class="cat-img"><img src="${c.image}" alt="" loading="lazy" width="200" height="200"></span><span class="cat-label">${c.label}<small>Fərdi sifariş</small></span></a>`
         : `<a class="cat" href="#/magaza?k=${c.id}"><span class="cat-img"><img src="${c.image}" alt="" loading="lazy" width="200" height="200"></span><span class="cat-label">${c.label}<small>${window.SITE.products.filter((p) => p.cats.includes(c.id)).length} məhsul</small></span></a>`).join('')}</div>
     </section>`,
