@@ -338,11 +338,11 @@ body[data-page="checkout"] .wa-float, body[data-page="cart"] .wa-float { display
 @media (max-width: 900px) {
   .menu-btn { display: grid; }
   .nav { position: fixed; inset: 0 0 auto 0; padding: 104px 24px 28px; background: var(--bg); flex-direction: column; justify-content: flex-start; gap: 2px; font-size: 18px; letter-spacing: .06em;
-         transform: translateY(-105%); transition: transform .45s var(--ease); z-index: -1; border-bottom: 1px solid var(--line); box-shadow: 0 30px 60px -30px rgba(0,0,0,.35); }
+         transform: translateY(-130%); visibility: hidden; transition: transform .45s var(--ease), visibility 0s linear .45s; z-index: -1; border-bottom: 1px solid var(--line); box-shadow: 0 30px 60px -30px rgba(0,0,0,.35); }
   .nav a { padding: 14px 0; color: var(--ink); border-bottom: 1px solid var(--line); }
   .nav a::after { display: none; }
   .nav .nav-wa { display: flex; gap: 10px; align-items: center; color: var(--accent-text); border: 0; }
-  body.nav-open .nav { transform: none; }
+  body.nav-open .nav { transform: none; visibility: visible; transition: transform .45s var(--ease), visibility 0s; }
   .about, .finale-card, .product-grid, .checkout-grid { grid-template-columns: minmax(0, 1fr); }
   .product-media, .summary { position: static; }
   .shop-layout { grid-template-columns: 1fr; }
