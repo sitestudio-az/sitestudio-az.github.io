@@ -4,69 +4,89 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Bouquet &amp; Co — Flowers &amp; Decor</title>
-<meta name="description" content="Bouquet & Co üçün sitestudio.az tərəfindən hazırlanmış demo sayt.">
-<link rel="icon" href="img/ic-monobuket.jpg">
+<title>Bouquet &amp; Co · Flowers &amp; Decor</title>
+<meta name="description" content="Bouquet & Co üçün sitestudio.az tərəfindən hazırlanmış demo onlayn mağaza.">
+<meta name="theme-color" content="#3DBDB1">
+<!-- DEPLOY STEP: og:url canlı ünvanla yenilənir -->
+<meta property="og:title" content="Bouquet & Co · Flowers & Decor">
+<meta property="og:description" content="Demo onlayn mağaza: buketlər, vazalar, səbətlər və Yeni il dekoru.">
+<meta property="og:image" content="img/p4.jpg">
+<meta property="og:url" content="https://sitestudio-az.github.io/bouquet-co/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233DBDB1'/%3E%3Ctext x='32' y='43' font-family='Georgia' font-size='30' text-anchor='middle' fill='%230F1F1D'%3EB%26amp;%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../shared/site.css">
 <style>
   :root {
-    --bg: #FFFFFF; --surface: #FFFFFF; --soft: #EEF8F6; --ink: #10201E; --muted: #5C6E6B;
-    --line: #DCEBE8; --line-strong: #BFDCD7;
-    --brand: #3DBDB1; --brand-ink: #0D1F1C; --brand-text: #1E8C82;
-    --f-head: 'Cormorant Garamond', Georgia, serif; --f-body: 'Montserrat', system-ui, sans-serif; --w-head: 500;
-    --r-hero: 999px 999px 28px 28px; --r-card: 4px; --r-btn: 2px;
-    --hdr-bg: rgba(255,255,255,.88); --demo-bg: #10201E;
-    --cols: 3; --contact-bg: #3DBDB1; --contact-ink: #0D1F1C; --contact-accent: #0D1F1C;
+    --bg: #FBFDFC; --surface: #FFFFFF; --soft: #EAF7F5; --ink: #0F1F1D; --muted: #55706C;
+    --line: #DCEBE8; --line-strong: #BBD8D3; --sale: #B8433B;
+    --accent: #3DBDB1; --accent-ink: #0D1F1C; --accent-text: #187A70;
+    --f-head: 'Cormorant Garamond', Georgia, serif; --f-body: 'Montserrat', system-ui, sans-serif; --w-head: 500; --ls-head: -.005em;
+    --r-card: 4px; --r-btn: 2px; --r-img: 4px; --r-big: 4px;
+    --hdr-bg: rgba(251,253,252,.88); --demo-bg: #0F1F1D; --logo-h: 30px;
+    --finale-bg: #3DBDB1; --finale-ink: #0D1F1C; --finale-accent: #0D1F1C; --finale-btn: #0D1F1C; --finale-btn-ink: #FFFFFF;
+    --card-line: #E6F0EE; --card-shadow: 0 34px 60px -40px rgba(15,60,55,.45);
   }
-  .brandmark { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 25px; letter-spacing: .14em; line-height: 1; color: var(--ink); }
-  .brandmark small { display: block; font-family: 'Montserrat', sans-serif; font-size: 9.5px; letter-spacing: .42em; font-weight: 600; color: var(--brand-text); margin-top: 6px; }
-  .hero { background: linear-gradient(180deg, var(--soft) 0%, #fff 75%); max-width: none; }
-  .hero > * { max-width: 640px; }
-  .hero-media { justify-self: center; width: 100%; }
-  .hero-media::before { content: ""; position: absolute; inset: -16px; border: 1px solid var(--brand); border-radius: 999px 999px 34px 34px; z-index: -1; }
-  .cat-img { border-radius: 50%; background: var(--brand); }
-  .chip.on { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
-  .card { border-color: transparent; }
-  .card-img { aspect-ratio: 3/4; }
-  .steps li { border-top: 3px solid var(--brand); }
-  .tiffany-band { background: var(--brand); color: var(--brand-ink); text-align: center; padding: 70px 20px; }
-  .tiffany-band p { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4vw, 48px); font-style: italic; max-width: 900px; margin: 0 auto; line-height: 1.2; }
-  .tiffany-band span { display: block; font-size: 12px; letter-spacing: .3em; text-transform: uppercase; margin-top: 18px; font-weight: 600; }
-  .contact-cta .btn { background: #0D1F1C; color: #fff; border-color: #0D1F1C; }
-  .contact-cta .btn-ghost { background: transparent; color: #0D1F1C; }
+  h2 { font-size: clamp(38px, 4.8vw, 64px); }
+  .pcard-body { text-align: center; } .pcard-foot { justify-content: center; flex-direction: column; gap: 12px; } .pcard .add { width: 100%; justify-content: center; }
+
+  /* hero: Tiffany qutusu və öz-özünə bağlanan lent */
+  .b-hero { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: clamp(24px, 5vw, 80px);
+            padding: clamp(40px, 6vw, 96px) var(--pad) clamp(64px, 8vw, 120px); max-width: 1400px; margin: 0 auto; isolation: isolate; }
+  .b-hero::before { content: ""; position: absolute; inset: 0 -50vw; background: linear-gradient(180deg, #EAF7F5 0%, var(--bg) 85%); z-index: -2; }
+  .b-hero h1 { font-size: clamp(56px, 8.4vw, 128px); line-height: .92; letter-spacing: -.02em; margin: 26px 0 26px; }
+  .b-hero h1 em { display: block; padding-left: .55em; }
+  .b-hero .lead { font-size: 18px; }
+  .b-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; position: relative; z-index: 2; }
+  .b-facts { display: flex; gap: 34px; flex-wrap: wrap; margin-top: 44px; font-size: 14px; color: var(--muted); }
+  .b-facts b { display: block; font-family: var(--f-head); font-size: 30px; font-weight: 500; color: var(--ink); line-height: 1.1; font-variant-numeric: lining-nums; }
+  .b-box { position: relative; justify-self: center; width: min(100%, 520px); }
+  .b-box img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 999px 999px 6px 6px; box-shadow: 0 50px 90px -50px rgba(15,60,55,.6); }
+  .b-box::before { content: ""; position: absolute; inset: -18px; border: 1px solid var(--accent); border-radius: 999px 999px 10px 10px; z-index: -1; }
+  .b-tag { position: absolute; left: -36px; bottom: 54px; background: var(--surface); padding: 18px 22px; box-shadow: 0 30px 60px -30px rgba(15,60,55,.5); font-size: 14px; color: var(--muted); }
+  .b-tag b { display: block; font-family: var(--f-head); font-size: 28px; color: var(--accent-text); font-weight: 500; line-height: 1; margin-bottom: 4px; font-variant-numeric: lining-nums; }
+  .ribbon { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; overflow: visible; }
+  .ribbon path { fill: none; stroke: var(--accent); stroke-linecap: round; stroke-dasharray: var(--len); stroke-dashoffset: var(--len); animation: draw 2.6s var(--ease) .3s forwards; }
+  .ribbon .r2 { stroke-width: 1.2; opacity: .55; animation-delay: .5s; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) { .ribbon path { stroke-dashoffset: 0; animation: none; } }
+
+  /* kateqoriya möhürləri */
+  .cat-img { background: var(--accent); box-shadow: inset 0 0 0 6px var(--bg), 0 0 0 1px var(--line-strong); }
+  .cats { --cat-cols: 5; }
+
+  /* mağazaya gəlin bandı */
+  .b-store { background: var(--accent); color: var(--accent-ink); }
+  .b-store-in { max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+  .b-store img { width: 100%; aspect-ratio: 4/3.4; object-fit: cover; }
+  .b-store-txt { padding: clamp(40px, 6vw, 96px) var(--pad); display: grid; align-content: center; gap: 18px; }
+  .b-store .eyebrow { color: var(--accent-ink); }
+  .b-store h2 { margin: 0; } .b-store h2 em { color: #fff; }
+  .b-store dl { display: grid; grid-template-columns: auto 1fr; gap: 10px 22px; font-size: 16px; margin: 8px 0 14px; }
+  .b-store dt { font-weight: 700; } .b-store .btn { background: var(--accent-ink); color: #fff; border-color: var(--accent-ink); justify-self: start; }
+  @media (max-width: 900px) {
+    .b-hero { grid-template-columns: 1fr; }
+    .b-box { order: -1; width: min(100%, 420px); }
+    .b-box img { aspect-ratio: 1; }
+    .b-tag { left: 8px; bottom: 20px; }
+    .b-store-in { grid-template-columns: 1fr; } .b-store img { aspect-ratio: 4/3; }
+    .ribbon { display: none; }
+  }
 </style>
 </head>
 <body>
 <noscript>Bu sayt JavaScript tələb edir.</noscript>
 <script>
 window.SITE = {
-  name: 'Bouquet & Co',
-  tagline: 'Flowers & Decor',
-  instagram: 'bouquet.aze',
-  whatsapp: '994509800800',
-  phones: ['+994 50 980 08 00'],
-  address: 'Parlament pr. 52F, Bakı',
-  mapQuery: 'Bouquet & Co, Parlament prospekti 52F, Baku',
-  hours: 'Mağaza: hər gün 08:00 – 00:00 · Çatdırılma: 08:30 – 00:00',
-  deliveryText: 'Bakı daxilində 08:30-dan gecə yarısınadək çatdırırıq və ya buketi mağazadan götürürsünüz.',
-  logoHtml: '<span class="brandmark">BOUQUET&amp;CO<small>FLOWERS &amp; DECOR</small></span>',
-  hero: {
-    eyebrow: 'Parlament prospekti · Bakı',
-    title: 'Çiçək və<br><em>dekor sənəti</em>',
-    text: 'Toy buketlərindən Yeni il kompozisiyalarına qədər, hər sifariş əl işidir. Bakı daxilində səhər 08:30-dan gecə yarısınadək çatdırırıq.',
-    image: 'img/hero.jpg',
-    alt: 'Əlində çəhrayı qızılgül tutan qadın',
-    badge: '<b>08:30 – 00:00</b>Bakı daxili çatdırılma',
-  },
-  facts: [
-    { icon: 'truck', title: 'Çatdırılma', text: 'Hər gün 08:30 – 00:00' },
-    { icon: 'pin', title: 'Mağaza', text: 'Parlament pr. 52F' },
-    { icon: 'gift', title: 'Parkinq', text: '70 maşınlıq, mağazanın yanında' },
-  ],
-  catTitle: 'Hər an üçün <em>öz buketi</em>',
+  key: 'bco-', name: 'Bouquet & Co', tagline: 'Flowers & Decor',
+  logo: 'img/logo.png', logoW: 144, logoH: 28,
+  instagram: 'bouquet.aze', whatsapp: '994509800800', phones: ['+994 50 980 08 00'],
+  address: 'Parlament pr. 52F, Bakı', mapQuery: 'Bouquet & Co, Parlament prospekti 52F, Baku',
+  hours: 'Hər gün 08:00 – 00:00', hoursShort: 'Mağaza hər gün 08:00 – 00:00 açıqdır',
+  deliveryLine: 'Bakı daxili çatdırılma 08:30 – 00:00', footerLine: 'Parlament prospektində gül və dekor butiki. Toy buketlərindən Yeni il dekoruna qədər.',
+  freeDeliveryFrom: 150, deliveryFee: 10, priceMax: 250, slotFrom: 9, slotTo: 23,
+  sizes: [{ id: 'std', label: 'Standart', k: 1, note: 'Şəkildəki kimi' }, { id: 'big', label: 'Böyük', k: 1.25, note: 'Daha çox gül' }, { id: 'lux', label: 'Lüks', k: 1.5, note: 'Premium qutu ilə' }],
   categories: [
     { id: 'toy', label: 'Toy buketi', image: 'img/ic-toy.jpg' },
     { id: 'mono', label: 'Monobuket', image: 'img/ic-monobuket.jpg' },
@@ -74,26 +94,78 @@ window.SITE = {
     { id: 'sebet', label: 'Səbət', image: 'img/ic-sebet.jpg' },
     { id: 'yeniil', label: 'Yeni il', image: 'img/ic-yeniil.jpg' },
   ],
-  collectionTitle: 'Seçilmiş <em>kompozisiyalar</em>',
-  products: [
-    { name: 'Lavanda orxideyalar', desc: 'Ağ və lavanda rəngli orxideyalardan dəbdəbəli vaza kompozisiyası.', image: 'img/p4.jpg', cat: 'vaza', tag: 'Yeni' },
-    { name: 'Qış nağılı', desc: 'Şam budaqları, qızılı aksentlər və bayram dekoru ilə kompozisiya.', image: 'img/p3.jpg', cat: 'yeniil', tag: 'Yeni il' },
-    { name: 'Ağ gül səbətləri', desc: 'Tədbir və korporativ hədiyyələr üçün eyni üslubda səbətlər.', image: 'img/p2.jpg', cat: 'sebet', tag: 'Tədbir' },
-    { name: 'Bənövşəyi orxideya vazası', desc: 'Əl ilə rənglənmiş vazada canlı orxideyalar.', image: 'img/p5.jpg', cat: 'vaza' },
-    { name: 'Yeni il ağacı kompozisiyası', desc: 'Masaüstü Yeni il ağacları və şam çələngi.', image: 'img/p6.jpg', cat: 'yeniil', tag: 'Yeni il' },
-    { name: 'Ağ orxideya, beton vaza', desc: 'Minimalist interyer üçün ağ orxideya kompozisiyası.', image: 'img/p1.jpg', cat: 'vaza' },
+  colors: [
+    { id: 'ag', label: 'Ağ', hex: '#F3EFE6' }, { id: 'cehrayi', label: 'Çəhrayı', hex: '#EFA5B5' }, { id: 'benovseyi', label: 'Bənövşəyi', hex: '#A98BC9' },
+    { id: 'qirmizi', label: 'Qırmızı', hex: '#C4273A' }, { id: 'yasil', label: 'Yaşıl', hex: '#5E8C5A' },
   ],
-  priceNote: 'Demo versiyada qiymətlər göstərilmir. Real saytda hər məhsulun qiyməti və şəkli admin paneldən əlavə olunur.',
-  extraHtml: `<section class="tiffany-band"><p>“Gül sadəcə hədiyyə deyil, xatırlanan andır.”</p><span>Bouquet &amp; Co · Flowers &amp; Decor</span></section>`,
+  products: [
+    { id: 'lavanda-orxideya', name: 'Lavanda orxideya kompozisiyası', cats: ['vaza'], colors: ['benovseyi', 'ag'], price: 245, badge: 'Bestseller', featured: true, image: 'img/p4.jpg',
+      desc: 'Ağ və lavanda rəngli orxideyalar, pastel vazalarda pillə-pillə yığılıb. Ev, ofis və ya xüsusi tədbir üçün.' },
+    { id: 'qis-nagili', name: 'Qış nağılı', cats: ['yeniil'], colors: ['ag', 'yasil'], price: 185, badge: 'Yeni', featured: true, image: 'img/p3.jpg',
+      desc: 'Şam budaqları, ağ güllər və qızılı bəzəklər. Yeni il masası və ya hədiyyə üçün hazır kompozisiya.' },
+    { id: 'yeni-il-agaci', name: 'Masaüstü Yeni il ağacı', cats: ['yeniil'], colors: ['yasil', 'qirmizi'], price: 210, old: 240, badge: 'Endirim', featured: true, image: 'img/p6.jpg',
+      desc: 'Canlı şam budaqlarından masaüstü ağac və çələng. Bayram boyu təzə qalır.' },
+    { id: 'ag-gul-sebeti', name: 'Ağ gül səbəti', cats: ['sebet'], colors: ['ag'], price: 120, featured: true, image: 'img/p2.jpg',
+      desc: 'Hörmə səbətdə ağ güllər və Tiffany lent. Tədbirlər üçün eyni üslubda bir neçə ədəd də hazırlayırıq.' },
+    { id: 'benovseyi-vaza', name: 'Bənövşəyi orxideya vazası', cats: ['vaza'], colors: ['benovseyi'], price: 165, image: 'img/p5.jpg',
+      desc: 'Əl ilə rənglənmiş vazada canlı bənövşəyi orxideyalar. Həftələrlə gözəl qalır.' },
+    { id: 'ag-orxideya-beton', name: 'Ağ orxideya, beton vaza', cats: ['vaza'], colors: ['ag'], price: 135, image: 'img/p1.jpg',
+      desc: 'Minimalist interyer üçün: ağ orxideya və boz beton vaza.' },
+    { id: 'saftali-monobuket', name: 'Şaftalı qızılgül monobuket', cats: ['mono'], colors: ['cehrayi'], price: 55, badge: 'Yeni', image: 'img/hero.jpg',
+      desc: 'Tək, iri şaftalı rəngli qızılgül. Sadə, amma yadda qalan jest.' },
+  ],
+  featuredTitle: 'Bu həftənin <em>sevimliləri</em>',
+  perks: [
+    { icon: 'truck', title: 'Bu gün çatdırılma', text: 'Bakı daxili 08:30 – 00:00, 150 ₼-dən pulsuz' },
+    { icon: 'gift', title: 'Tiffany qablaşdırma', text: 'Hər sifariş imza lentimizlə bağlanır' },
+    { icon: 'store', title: 'Mağazadan götürün', text: 'Parlament pr. 52F, yanında parkinq' },
+    { icon: 'card', title: 'Rahat ödəniş', text: 'Kartla onlayn və ya nağd' },
+  ],
+  heroHtml: (I, wa) => `
+    <section class="b-hero">
+      <svg class="ribbon" viewBox="0 0 1400 760" preserveAspectRatio="none" aria-hidden="true">
+        <path style="--len:2600" stroke-width="2.4" d="M-40 720 C 180 650, 330 760, 540 690 S 780 520, 900 600 S 1080 760, 1220 640 S 1370 460, 1460 500"/>
+        <path class="r2" style="--len:2600" d="M-40 740 C 190 670, 340 780, 550 710 S 790 540, 910 620 S 1090 780, 1230 660 S 1380 480, 1460 520"/>
+      </svg>
+      <div>
+        <p class="eyebrow">Parlament prospekti · Bakı</p>
+        <h1>Çiçək və<em>dekor sənəti</em></h1>
+        <p class="lead">Toy buketlərindən Yeni il kompozisiyalarına qədər, hər sifariş əl işidir. Seçin, bu gün qapınızda olsun.</p>
+        <div class="b-cta"><a class="btn btn-lg" href="#/magaza">Kolleksiyaya bax ${I.arrow}</a>
+          <a class="btn btn-ghost btn-lg" href="${wa('Salam! Buket sifariş etmək istəyirəm.')}" target="_blank" rel="noopener">${I.wa}<span>WhatsApp</span></a></div>
+        <div class="b-facts"><span><b>08:30–00:00</b>çatdırılma</span><span><b>Hər gün</b>mağaza açıqdır</span><span><b>70</b>maşınlıq parkinq</span></div>
+      </div>
+      <div class="b-box"><img src="img/hero.jpg" alt="Əlində şaftalı rəngli qızılgül tutan qadın" width="640" height="800" fetchpriority="high">
+        <div class="b-tag"><b>55 ₼-dən</b>Monobuketlər</div></div>
+    </section>`,
+  categoriesHtml: (I, wa) => `
+    <section class="sec">
+      <div class="sec-head center"><p class="eyebrow center-eyebrow">Kateqoriyalar</p><h2>Hər an üçün <em>öz buketi</em></h2></div>
+      <div class="cats">${window.SITE.categories.map((c) => c.id === 'toy'
+        ? `<a class="cat" href="${wa('Salam! Toy buketi sifariş etmək istəyirəm.')}" target="_blank" rel="noopener"><span class="cat-img"><img src="${c.image}" alt="" loading="lazy" width="200" height="200"></span><span class="cat-label">${c.label}<small>Fərdi sifariş</small></span></a>`
+        : `<a class="cat" href="#/magaza?k=${c.id}"><span class="cat-img"><img src="${c.image}" alt="" loading="lazy" width="200" height="200"></span><span class="cat-label">${c.label}<small>${window.SITE.products.filter((p) => p.cats.includes(c.id)).length} məhsul</small></span></a>`).join('')}</div>
+    </section>`,
+  signatureHtml: (I) => `
+    <section class="b-store sig">
+      <div class="b-store-in">
+        <img src="img/magaza.jpg" alt="Bouquet & Co mağazasının fasadı və çatdırılma velosipedi" loading="lazy" width="700" height="700">
+        <div class="b-store-txt">
+          <p class="eyebrow">Mağazaya gəlin</p>
+          <h2>Butikdə <em>özünüz seçin</em></h2>
+          <dl><dt>Ünvan</dt><dd>Parlament prospekti 52F</dd><dt>Saatlar</dt><dd>Hər gün 08:00 – 00:00</dd><dt>Parkinq</dt><dd>70 maşınlıq, mağazanın yanında</dd></dl>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('Bouquet & Co, Parlament prospekti 52F, Baku')}" target="_blank" rel="noopener">${I.pin}<span>Xəritədə aç</span></a>
+        </div>
+      </div>
+    </section>`,
   about: {
-    title: 'Parlament prospektində<br><em>çiçək butiki</em>',
+    title: 'Gül və dekor,<br><em>bir imzada</em>',
     paragraphs: [
       'Bouquet & Co Bakının mərkəzində gül və dekor butikidir. Toy və nişan buketləri, vaza kompozisiyaları, səbətlər və bayram dekorları hazırlayırıq.',
-      'Mağazamız hər gün 08:00-dan 00:00-dək açıqdır, yanında 70 maşınlıq parkinq var.',
+      'Hər kompozisiya əl ilə yığılır və imza firuzəyi lentimizlə bağlanır.',
     ],
-    images: ['img/magaza.jpg', 'img/parking.jpg'],
+    images: ['img/p1.jpg', 'img/p5.jpg'],
   },
-  contactTitle: 'Buketinizi <em>bu gün</em> sifariş edin',
+  finaleTitle: 'Buketinizi <em>bu gün</em> sifariş edin',
 };
 </script>
 <script src="../shared/site.js"></script>

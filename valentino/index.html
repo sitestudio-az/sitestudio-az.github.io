@@ -4,105 +4,188 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Valentino Flowers</title>
-<meta name="description" content="Valentino Flowers üçün sitestudio.az tərəfindən hazırlanmış demo sayt.">
-<link rel="icon" href="img/monogram.jpg">
+<title>Valentino Flowers · 7/24</title>
+<meta name="description" content="Valentino Flowers üçün sitestudio.az tərəfindən hazırlanmış demo onlayn mağaza.">
+<meta name="theme-color" content="#0C1517">
+<!-- DEPLOY STEP: og:url canlı ünvanla yenilənir -->
+<meta property="og:title" content="Valentino Flowers · 7/24">
+<meta property="og:description" content="Demo onlayn mağaza: buketlər, kompozisiyalar, Yeni il və uşaqlar üçün hədiyyələr.">
+<meta property="og:image" content="img/hero.jpg">
+<meta property="og:url" content="https://sitestudio-az.github.io/valentino/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%230E8597'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-size='34' text-anchor='middle' fill='white'%3EV%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../shared/site.css">
 <style>
   :root {
-    --bg: #0B1416; --surface: #111D20; --soft: #172629; --ink: #F2EEE7; --muted: #A3AFAE;
-    --line: #1F2F32; --line-strong: #2F4548;
-    --brand: #0E8597; --brand-ink: #FFFFFF; --brand-text: #63C6D3;
+    --bg: #0C1517; --surface: #121E21; --soft: #18292D; --ink: #F2EEE7; --muted: #A4B1B0;
+    --line: #1F3134; --line-strong: #2F474B; --sale: #D0473F; --ok: #6FD3A0;
+    --accent: #0E8597; --accent-ink: #FFFFFF; --accent-text: #72CCD8;
     --f-head: 'Playfair Display', Georgia, serif; --f-body: 'Inter', system-ui, sans-serif; --w-head: 500;
-    --r-hero: 28px; --r-card: 18px; --r-btn: 40px;
-    --hdr-bg: rgba(11,20,22,.85); --demo-bg: #0E8597;
-    --cols: 3; --contact-bg: linear-gradient(135deg, #0E8597, #0A5F6C); --contact-ink: #fff; --contact-accent: #BFEFF5;
+    --r-card: 18px; --r-btn: 40px; --r-img: 22px; --r-big: 28px;
+    --hdr-bg: rgba(12,21,23,.86); --demo-bg: #0E8597; --logo-h: 62px; --ftr-bg: #0A1214;
+    --finale-bg: linear-gradient(135deg, #0E8597 0%, #08515C 100%); --finale-ink: #FFFFFF; --finale-accent: #BFEFF5; --finale-btn: #FFFFFF; --finale-btn-ink: #08515C;
+    --card-line: #1C2D30; --card-shadow: 0 40px 70px -40px rgba(0,0,0,.9);
   }
-  .mono { width: 46px; height: 46px; border-radius: 50%; overflow: hidden; flex: none; box-shadow: 0 0 0 1px rgba(255,255,255,.15); }
-  .mono img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.25); }
-  .wm { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 19px; letter-spacing: .26em; line-height: 1; }
-  .wm small { display: block; font-size: 9px; letter-spacing: .5em; color: var(--brand-text); margin-top: 6px; }
-  .hero { position: relative; }
-  .hero::before { content: ""; position: absolute; width: 560px; height: 560px; right: 5%; top: 10%; background: radial-gradient(circle, rgba(14,133,151,.35), transparent 65%); z-index: -1; filter: blur(10px); }
-  .hero-media img { aspect-ratio: 4/5; }
-  .hero-badge { background: var(--brand); color: #fff; border: 0; }
-  .hero-badge b { color: #fff; font-size: 34px; }
-  .cat-img { background: #0E8597; border-color: transparent; padding: 0; }
-  .chip.on { background: var(--brand); border-color: var(--brand); color: #fff; }
-  .card-tag { background: var(--brand); color: #fff; }
-  .burc { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(28px, 5vw, 70px); align-items: center; background: var(--surface);
-          border: 1px solid var(--line); border-radius: 28px; overflow: hidden; }
-  .burc img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 1; }
-  .burc > div { padding: 40px clamp(24px, 4vw, 56px) 40px 0; }
-  .burc .btn { margin-top: 28px; }
-  @media (max-width: 900px) { .burc { grid-template-columns: 1fr; } .burc > div { padding: 8px 24px 36px; } }
+  body { background: radial-gradient(1200px 700px at 85% -10%, rgba(14,133,151,.22), transparent 60%), var(--bg); }
+  .pbadge { background: var(--accent); color: #fff; }
+
+  /* hero: canlı Bakı saatı */
+  .v-hero { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 80px); align-items: center; max-width: 1400px; margin: 0 auto;
+            padding: clamp(36px, 6vw, 90px) var(--pad) clamp(56px, 8vw, 110px); }
+  .v-hero h1 { font-size: clamp(52px, 7.4vw, 112px); line-height: .95; margin: 24px 0 24px; }
+  .v-hero h1 em { color: var(--accent-text); }
+  .v-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+  .v-clock { display: inline-flex; align-items: center; gap: 18px; margin-top: 40px; padding: 16px 22px 16px 18px; border: 1px solid var(--line-strong); border-radius: 18px; background: rgba(18,30,33,.7); }
+  .v-clock .dot { width: 12px; height: 12px; border-radius: 50%; background: #3DDC97; box-shadow: 0 0 0 0 rgba(61,220,151,.6); animation: pulse 2s infinite; flex: none; }
+  @keyframes pulse { 70% { box-shadow: 0 0 0 12px rgba(61,220,151,0); } 100% { box-shadow: 0 0 0 0 rgba(61,220,151,0); } }
+  .v-clock time { font-family: var(--f-head); font-size: 40px; line-height: 1; font-variant-numeric: lining-nums tabular-nums; letter-spacing: .02em; }
+  .v-clock span { font-size: 14px; color: var(--muted); line-height: 1.4; } .v-clock b { color: var(--ink); display: block; font-size: 15px; }
+  .v-media { position: relative; }
+  .v-media img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 240px 240px 28px 28px; box-shadow: 0 60px 100px -50px rgba(0,0,0,.95); }
+  .v-mono { position: absolute; left: -30px; bottom: 40px; width: 120px; height: 120px; border-radius: 50%; background: var(--accent); display: grid; place-items: center;
+            box-shadow: 0 30px 60px -20px rgba(0,0,0,.7); animation: spin 30s linear infinite; }
+  .v-mono img { width: 70%; height: auto; aspect-ratio: auto; border-radius: 0; box-shadow: none; animation: spin 30s linear infinite reverse; }
+  .v-mono svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .cats { --cat-cols: 4; }
+  .cat-img { background: var(--accent); box-shadow: 0 0 0 1px var(--line-strong); }
+
+  /* bürc kartı seçicisi */
+  .v-zod { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(28px, 5vw, 72px); align-items: center; background: var(--surface); border: 1px solid var(--line);
+           border-radius: 28px; overflow: hidden; }
+  .v-zod > img { width: 100%; height: 100%; object-fit: cover; min-height: 420px; max-height: 560px; }
+  .v-zod-in { padding: clamp(28px, 4vw, 56px) clamp(24px, 4vw, 56px) clamp(28px, 4vw, 56px) 0; }
+  .zgrid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin: 26px 0 22px; }
+  .zgrid button { display: grid; gap: 2px; justify-items: center; padding: 10px 4px; border: 1px solid var(--line-strong); border-radius: 14px; font-size: 11.5px; color: var(--muted); transition: all .25s; min-height: 44px; }
+  .zgrid button i { font-style: normal; font-size: 22px; color: var(--accent-text); line-height: 1.1; }
+  .zgrid button:hover { color: var(--ink); border-color: var(--accent); }
+  .zgrid button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; } .zgrid button[aria-pressed="true"] i { color: #fff; }
+  .zres { min-height: 52px; color: var(--muted); }
+  .zres b { color: var(--ink); }
+  @media (max-width: 900px) {
+    .v-hero { grid-template-columns: 1fr; } .v-media { order: -1; max-width: 440px; margin: 0 auto; width: 100%; }
+    .v-media img { aspect-ratio: 1; } .v-mono { width: 92px; height: 92px; left: 6px; bottom: 16px; }
+    .v-zod { grid-template-columns: 1fr; } .v-zod > img { min-height: 280px; max-height: 360px; } .v-zod-in { padding: 4px 22px 28px; }
+    .zgrid { grid-template-columns: repeat(4, 1fr); }
+  }
 </style>
 </head>
 <body>
 <noscript>Bu sayt JavaScript tələb edir.</noscript>
 <script>
 window.SITE = {
-  name: 'Valentino Flowers',
-  tagline: 'Gül salonu, 7/24',
-  instagram: 'valentino.aze',
-  whatsapp: '994506590001',
-  phones: ['+994 50 659 00 01', '+994 55 200 45 00'],
-  address: 'Azadlıq pr. 151A, Bakı',
-  mapQuery: 'Valentino Flowers, Azadlıq prospekti 151A, Baku',
-  hours: '7/24, gecə-gündüz',
-  deliveryText: 'Gecə-gündüz işləyirik: buket istədiyiniz ünvana, istədiyiniz saatda çatır.',
-  logoHtml: '<span class="mono"><img src="img/monogram.jpg" alt=""></span><span class="wm">VALENTINO<small>FLOWERS</small></span>',
-  hero: {
-    eyebrow: 'Azadlıq prospekti · 7/24',
-    title: 'Hər hissin<br><em>öz çiçəyi</em>',
-    text: 'Ad günü, bayram, uşaq sürprizi və ya sadəcə “səni düşünürəm”. Valentino Flowers-də hər buket əl ilə, xüsusi an üçün hazırlanır. Sifarişləri gecə-gündüz qəbul edirik.',
-    image: 'img/hero.jpg',
-    alt: 'Ağ və qızılı bəzəkli Yeni il ağacı kompozisiyası',
-    badge: '<b>7/24</b>Sifariş və çatdırılma',
-  },
-  facts: [
-    { icon: 'clock', title: 'İş saatı', text: '7/24, bayramlarda da' },
-    { icon: 'pin', title: 'Ünvan', text: 'Azadlıq pr. 151A' },
-    { icon: 'phone', title: 'Zəng / WhatsApp', text: '050 659 00 01' },
-  ],
-  catTitle: 'Kolleksiyalarımız',
+  key: 'val-', name: 'Valentino Flowers', tagline: 'Gül salonu, 7/24',
+  logo: 'img/logo.png', logoW: 122, logoH: 92,
+  instagram: 'valentino.aze', whatsapp: '994506590001', phones: ['+994 50 659 00 01', '+994 55 200 45 00'],
+  address: 'Azadlıq pr. 151A, Bakı', mapQuery: 'Valentino Flowers, Azadlıq prospekti 151A, Baku',
+  hours: '7/24, gecə-gündüz', hoursShort: 'Gecə-gündüz sifariş qəbul edirik',
+  deliveryLine: 'Bakı daxili çatdırılma, 7/24', footerLine: 'Azadlıq prospektində 7/24 işləyən gül salonu. Hər hissin öz çiçəyi.',
+  freeDeliveryFrom: 150, deliveryFee: 8, priceMax: 250, slotFrom: 0, slotTo: 24,
+  sizes: [{ id: 'std', label: 'Standart', k: 1, note: 'Şəkildəki kimi' }, { id: 'big', label: 'Böyük', k: 1.25, note: 'Daha dolğun' }, { id: 'lux', label: 'Lüks', k: 1.5, note: 'İmzalı qutu ilə' }],
   categories: [
     { id: 'buket', label: 'Buketlər', image: 'img/ic-buket.jpg' },
     { id: 'komp', label: 'Kompozisiyalar', image: 'img/ic-kompozisiya.jpg' },
     { id: 'yeniil', label: 'Yeni il', image: 'img/ic-yeniil.jpg' },
     { id: 'usaq', label: 'Uşaqlar üçün', image: 'img/ic-usaq.jpg' },
   ],
-  collectionTitle: 'Yeni <em>kompozisiyalar</em>',
-  products: [
-    { name: 'Qırmızı Yeni il səbəti', desc: 'Qırmızı güllər, şam budaqları və bayram şamları.', image: 'img/p3.jpg', cat: 'yeniil komp', tag: 'Yeni il' },
-    { name: 'Tünd bənövşəyi buket', desc: 'Dalğalı qablaşdırmada tünd bənövşəyi xrizantemalar.', image: 'img/p2.jpg', cat: 'buket' },
-    { name: 'Ad günü sürprizi', desc: 'Pastel güllər, ayıcıq və tortvari kompozisiya.', image: 'img/p5.jpg', cat: 'usaq komp', tag: 'Uşaq üçün' },
-    { name: 'Çəhrayı ranunkulus', desc: 'Yumşaq çəhrayı ranunkuluslardan böyük buket.', image: 'img/p7.jpg', cat: 'buket' },
-    { name: 'Qrinç qutusu', desc: 'Qırmızı qızılgüllər və yaşıl Qrinç, Valentino qutusunda.', image: 'img/p6.jpg', cat: 'yeniil komp', tag: 'Xüsusi' },
-    { name: 'Qar ağı kompozisiya', desc: 'Ağ güllər, pambıq budaqları və mirvari bəzəklər.', image: 'img/p4.jpg', cat: 'yeniil komp' },
-    { name: '“Happy Birthday” buketi', desc: 'Çəhrayı hortenziya və güllərdən təbrik buketi.', image: 'img/p8.jpg', cat: 'buket' },
-    { name: 'Qırmızı maşın', desc: 'Retro qırmızı maşınla Yeni il kompozisiyası.', image: 'img/p10.jpg', cat: 'yeniil usaq komp' },
-    { name: 'Ağ-çəhrayı zəriflik', desc: 'Ağ və çəhrayı güllər, imzalı lentli qutuda.', image: 'img/p1.jpg', cat: 'komp' },
+  colors: [
+    { id: 'qirmizi', label: 'Qırmızı', hex: '#B3202F' }, { id: 'cehrayi', label: 'Çəhrayı', hex: '#EE9BB3' }, { id: 'ag', label: 'Ağ', hex: '#EFEBE3' },
+    { id: 'benovseyi', label: 'Bənövşəyi', hex: '#6E2A4D' }, { id: 'yasil', label: 'Yaşıl', hex: '#3E6B4C' },
   ],
-  priceNote: 'Demo versiyada qiymətlər göstərilmir. Real saytda qiymətlər və yeni məhsullar admin paneldən əlavə olunur.',
-  extraHtml: `<section class="sec"><div class="burc">
-      <img src="img/burc.jpg" alt="Valentino imzalı bürc kartı" loading="lazy">
-      <div><p class="eyebrow">Bürc kolleksiyası</p><h2>Buketə <em>bürc kartı</em></h2>
-      <p class="lead" style="margin-top:18px">Sevdiyiniz insanın bürcünü yazın, buketə Valentino imzalı bürc kartı əlavə edək. Kiçik detal, böyük təəssürat.</p>
-      <a class="btn" href="https://wa.me/994506590001?text=${encodeURIComponent('Salam! Bürc kartlı buket istəyirəm.')}" target="_blank" rel="noopener">Bürc kartlı buket sifariş et</a></div>
-    </div></section>`,
+  products: [
+    { id: 'qirmizi-yeni-il-sebeti', name: 'Qırmızı Yeni il səbəti', cats: ['yeniil', 'komp'], colors: ['qirmizi', 'yasil'], price: 195, badge: 'Yeni', featured: true, image: 'img/p3.jpg',
+      desc: 'Qırmızı güllər, şam budaqları, pambıq və bayram şamları, hörmə səbətdə.' },
+    { id: 'cehrayi-ranunkulus', name: 'Çəhrayı ranunkulus buketi', cats: ['buket'], colors: ['cehrayi'], price: 230, badge: 'Bestseller', featured: true, image: 'img/p7.jpg',
+      desc: 'Onlarla yumşaq çəhrayı ranunkulus, Valentino imzalı qablaşdırmada. Böyük və təsirli.' },
+    { id: 'ad-gunu-surprizi', name: 'Ad günü sürprizi', cats: ['usaq', 'komp'], colors: ['cehrayi', 'ag'], price: 175, featured: true, image: 'img/p5.jpg',
+      desc: 'Pastel güllər, ayıcıq və tortvari kompozisiya. Uşağın və ya böyüyün ad günü üçün.' },
+    { id: 'qrinc-qutusu', name: 'Qrinç qutusu', cats: ['yeniil', 'komp'], colors: ['qirmizi', 'yasil'], price: 165, badge: 'Xüsusi', featured: true, image: 'img/p6.jpg',
+      desc: 'Qırmızı qızılgüllər və yaşıl Qrinç, Valentino məxmər qutusunda. Bayramın ən şən hədiyyəsi.' },
+    { id: 'tund-benovseyi', name: 'Tünd bənövşəyi buket', cats: ['buket'], colors: ['benovseyi'], price: 140, image: 'img/p2.jpg',
+      desc: 'Dalğalı qablaşdırmada tünd bənövşəyi xrizantemalar. Dərin və zərif.' },
+    { id: 'qar-agi', name: 'Qar ağı kompozisiya', cats: ['yeniil', 'komp'], colors: ['ag'], price: 210, image: 'img/p4.jpg',
+      desc: 'Ağ güllər, pambıq budaqları, lələk və mirvari bəzəklər.' },
+    { id: 'happy-birthday', name: '“Happy Birthday” buketi', cats: ['buket'], colors: ['cehrayi'], price: 155, old: 180, badge: 'Endirim', image: 'img/p8.jpg',
+      desc: 'Çəhrayı hortenziya və güllər, təbrik yazılı lent və bürc kartı ilə.' },
+    { id: 'retro-masin', name: 'Retro qırmızı maşın', cats: ['yeniil', 'usaq', 'komp'], colors: ['qirmizi'], price: 185, image: 'img/p10.jpg',
+      desc: 'Qırmızı retro maşın, şam budaqları və güllərlə Yeni il kompozisiyası.' },
+    { id: 'ag-cehrayi-zeriflik', name: 'Ağ-çəhrayı zəriflik', cats: ['komp'], colors: ['ag', 'cehrayi'], price: 125, image: 'img/p1.jpg',
+      desc: 'Ağ və çəhrayı güllər, imzalı lentli qutuda.' },
+    { id: 'bayram-vazasi', name: 'Qırmızı bayram vazası', cats: ['yeniil', 'komp'], colors: ['qirmizi'], price: 150, image: 'img/p9.jpg',
+      desc: 'Qırmızı güllər, şamlar və bayram bəzəkləri, qış mənzərəli vazada.' },
+    { id: 'hediyye-qatari', name: 'Hədiyyə qatarı', cats: ['usaq', 'komp'], colors: ['qirmizi'], price: 120, image: 'img/p11.jpg',
+      desc: 'Uşaqlar üçün qatar formalı hədiyyə kompozisiyası.' },
+  ],
+  featuredTitle: 'Gecənin və gündüzün <em>seçimləri</em>',
+  perks: [
+    { icon: 'clock', title: '7/24 sifariş', text: 'Gecə yarısı da, bayramda da' },
+    { icon: 'truck', title: 'Bakı daxili çatdırılma', text: '150 ₼-dən pulsuz' },
+    { icon: 'gift', title: 'Bürc kartı', text: 'İstəsəniz, buketə əlavə edirik' },
+    { icon: 'card', title: 'Rahat ödəniş', text: 'Kartla onlayn və ya nağd' },
+  ],
+  heroHtml: (I, wa) => `
+    <section class="v-hero">
+      <div>
+        <p class="eyebrow">Azadlıq prospekti · 7/24</p>
+        <h1>Hər hissin<br><em>öz çiçəyi</em></h1>
+        <p class="lead">Ad günü, bayram, uşaq sürprizi və ya sadəcə “səni düşünürəm”. Buket əl ilə, sizin anınız üçün yığılır.</p>
+        <div class="v-cta"><a class="btn btn-lg" href="#/magaza">Buket seç ${I.arrow}</a>
+          <a class="btn btn-ghost btn-lg" href="${wa('Salam! Buket sifariş etmək istəyirəm.')}" target="_blank" rel="noopener">${I.wa}<span>WhatsApp</span></a></div>
+        <div class="v-clock" aria-live="off"><i class="dot" aria-hidden="true"></i><time id="vClock">--:--</time><span><b>Bakıda indi. Açığıq.</b>Gecə-gündüz sifariş qəbul edirik</span></div>
+      </div>
+      <div class="v-media">
+        <img src="img/hero.jpg" alt="Ağ və qızılı bəzəkli Yeni il ağacı kompozisiyası" width="640" height="800" fetchpriority="high">
+        <div class="v-mono" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="circ" d="M60 60 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/></defs>
+          <text font-family="Inter" font-size="9.5" letter-spacing="3.2" fill="#fff"><textPath href="#circ">VALENTINO FLOWERS · 7/24 · BAKI · </textPath></text></svg>
+          <img src="img/logo.png" alt="" width="122" height="92" style="width:44%"></div>
+      </div>
+    </section>`,
+  categoriesHtml: () => `
+    <section class="sec">
+      <div class="sec-head"><p class="eyebrow">Kolleksiyalar</p><h2>Nə üçün <em>axtarırsınız?</em></h2></div>
+      <div class="cats">${window.SITE.categories.map((c) => `<a class="cat" href="#/magaza?k=${c.id}"><span class="cat-img"><img src="${c.image}" alt="" loading="lazy" width="200" height="200"></span><span class="cat-label">${c.label}<small>${window.SITE.products.filter((p) => p.cats.includes(c.id)).length} məhsul</small></span></a>`).join('')}</div>
+    </section>`,
+  signatureHtml: (I) => `
+    <section class="sec sig">
+      <div class="v-zod">
+        <img src="img/burc.jpg" alt="Valentino imzalı bürc kartı" loading="lazy" width="640" height="640">
+        <div class="v-zod-in">
+          <p class="eyebrow">Bürc kartı</p>
+          <h2>Onun bürcü <em>hansıdır?</em></h2>
+          <p class="lead" style="margin-top:16px">Bürcü seçin, buketə həmin bürcün imzalı kartını əlavə edək.</p>
+          <div class="zgrid" id="zgrid"></div>
+          <p class="zres" id="zres">Bürc seçilməyib.</p>
+          <a class="btn" id="zbtn" href="#/magaza">Buket seç ${I.arrow}</a>
+        </div>
+      </div>
+    </section>`,
+  onHome: (root, { wa }) => {
+    const clock = root.querySelector('#vClock');
+    const fmt = new Intl.DateTimeFormat('az-AZ', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Baku' });
+    const tick = () => { if (!document.hidden && clock.isConnected) clock.textContent = fmt.format(new Date()); };
+    tick(); const t = setInterval(() => { if (!clock.isConnected) clearInterval(t); else tick(); }, 15000);
+    const Z = [['♈', 'Qoç'], ['♉', 'Buğa'], ['♊', 'Əkizlər'], ['♋', 'Xərçəng'], ['♌', 'Şir'], ['♍', 'Qız'], ['♎', 'Tərəzi'], ['♏', 'Əqrəb'], ['♐', 'Oxatan'], ['♑', 'Oğlaq'], ['♒', 'Dolça'], ['♓', 'Balıqlar']];
+    const g = root.querySelector('#zgrid'), res = root.querySelector('#zres');
+    g.innerHTML = Z.map(([s, n]) => `<button type="button" aria-pressed="false" data-z="${n}"><i aria-hidden="true">${s}︎</i>${n}</button>`).join('');
+    g.addEventListener('click', (e) => {
+      const b = e.target.closest('button'); if (!b) return;
+      g.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', x === b));
+      res.innerHTML = `<b>${b.dataset.z}</b> kartı seçildi. Buketi seçin, sifarişdə “Vizitka” xanasına <b>${b.dataset.z}</b> yazın, ya da WhatsApp-da bildirin.`;
+      root.querySelector('#zbtn').outerHTML = `<a class="btn" id="zbtn" href="${wa('Salam! ' + b.dataset.z + ' bürc kartlı buket istəyirəm.')}" target="_blank" rel="noopener">${b.dataset.z} kartlı buket sifariş et</a>`;
+    });
+  },
   about: {
     title: 'Valentino <em>Flowers</em>',
     paragraphs: [
       'Azadlıq prospektindəki gül salonumuz 7/24 işləyir. Gecə yarısı yada düşən təbrik də vaxtında çatır.',
       'Hər mövsümün öz kolleksiyası var: Novruz, Ramazan, Bilik günü, Yeni il və uşaqlar üçün xüsusi kompozisiyalar.',
     ],
-    images: ['img/p9.jpg', 'img/p11.jpg'],
+    images: ['img/p9.jpg', 'img/p8.jpg'],
   },
-  contactTitle: 'Gecə də, gündüz də <em>buradayıq</em>',
+  finaleTitle: 'Gecə də, gündüz də <em>buradayıq</em>',
 };
 </script>
 <script src="../shared/site.js"></script>
