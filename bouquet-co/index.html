@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Bouquet &amp; Co — Flowers &amp; Decor</title>
+<meta name="description" content="Bouquet & Co üçün sitestudio.az tərəfindən hazırlanmış demo sayt.">
+<link rel="icon" href="img/ic-monobuket.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/site.css">
+<style>
+  :root {
+    --bg: #FFFFFF; --surface: #FFFFFF; --soft: #EEF8F6; --ink: #10201E; --muted: #5C6E6B;
+    --line: #DCEBE8; --line-strong: #BFDCD7;
+    --brand: #3DBDB1; --brand-ink: #0D1F1C; --brand-text: #1E8C82;
+    --f-head: 'Cormorant Garamond', Georgia, serif; --f-body: 'Montserrat', system-ui, sans-serif; --w-head: 500;
+    --r-hero: 999px 999px 28px 28px; --r-card: 4px; --r-btn: 2px;
+    --hdr-bg: rgba(255,255,255,.88); --demo-bg: #10201E;
+    --cols: 3; --contact-bg: #3DBDB1; --contact-ink: #0D1F1C; --contact-accent: #0D1F1C;
+  }
+  .brandmark { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 25px; letter-spacing: .14em; line-height: 1; color: var(--ink); }
+  .brandmark small { display: block; font-family: 'Montserrat', sans-serif; font-size: 9.5px; letter-spacing: .42em; font-weight: 600; color: var(--brand-text); margin-top: 6px; }
+  .hero { background: linear-gradient(180deg, var(--soft) 0%, #fff 75%); max-width: none; }
+  .hero > * { max-width: 640px; }
+  .hero-media { justify-self: center; width: 100%; }
+  .hero-media::before { content: ""; position: absolute; inset: -16px; border: 1px solid var(--brand); border-radius: 999px 999px 34px 34px; z-index: -1; }
+  .cat-img { border-radius: 50%; background: var(--brand); }
+  .chip.on { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+  .card { border-color: transparent; }
+  .card-img { aspect-ratio: 3/4; }
+  .steps li { border-top: 3px solid var(--brand); }
+  .tiffany-band { background: var(--brand); color: var(--brand-ink); text-align: center; padding: 70px 20px; }
+  .tiffany-band p { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4vw, 48px); font-style: italic; max-width: 900px; margin: 0 auto; line-height: 1.2; }
+  .tiffany-band span { display: block; font-size: 12px; letter-spacing: .3em; text-transform: uppercase; margin-top: 18px; font-weight: 600; }
+  .contact-cta .btn { background: #0D1F1C; color: #fff; border-color: #0D1F1C; }
+  .contact-cta .btn-ghost { background: transparent; color: #0D1F1C; }
+</style>
+</head>
+<body>
+<noscript>Bu sayt JavaScript tələb edir.</noscript>
+<script>
+window.SITE = {
+  name: 'Bouquet & Co',
+  tagline: 'Flowers & Decor',
+  instagram: 'bouquet.aze',
+  whatsapp: '994509800800',
+  phones: ['+994 50 980 08 00'],
+  address: 'Parlament pr. 52F, Bakı',
+  mapQuery: 'Bouquet & Co, Parlament prospekti 52F, Baku',
+  hours: 'Mağaza: hər gün 08:00 – 00:00 · Çatdırılma: 08:30 – 00:00',
+  deliveryText: 'Bakı daxilində 08:30-dan gecə yarısınadək çatdırırıq və ya buketi mağazadan götürürsünüz.',
+  logoHtml: '<span class="brandmark">BOUQUET&amp;CO<small>FLOWERS &amp; DECOR</small></span>',
+  hero: {
+    eyebrow: 'Parlament prospekti · Bakı',
+    title: 'Çiçək və<br><em>dekor sənəti</em>',
+    text: 'Toy buketlərindən Yeni il kompozisiyalarına qədər, hər sifariş əl işidir. Bakı daxilində səhər 08:30-dan gecə yarısınadək çatdırırıq.',
+    image: 'img/hero.jpg',
+    alt: 'Əlində çəhrayı qızılgül tutan qadın',
+    badge: '<b>08:30 – 00:00</b>Bakı daxili çatdırılma',
+  },
+  facts: [
+    { icon: 'truck', title: 'Çatdırılma', text: 'Hər gün 08:30 – 00:00' },
+    { icon: 'pin', title: 'Mağaza', text: 'Parlament pr. 52F' },
+    { icon: 'gift', title: 'Parkinq', text: '70 maşınlıq, mağazanın yanında' },
+  ],
+  catTitle: 'Hər an üçün <em>öz buketi</em>',
+  categories: [
+    { id: 'toy', label: 'Toy buketi', image: 'img/ic-toy.jpg' },
+    { id: 'mono', label: 'Monobuket', image: 'img/ic-monobuket.jpg' },
+    { id: 'vaza', label: 'Vaza', image: 'img/ic-vaza.jpg' },
+    { id: 'sebet', label: 'Səbət', image: 'img/ic-sebet.jpg' },
+    { id: 'yeniil', label: 'Yeni il', image: 'img/ic-yeniil.jpg' },
+  ],
+  collectionTitle: 'Seçilmiş <em>kompozisiyalar</em>',
+  products: [
+    { name: 'Lavanda orxideyalar', desc: 'Ağ və lavanda rəngli orxideyalardan dəbdəbəli vaza kompozisiyası.', image: 'img/p4.jpg', cat: 'vaza', tag: 'Yeni' },
+    { name: 'Qış nağılı', desc: 'Şam budaqları, qızılı aksentlər və bayram dekoru ilə kompozisiya.', image: 'img/p3.jpg', cat: 'yeniil', tag: 'Yeni il' },
+    { name: 'Ağ gül səbətləri', desc: 'Tədbir və korporativ hədiyyələr üçün eyni üslubda səbətlər.', image: 'img/p2.jpg', cat: 'sebet', tag: 'Tədbir' },
+    { name: 'Bənövşəyi orxideya vazası', desc: 'Əl ilə rənglənmiş vazada canlı orxideyalar.', image: 'img/p5.jpg', cat: 'vaza' },
+    { name: 'Yeni il ağacı kompozisiyası', desc: 'Masaüstü Yeni il ağacları və şam çələngi.', image: 'img/p6.jpg', cat: 'yeniil', tag: 'Yeni il' },
+    { name: 'Ağ orxideya, beton vaza', desc: 'Minimalist interyer üçün ağ orxideya kompozisiyası.', image: 'img/p1.jpg', cat: 'vaza' },
+  ],
+  priceNote: 'Demo versiyada qiymətlər göstərilmir. Real saytda hər məhsulun qiyməti və şəkli admin paneldən əlavə olunur.',
+  extraHtml: `<section class="tiffany-band"><p>“Gül sadəcə hədiyyə deyil, xatırlanan andır.”</p><span>Bouquet &amp; Co · Flowers &amp; Decor</span></section>`,
+  about: {
+    title: 'Parlament prospektində<br><em>çiçək butiki</em>',
+    paragraphs: [
+      'Bouquet & Co Bakının mərkəzində gül və dekor butikidir. Toy və nişan buketləri, vaza kompozisiyaları, səbətlər və bayram dekorları hazırlayırıq.',
+      'Mağazamız hər gün 08:00-dan 00:00-dək açıqdır, yanında 70 maşınlıq parkinq var.',
+    ],
+    images: ['img/magaza.jpg', 'img/parking.jpg'],
+  },
+  contactTitle: 'Buketinizi <em>bu gün</em> sifariş edin',
+};
+</script>
+<script src="../shared/site.js"></script>
+</body>
+</html>
