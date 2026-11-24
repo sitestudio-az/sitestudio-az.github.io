@@ -114,10 +114,10 @@ h2 em, h1 em, .h-page em { font-style: var(--em-style, italic); color: var(--acc
 
 /* kateqoriyalar, üstünlüklər, haqqımızda, final */
 .cats { display: grid; grid-template-columns: repeat(var(--cat-cols, 5), 1fr); gap: 22px; }
-.cat { display: grid; gap: 14px; justify-items: center; text-align: center; }
+.cat { display: grid; gap: 14px; justify-items: center; text-align: center; min-width: 0; }
 .cat-img { width: 100%; max-width: 200px; aspect-ratio: 1; border-radius: 50%; overflow: hidden; transition: transform .5s var(--ease), box-shadow .5s; }
 .cat-img img { width: 100%; height: 100%; object-fit: cover; }
-.cat:hover .cat-img { transform: translateY(-6px) rotate(-2deg); box-shadow: 0 26px 40px -26px rgba(0,0,0,.5); }
+@media (hover: hover) { .cat:hover .cat-img { transform: translateY(-6px) rotate(-2deg); box-shadow: 0 26px 40px -26px rgba(0,0,0,.5); } }
 .cat-label { font-family: var(--f-head); font-size: 22px; font-weight: var(--w-head, 500); }
 .cat small { display: block; font-family: var(--f-body); font-size: 13px; color: var(--muted); margin-top: 2px; }
 .perks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; padding-top: 0; padding-bottom: 0; }
@@ -357,9 +357,10 @@ body[data-page="checkout"] .wa-float, body[data-page="cart"] .wa-float { display
   .filters-bg { display: block; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 85; opacity: 0; pointer-events: none; transition: opacity .3s; }
   .filters-bg.open { opacity: 1; pointer-events: auto; }
   .sort span { display: none; }
-  .cats { grid-template-columns: none; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 calc(var(--pad) * -1); padding: 4px var(--pad) 12px; scrollbar-width: none; gap: 16px; }
+  .cats { grid-template-columns: none; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--pad); margin: 0 calc(var(--pad) * -1); padding: 4px var(--pad) 12px; scrollbar-width: none; gap: 16px; }
   .cats::-webkit-scrollbar { display: none; }
-  .cat { flex: 0 0 132px; scroll-snap-align: start; }
+  .cat { flex: 0 0 136px; width: 136px; min-width: 0; scroll-snap-align: start; }
+  .cat-label { font-size: 18px !important; overflow-wrap: anywhere; }
 }
 @media (max-width: 600px) {
   body { font-size: 16px; }

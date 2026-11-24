@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Josefin+Sans:wght@300;400;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/pastel-bulud.jpg">
-<link rel="stylesheet" href="../shared/site.css?v=8">
+<link rel="stylesheet" href="../shared/site.css?v=9">
 <style>
   :root {
     --bg: #FBF9FF; --surface: #FFFFFF; --soft: #F1ECFC; --ink: #221A3B; --muted: #6A6386;
@@ -101,7 +101,7 @@
   .tiers button[aria-selected="true"] { color: #fff; }
   .tiers button small { display: block; font-family: var(--f-body); font-size: 11px; letter-spacing: 0; opacity: .75; margin-top: 2px; }
   .tier-pill { position: absolute; top: 6px; bottom: 6px; left: 0; width: 0; border-radius: 50px; background: var(--accent); box-shadow: 0 12px 24px -10px rgba(92,68,164,.7); transition: transform .5s var(--ease), width .5s var(--ease); }
-  .rail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(250px, 280px); gap: 20px; overflow-x: auto; padding: 4px 4px 22px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .rail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(250px, 280px); gap: 20px; overflow-x: auto; padding: 4px 4px 22px; scroll-snap-type: x mandatory; scroll-padding-inline: 4px; scrollbar-width: thin; }
   .rail .pcard { scroll-snap-align: start; animation: cardin .6s var(--ease) both; animation-delay: calc(var(--i) * 60ms); }
   @keyframes cardin { from { opacity: 0; transform: translateY(18px); } }
   .rail-foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 6px; color: var(--muted); font-size: 14.5px; }
@@ -323,6 +323,6 @@
   };
 })();
 </script>
-<script src="../shared/site.js?v=8"></script>
+<script src="../shared/site.js?v=9"></script>
 </body>
 </html>
