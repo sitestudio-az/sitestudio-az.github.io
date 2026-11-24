@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cənnət Flowers · Boutique</title>
+<meta name="description" content="Cənnət Flowers üçün sitestudio.az tərəfindən hazırlanmış demo onlayn mağaza.">
+<meta name="theme-color" content="#5C44A4">
+<!-- DEPLOY STEP: og:url canlı ünvanla yenilənir -->
+<meta property="og:title" content="Cənnət Flowers · Boutique">
+<meta property="og:description" content="Hər gün təzə buketlər, 50 ₼-dən gəlin buketlərinə qədər. Demo onlayn mağaza.">
+<meta property="og:image" content="img/pastel-bulud.jpg">
+<meta property="og:url" content="https://sitestudio-az.github.io/cennet/">
+<link rel="icon" href="img/flower-violet.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Josefin+Sans:wght@300;400;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/pastel-bulud.jpg">
+<link rel="stylesheet" href="../shared/site.css?v=8">
+<style>
+  :root {
+    --bg: #FBF9FF; --surface: #FFFFFF; --soft: #F1ECFC; --ink: #221A3B; --muted: #6A6386;
+    --line: #E8E1F7; --line-strong: #D5CAF0; --sale: #C2185B; --ok: #2E8B57;
+    --accent: #5C44A4; --accent-ink: #FFFFFF; --accent-text: #5236A6;
+    --violet-deep: #2E2058; --champagne: #EADCC2; --blush: #F6D9E4;
+    --f-head: 'Bodoni Moda', Didot, Georgia, serif; --f-body: 'Manrope', system-ui, sans-serif; --f-label: 'Josefin Sans', 'Manrope', sans-serif;
+    --w-head: 400; --ls-head: -.015em;
+    --r-card: 22px; --r-btn: 40px; --r-img: 26px; --r-big: 36px;
+    --hdr-bg: rgba(251,249,255,.9); --demo-bg: #2E2058;
+    --finale-bg: radial-gradient(120% 140% at 90% 0%, #7B5FD0 0%, #5C44A4 40%, #2E2058 100%); --finale-ink: #FFFFFF; --finale-accent: #EADCC2;
+    --finale-btn: #FFFFFF; --finale-btn-ink: #2E2058;
+    --card-shadow: 0 36px 70px -40px rgba(46,32,88,.55);
+  }
+  body { background: radial-gradient(1200px 800px at 100% -10%, #EEE6FF 0%, transparent 60%), var(--bg); }
+  .eyebrow, .pcat, .nav, .ftr h3, .filters legend, .sizes legend { font-family: var(--f-label); }
+  .eyebrow { letter-spacing: .34em; }
+  h2 em, h1 em, .h-page em { font-weight: 400; }
+  .pcard { box-shadow: 0 20px 44px -36px rgba(46,32,88,.55); }
+  .pbadge-bestseller { background: var(--champagne); color: var(--violet-deep); }
+
+  /* loqo: çiçək nişanı + söz nişanı (yüksək keyfiyyətli loqo gələnə qədər) */
+  .c-logo { display: flex; align-items: center; gap: 12px; color: var(--accent); }
+  .c-logo img { height: 40px; width: auto; }
+  .c-logo span { font-family: var(--f-label); font-weight: 300; font-size: 21px; letter-spacing: .14em; line-height: 1; text-transform: uppercase; white-space: nowrap; }
+  .c-logo small { display: block; font-size: 9.5px; letter-spacing: .55em; margin-top: 6px; font-weight: 400; opacity: .8; }
+  .ftr-brand .c-logo img { height: 46px; }
+
+  /* ---------- HERO: buket bürcü ---------- */
+  .c-hero { position: relative; isolation: isolate; display: grid; grid-template-columns: 1fr 1.05fr; align-items: center; gap: clamp(24px, 4vw, 64px);
+            max-width: 1440px; margin: 0 auto; padding: clamp(28px, 4vw, 64px) var(--pad) clamp(40px, 6vw, 90px); min-height: min(88vh, 860px); }
+  .c-hero h1 { font-size: clamp(54px, 7.6vw, 124px); line-height: .9; letter-spacing: -.03em; margin: 26px 0 24px; }
+  .c-hero h1 em { display: block; color: var(--accent-text); padding-left: .4em; will-change: transform; transition: transform .2s linear; }
+  .stage { transition: transform .25s linear; }
+  .c-hero h1 .w { display: inline-block; opacity: 0; transform: translateY(.5em) rotate(2deg); animation: rise 1s var(--ease) forwards; animation-delay: var(--d); }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  .c-hero .lead { font-size: 18px; max-width: 46ch; opacity: 0; animation: rise .9s var(--ease) .75s forwards; }
+  .c-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; opacity: 0; animation: rise .9s var(--ease) .9s forwards; }
+  .c-proof { display: flex; gap: clamp(20px, 3vw, 40px); margin-top: 42px; padding-top: 26px; border-top: 1px solid var(--line); opacity: 0; animation: rise .9s var(--ease) 1.05s forwards; }
+  .c-proof b { display: block; font-family: var(--f-head); font-weight: 400; font-size: clamp(28px, 2.6vw, 38px); line-height: 1; color: var(--ink); }
+  .c-proof span { font-size: 13px; color: var(--muted); letter-spacing: .02em; }
+  .stage { position: relative; width: 100%; max-width: 680px; aspect-ratio: 1; justify-self: center; }
+  .orbit { position: absolute; inset: 6%; border-radius: 50%; border: 1px dashed var(--line-strong); animation: spin 90s linear infinite; }
+  .orbit.o2 { inset: 20%; border-style: solid; border-color: rgba(92,68,164,.14); animation-duration: 140s; animation-direction: reverse; }
+  .orbit::after { content: ""; position: absolute; top: -5px; left: 50%; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 6px rgba(92,68,164,.12); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .bub { position: absolute; left: var(--x); top: var(--y); width: var(--s); aspect-ratio: 1; margin: calc(var(--s) / -2) 0 0 calc(var(--s) / -2); will-change: transform; }
+  .bub > div { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; box-shadow: 0 30px 60px -28px rgba(46,32,88,.65), 0 0 0 6px rgba(255,255,255,.9);
+               opacity: 0; transform: scale(.55); filter: blur(8px); animation: bloom 1.2s var(--ease) forwards, float var(--fd, 7s) ease-in-out infinite alternate; animation-delay: var(--bd), calc(var(--bd) + 1.2s); }
+  .bub img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+  .bub:hover img { transform: scale(1.08); }
+  .bub.main > div { box-shadow: 0 50px 100px -40px rgba(46,32,88,.75), 0 0 0 10px rgba(255,255,255,.95); }
+  @keyframes bloom { to { opacity: 1; transform: none; filter: none; } }
+  @keyframes float { from { translate: 0 -6px; } to { translate: 0 8px; } }
+  .stage-tag { position: absolute; right: 2%; bottom: 10%; background: var(--surface); border-radius: 18px; padding: 14px 18px; box-shadow: 0 24px 50px -26px rgba(46,32,88,.55);
+               display: flex; gap: 12px; align-items: center; font-size: 13.5px; color: var(--muted); opacity: 0; animation: rise .9s var(--ease) 1.6s forwards; z-index: 3; }
+  .stage-tag i { width: 42px; height: 42px; border-radius: 50%; background: var(--soft); display: grid; place-items: center; color: var(--accent); font-style: normal; flex: none; }
+  .stage-tag b { display: block; color: var(--ink); font-size: 15px; }
+  .petals { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: -1; }
+  .petal { position: absolute; top: -40px; left: var(--l); width: var(--w); height: calc(var(--w) * 1.3); background: var(--c); border-radius: 80% 10% 80% 10%; opacity: .0;
+           animation: fall var(--t) linear var(--dl) infinite; }
+  @keyframes fall { 0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0); } 10% { opacity: .75; } 90% { opacity: .55; } 100% { opacity: 0; transform: translate3d(var(--dx), 105vh, 0) rotate(540deg); } }
+
+  /* marquee bandı */
+  .c-marquee { background: var(--accent); color: #fff; overflow: hidden; padding: 18px 0; transform: rotate(-1.2deg) scale(1.02); margin: 10px 0 0; }
+  .c-marquee div { display: flex; width: max-content; gap: 46px; animation: slide 38s linear infinite; font-family: var(--f-label); font-size: 17px; letter-spacing: .24em; text-transform: uppercase; white-space: nowrap; }
+  .c-marquee span::after { content: "✦"; margin-left: 46px; color: var(--champagne); }
+  @keyframes slide { to { transform: translateX(-50%); } }
+
+  /* kateqoriyalar */
+  .cats { --cat-cols: 4; }
+  .cat-img { max-width: 230px; box-shadow: 0 0 0 8px var(--surface), 0 0 0 9px var(--line-strong); }
+  .cat-label { font-size: 26px; }
+
+  /* büdcə pilləkəni */
+  .ladder-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; }
+  .tiers { position: relative; display: flex; gap: 6px; margin: 34px 0 30px; padding: 6px; background: var(--surface); border: 1px solid var(--line); border-radius: 60px;
+           overflow-x: auto; scrollbar-width: none; }
+  .tiers::-webkit-scrollbar { display: none; }
+  .tiers button { position: relative; z-index: 1; flex: 1 0 auto; padding: 14px 20px; border-radius: 50px; font-family: var(--f-label); font-size: 15px; letter-spacing: .06em; color: var(--muted); white-space: nowrap; transition: color .35s; min-height: 48px; }
+  .tiers button[aria-selected="true"] { color: #fff; }
+  .tiers button small { display: block; font-family: var(--f-body); font-size: 11px; letter-spacing: 0; opacity: .75; margin-top: 2px; }
+  .tier-pill { position: absolute; top: 6px; bottom: 6px; left: 0; width: 0; border-radius: 50px; background: var(--accent); box-shadow: 0 12px 24px -10px rgba(92,68,164,.7); transition: transform .5s var(--ease), width .5s var(--ease); }
+  .rail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(250px, 280px); gap: 20px; overflow-x: auto; padding: 4px 4px 22px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .rail .pcard { scroll-snap-align: start; animation: cardin .6s var(--ease) both; animation-delay: calc(var(--i) * 60ms); }
+  @keyframes cardin { from { opacity: 0; transform: translateY(18px); } }
+  .rail-foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 6px; color: var(--muted); font-size: 14.5px; }
+
+  /* imza lenti bölməsi */
+  .c-ribbon { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(28px, 5vw, 80px); align-items: center; }
+  .c-ribbon-media { position: relative; }
+  .c-ribbon-media img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 280px 280px 30px 30px; box-shadow: 0 50px 90px -50px rgba(46,32,88,.7); }
+  .ribbon-text { position: absolute; inset: -6% -10% auto -10%; width: 120%; height: auto; overflow: visible; pointer-events: none; }
+  .ribbon-text path.band { fill: none; stroke: #fff; stroke-width: 34; stroke-linecap: round; filter: drop-shadow(0 10px 14px rgba(46,32,88,.25)); }
+  .ribbon-text text { font-family: var(--f-label); font-size: 15px; font-weight: 600; letter-spacing: .34em; fill: var(--accent); }
+  .c-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 34px; }
+  .c-stats div { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 20px 18px; }
+  .c-stats b { display: block; font-family: var(--f-head); font-weight: 400; font-size: clamp(28px, 2.8vw, 40px); line-height: 1; color: var(--accent-text); }
+  .c-stats span { font-size: 13px; color: var(--muted); }
+
+  .finale-card::after { content: ""; position: absolute; right: -60px; bottom: -60px; width: 340px; height: 340px; background: url(img/flower-white.png) center / contain no-repeat; opacity: .12; animation: spin 80s linear infinite; pointer-events: none; }
+  .finale-card h2 { font-size: clamp(38px, 5vw, 66px); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .c-hero h1 .w, .c-hero .lead, .c-cta, .c-proof, .stage-tag, .bub > div { opacity: 1 !important; transform: none !important; filter: none !important; }
+    .petals, .c-marquee div { animation: none !important; } .petals { display: none; }
+  }
+  @media (max-width: 1100px) { .c-ribbon { grid-template-columns: 1fr 1fr; } .c-stats { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) {
+    .c-hero { grid-template-columns: 1fr; min-height: 0; padding-top: 18px; }
+    .stage { order: -1; max-width: 430px; }
+    .c-hero h1 { font-size: clamp(50px, 14vw, 72px); margin-top: 18px; }
+    .c-proof { gap: 18px; } .c-proof b { font-size: 26px; }
+    .stage-tag { right: 0; bottom: 2%; padding: 10px 14px; font-size: 12.5px; } .stage-tag i { width: 34px; height: 34px; }
+    .bub.hide-sm { display: none; }
+    .c-ribbon { grid-template-columns: 1fr; } .c-stats { grid-template-columns: repeat(3, 1fr); }
+    .c-stats div { padding: 14px 12px; }
+    .rail { grid-auto-columns: 72%; }
+    .c-logo span { font-size: 15px; letter-spacing: .08em; } .c-logo img { height: 32px; } .c-logo small { font-size: 7.5px; letter-spacing: .5em; } .c-logo { gap: 9px; }
+    .c-marquee div { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+<noscript>Bu sayt JavaScript tələb edir.</noscript>
+<script>
+(function () {
+  const W = '994705940212';
+  const logo = (white) => `<span class="c-logo"><img src="img/flower-${white ? 'white' : 'violet'}.png" alt="" width="59" height="59"><span>Cənnət Flowers<small>Boutique</small></span></span>`;
+  const TIERS = [
+    { id: 't1', label: '50–55 ₼', min: 50, max: 55, note: 'Kiçik jest' },
+    { id: 't2', label: '80–100 ₼', min: 80, max: 100, note: 'Gündəlik' },
+    { id: 't3', label: '100–120 ₼', min: 100, max: 120, note: 'Ən çox seçilən' },
+    { id: 't4', label: '150–250 ₼', min: 150, max: 250, note: 'Xüsusi gün' },
+    { id: 't5', label: '250–300 ₼', min: 250, max: 300, note: 'Böyük sürpriz' },
+    { id: 't6', label: '300–450 ₼', min: 300, max: 450, note: 'Premium' },
+    { id: 't7', label: '450+ ₼', min: 450, max: 9999, note: 'Möhtəşəm' },
+  ];
+  window.SITE = {
+    key: 'cen-', name: 'Cənnət Flowers', tagline: 'Boutique',
+    logo: 'img/flower-violet.png', logoW: 59, logoH: 59, logoHtml: logo(false),
+    instagram: 'cennet.flowers', whatsapp: W, phones: ['+994 12 571 20 12', '+994 51 409 12 02', '+994 70 594 02 12'],
+    address: 'Həzi Aslanov metrosunun yuxarı çıxışı, KFC ilə üzbəüz, Bakı', mapQuery: 'Həzi Aslanov metro, Baku',
+    hours: 'Sifariş: zəng və WhatsApp ilə', hoursShort: 'Sifarişi zəng və WhatsApp ilə də qəbul edirik',
+    deliveryLine: 'Bakı daxili çatdırılma, 150 ₼-dən pulsuz', footerLine: 'Həzi Aslanovda gül butiki. Hər gün təzə buketlər, imzalı Cənnət lenti ilə.',
+    freeDeliveryFrom: 150, deliveryFee: 10, priceMax: 500, slotFrom: 9, slotTo: 23,
+    sizes: [{ id: 'std', label: 'Standart', k: 1, note: 'Şəkildəki kimi' }, { id: 'big', label: 'Böyük', k: 1.25, note: 'Daha dolğun' }, { id: 'lux', label: 'Lüks', k: 1.5, note: 'İmzalı qutu ilə' }],
+    categories: [
+      { id: 'buket', label: 'Buketlər', image: 'img/pion-reng.jpg' },
+      { id: 'sebet', label: 'Səbətlər', image: 'img/krem-sebet.jpg' },
+      { id: 'komp', label: 'Kompozisiyalar', image: 'img/mexmer-qutu.jpg' },
+      { id: 'gelin', label: 'Gəlin buketləri', image: 'img/ag-zeriflik.jpg' },
+    ],
+    colors: [
+      { id: 'ag', label: 'Ağ və krem', hex: '#F4EFE4' }, { id: 'cehrayi', label: 'Çəhrayı', hex: '#F1A3BC' }, { id: 'qirmizi', label: 'Qırmızı', hex: '#D32435' },
+      { id: 'bordo', label: 'Bordo', hex: '#7A1E3C' }, { id: 'sari', label: 'Sarı', hex: '#F2C94C' }, { id: 'narinci', label: 'Narıncı', hex: '#F07F2A' },
+      { id: 'benovseyi', label: 'Yasəmən', hex: '#B39DDB' },
+    ],
+    products: [
+      { id: 'i-love-you', name: '“I Love You” qırmızı qızılgül', cats: ['buket'], colors: ['qirmizi'], price: 480, badge: 'Lüks', featured: true, image: 'img/i-love-you.jpg', desc: 'Yüzlərlə qırmızı qızılgüldən nəhəng buket, “I Love You” yazısı ilə. Evlilik təklifi və yubiley üçün.' },
+      { id: 'pastel-bulud', name: 'Pastel bulud buketi', cats: ['buket'], colors: ['cehrayi', 'ag'], price: 340, badge: 'Bestseller', featured: true, image: 'img/pastel-bulud.jpg', desc: 'Pastel hortenziya, pion qızılgül və orxideyalardan böyük, buludvari buket.' },
+      { id: 'pion-lilya', name: 'Pion və lilya buketi', cats: ['buket'], colors: ['cehrayi', 'ag'], price: 250, badge: 'Yeni', featured: true, image: 'img/pion-lilya.jpg', desc: 'Pion qızılgüllər, ağ lilya və hortenziya, yasəmən qablaşdırmada.' },
+      { id: 'mexmer-qutu', name: 'Qırmızı məxmər qutu', cats: ['komp'], colors: ['qirmizi', 'bordo'], price: 320, featured: true, image: 'img/mexmer-qutu.jpg', desc: 'Bordo məxmər qutuda qırmızı qızılgül, hortenziya və xrizantemalar. İmzalı Cənnət qutusu.' },
+      { id: 'pastel-mix', name: 'Pastel mix buketi', cats: ['buket'], colors: ['cehrayi', 'ag', 'narinci'], price: 165, image: 'img/pastel-mix.jpg', desc: 'Şaftalı pion qızılgüllər, ağ xrizantema və fuşya güllər.' },
+      { id: 'krem-ranunkulus', name: 'Krem ranunkulus buketi', cats: ['buket', 'gelin'], colors: ['ag'], price: 120, image: 'img/krem-ranunkulus.jpg', desc: 'Krem ranunkuluslar və ağ xrizantemalar, evkalipt yarpaqları ilə.' },
+      { id: 'ag-xrizantema', name: 'Ağ xrizantema buketi', cats: ['buket'], colors: ['ag'], price: 85, image: 'img/ag-xrizantema.jpg', desc: 'İri ağ xrizantemalar, yaşıl qablaşdırmada. Sadə və zərif.' },
+      { id: 'ag-kraft', name: 'Ağ xrizantema, kraft', cats: ['buket'], colors: ['ag'], price: 55, image: 'img/ag-kraft.jpg', desc: 'Ağ xrizantemalar kraft kağızda. Kiçik, amma yaddaqalan jest.' },
+      { id: 'pion-reng', name: 'Rəngarəng pion qızılgül', cats: ['buket'], colors: ['cehrayi', 'sari'], price: 185, image: 'img/pion-reng.jpg', desc: 'Fuşya, sarı və çəhrayı pion qızılgüllər, çəhrayı qablaşdırmada.' },
+      { id: 'bordo-cehrayi', name: 'Bordo və çəhrayı buket', cats: ['buket'], colors: ['bordo', 'cehrayi'], price: 230, image: 'img/bordo-cehrayi.jpg', desc: 'Bordo xrizantemalar və çəhrayı hortenziya, bordo lentlə.' },
+      { id: 'sari-gunes', name: 'Günəşli sarı buket', cats: ['buket'], colors: ['sari', 'ag'], price: 110, image: 'img/sari-gunes.jpg', desc: 'Sarı pion qızılgüllər və ağ xrizantemalar. Əhval qaldıran buket.' },
+      { id: 'bordo-xrizantema', name: 'Bordo xrizantema buketi', cats: ['buket'], colors: ['bordo'], price: 160, image: 'img/bordo-xrizantema.jpg', desc: 'Dərin bordo xrizantemalar, kraft qablaşdırmada.' },
+      { id: 'qirmizi-bordo', name: 'Qırmızı qızılgül, bordo yarpaq', cats: ['buket'], colors: ['qirmizi', 'bordo'], price: 115, image: 'img/qirmizi-bordo.jpg', desc: 'Qırmızı qızılgüllər tünd bordo yarpaqlarla.' },
+      { id: 'cobanyastigi', name: 'Ağ çobanyastığı buketi', cats: ['buket'], colors: ['ag'], price: 50, old: 60, badge: 'Endirim', image: 'img/cobanyastigi.jpg', desc: 'Yüzlərlə kiçik ağ çobanyastığı. Təravətli və sadə.' },
+      { id: 'krem-sebet', name: 'Krem gül səbəti', cats: ['sebet'], colors: ['ag', 'narinci'], price: 150, image: 'img/krem-sebet.jpg', desc: 'Hörmə səbətdə krem və şaftalı güllər.' },
+      { id: 'qirmizi-ehtiras', name: 'Qırmızı ehtiras', cats: ['buket'], colors: ['qirmizi', 'bordo'], price: 260, image: 'img/qirmizi-ehtiras.jpg', desc: 'Qırmızı qızılgül və bordo xrizantemalardan böyük, təsirli buket.' },
+      { id: 'saftali-pion', name: 'Şaftalı pion buketi', cats: ['buket'], colors: ['narinci', 'ag'], price: 240, image: 'img/saftali-pion.jpg', desc: 'İri şaftalı pion qızılgüllər, bordo lentlə.' },
+      { id: 'cehrayi-hortenziya', name: 'Çəhrayı hortenziya buketi', cats: ['buket'], colors: ['cehrayi'], price: 210, image: 'img/cehrayi-hortenziya.jpg', desc: 'Çəhrayı hortenziya və kol qızılgülləri.' },
+      { id: 'bordo-neheng', name: 'Bordo nəhəng buket', cats: ['buket'], colors: ['bordo'], price: 290, image: 'img/bordo-neheng.jpg', desc: 'Onlarla bordo xrizantemadan iri dairəvi buket.' },
+      { id: 'narinci-qizilgul', name: 'Narıncı qızılgül buketi', cats: ['buket'], colors: ['narinci'], price: 120, image: 'img/narinci-qizilgul.jpg', desc: 'Parlaq narıncı qızılgüllər, ağ qablaşdırmada.' },
+      { id: 'stitch', name: 'Stitch sürprizli buket', cats: ['komp'], colors: ['benovseyi', 'ag'], price: 280, badge: 'Yeni', image: 'img/stitch.jpg', desc: 'Yasəmən hortenziya, güllər və Stitch oyuncağı. Uşaqlar və yeniyetmələr üçün.' },
+      { id: 'krem-yasil', name: 'Krem qızılgül və yaşıl', cats: ['buket'], colors: ['ag'], price: 95, image: 'img/krem-yasil.jpg', desc: 'Krem qızılgüllər və yaşıl dianthus.' },
+      { id: 'ag-zeriflik', name: 'Ağ zəriflik buketi', cats: ['buket', 'gelin'], colors: ['ag'], price: 150, image: 'img/ag-zeriflik.jpg', desc: 'Krem qızılgüllər, ağ hortenziya və orxideya. Gəlin buketi kimi də sifariş olunur.' },
+      { id: 'cehrayi-qirmizi', name: 'Çəhrayı-qırmızı qızılgül', cats: ['buket'], colors: ['cehrayi', 'qirmizi'], price: 110, image: 'img/cehrayi-qirmizi.jpg', desc: 'Qırmızı və fuşya qızılgüllər, çəhrayı qablaşdırmada.' },
+      { id: 'yasemen-hortenziya', name: 'Yasəmən hortenziya buketi', cats: ['buket'], colors: ['benovseyi', 'ag'], price: 175, image: 'img/yasemen-hortenziya.jpg', desc: 'Yasəmən hortenziya və ağ xrizantemalar.' },
+      { id: 'cehrayi-krem', name: 'Çəhrayı və krem qızılgül', cats: ['buket'], colors: ['cehrayi', 'ag'], price: 100, image: 'img/cehrayi-krem.jpg', desc: 'Fuşya pion qızılgüllər və krem güllər.' },
+    ],
+    featuredEyebrow: 'Ən çox sevilənlər',
+    featuredTitle: 'Bu həftənin <em>ulduzları</em>',
+    perks: [
+      { icon: 'truck', title: 'Bakı daxili çatdırılma', text: '150 ₼-dən pulsuz' },
+      { icon: 'gift', title: 'İmzalı Cənnət lenti', text: 'Hər buketdə' },
+      { icon: 'store', title: 'Həzi Aslanov', text: 'Metronun yuxarı çıxışı, KFC ilə üzbəüz' },
+      { icon: 'card', title: 'Rahat ödəniş', text: 'Kartla onlayn və ya nağd' },
+    ],
+    heroHtml: (I, wa) => {
+      const B = [
+        { img: 'pastel-bulud', x: 50, y: 50, s: 46, d: .15, bd: '.25s', fd: '8s', main: 1 },
+        { img: 'pion-reng', x: 16, y: 26, s: 21, d: .32, bd: '.45s', fd: '6.5s' },
+        { img: 'mexmer-qutu', x: 84, y: 20, s: 22, d: .42, bd: '.55s', fd: '7.2s' },
+        { img: 'saftali-pion', x: 88, y: 66, s: 19, d: .26, bd: '.65s', fd: '6.8s' },
+        { img: 'cehrayi-hortenziya', x: 20, y: 76, s: 23, d: .38, bd: '.75s', fd: '7.6s' },
+        { img: 'sari-gunes', x: 58, y: 9, s: 13, d: .55, bd: '.85s', fd: '6s', hide: 1 },
+        { img: 'stitch', x: 54, y: 92, s: 14, d: .5, bd: '.95s', fd: '6.4s', hide: 1 },
+      ];
+      const P = [['4%', 10, '#C9B5F2', '13s', '0s', '60px'], ['18%', 8, '#F2B8CC', '16s', '3s', '-40px'], ['33%', 12, '#E7DCFB', '14s', '6s', '80px'], ['52%', 9, '#F6CFDC', '17s', '1.5s', '-60px'],
+        ['67%', 11, '#C9B5F2', '15s', '8s', '50px'], ['81%', 7, '#EADCC2', '18s', '4s', '-30px'], ['93%', 10, '#F2B8CC', '13.5s', '10s', '-70px']];
+      const words = (t, base) => t.split(' ').map((w, i) => `<span class="w" style="--d:${base + i * .12}s">${w}</span>`).join(' ');
+      return `
+      <section class="c-hero" aria-label="Giriş">
+        <div class="petals" aria-hidden="true">${P.map(([l, w, c, t, dl, dx]) => `<i class="petal" style="--l:${l};--w:${w}px;--c:${c};--t:${t};--dl:${dl};--dx:${dx}"></i>`).join('')}</div>
+        <div>
+          <p class="eyebrow">Həzi Aslanov · Bakı</p>
+          <h1 aria-label="Cənnətdən bir buket">${words('Cənnətdən', .1)}<em>${words('bir buket', .25)}</em></h1>
+          <p class="lead">Hər gün təzə yığılan buketlər: 50 ₼-lik kiçik jestdən unudulmaz sürprizlərə qədər. İmzalı lentimizlə, Bakının hər yerinə.</p>
+          <div class="c-cta"><a class="btn btn-lg" href="#/magaza">Buket seç ${I.arrow}</a>
+            <a class="btn btn-ghost btn-lg" href="${wa('Salam! Buket sifariş etmək istəyirəm.')}" target="_blank" rel="noopener">${I.wa}<span>WhatsApp</span></a></div>
+          <div class="c-proof"><div><b>273K</b><span>Instagram izləyicisi</span></div><div><b>9 400+</b><span>paylaşılan buket</span></div><div><b>Hər gün</b><span>təzə güllər</span></div></div>
+        </div>
+        <div class="stage" aria-hidden="true">
+          <div class="orbit"></div><div class="orbit o2"></div>
+          ${B.map((b) => `<div class="bub${b.main ? ' main' : ''}${b.hide ? ' hide-sm' : ''}" data-depth="${b.d}" style="--x:${b.x}%;--y:${b.y}%;--s:${b.s}%;--bd:${b.bd};--fd:${b.fd}"><div><img src="img/${b.img}.jpg" alt="" width="600" height="600"${b.main ? ' fetchpriority="high"' : ''}></div></div>`).join('')}
+          <div class="stage-tag"><i>${I.truck}</i><span><b>Bu gün çatdırılma</b>Bakının hər yerinə</span></div>
+        </div>
+      </section>
+      <div class="c-marquee" aria-hidden="true"><div>${Array(2).fill(['Təzə güllər hər gün', 'İmzalı Cənnət lenti', 'Gəlin buketləri', 'Səbətlər və kompozisiyalar', 'Bakı daxili çatdırılma', '50 ₼-dən 450 ₼-ə qədər'].map((t) => `<span>${t}</span>`).join('')).join('')}</div></div>`;
+    },
+    categoriesHtml: () => `
+      <section class="sec">
+        <div class="sec-head center"><p class="eyebrow center-eyebrow">Kolleksiyalar</p><h2>Nə axtarırsınız?</h2></div>
+        <div class="cats">${window.SITE.categories.map((c) => `<a class="cat" href="#/magaza?k=${c.id}"><span class="cat-img"><img src="${c.image}" alt="" loading="lazy" width="460" height="460"></span><span class="cat-label">${c.label}<small>${window.SITE.products.filter((p) => p.cats.includes(c.id)).length} məhsul</small></span></a>`).join('')}</div>
+      </section>`,
+    signatureHtml: (I) => `
+      <section class="sec sig" id="budce">
+        <div class="ladder-head"><div><p class="eyebrow">Büdcəyə görə</p><h2>Büdcənizi seçin, <em>buketiniz hazırdır</em></h2></div>
+          <p class="lead" style="max-width:38ch">Instagram-dakı qiymət bölmələrimiz, indi bir toxunuşla.</p></div>
+        <div class="tiers" role="tablist" aria-label="Qiymət pillələri" id="tiers"><span class="tier-pill" id="tierPill"></span>
+          ${TIERS.map((t, i) => `<button role="tab" aria-selected="${i === 2}" data-t="${t.id}">${t.label}<small>${t.note}</small></button>`).join('')}</div>
+        <div class="rail" id="rail" aria-live="polite"></div>
+        <div class="rail-foot"><span id="railInfo"></span><a class="link-arrow" id="railAll" href="#/magaza">Bu pillədə hamısı ${I.arrow}</a></div>
+      </section>
+      <section class="sec sig">
+        <div class="c-ribbon">
+          <div class="c-ribbon-media">
+            <img src="img/cehrayi-krem.jpg" alt="İmzalı Cənnət Flowers lenti ilə bağlanmış çəhrayı və krem qızılgül buketi" loading="lazy" width="800" height="1000">
+            <svg class="ribbon-text" viewBox="0 0 700 220" aria-hidden="true">
+              <path id="rb" class="band" d="M-20 150 C 120 40, 260 210, 380 120 S 600 30, 720 110"/>
+              <text dy="5"><textPath href="#rb" id="rbText" startOffset="0">CƏNNƏT FLOWERS · BOUTIQUE · CƏNNƏT FLOWERS · BOUTIQUE · CƏNNƏT FLOWERS · BOUTIQUE ·</textPath></text>
+            </svg>
+          </div>
+          <div>
+            <p class="eyebrow">Bizim imzamız</p>
+            <h2>Hər buket <em>imzalı lentlə</em> bağlanır</h2>
+            <p class="lead" style="margin-top:20px">Ağ atlas lentin üstündəki “Cənnət Flowers Boutique” yazısı sevdiyiniz insana buketin haradan gəldiyini xatırladır. Qablaşdırmadan lentə qədər hər detal əl ilə hazırlanır.</p>
+            <div class="c-stats"><div><b>273K</b><span>izləyici Instagram-da</span></div><div><b>9 452</b><span>paylaşım</span></div><div><b>7</b><span>qiymət pilləsi</span></div></div>
+          </div>
+        </div>
+      </section>`,
+    onHome: (root, { P, card }) => {
+      // hero: dərinlik paralaksı (yalnız hərəkət icazəsi olanda)
+      const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const bubs = [...root.querySelectorAll('.bub')];
+      if (!still && bubs.length) {
+        let raf = 0;
+        const em = root.querySelector('.c-hero h1 em'), stage = root.querySelector('.stage'), wide = matchMedia('(min-width: 901px)').matches;
+        const move = () => {
+          raf = 0; const y = Math.min(scrollY, 900), k = Math.min(1, y / 600);
+          bubs.forEach((b) => { b.style.transform = `translate3d(0, ${(-y * b.dataset.depth).toFixed(1)}px, 0)`; });
+          // başlığın kursiv sətri buketlərlə birlikdə sağa sürüşür, səhnə yavaşca kiçilib geri çəkilir
+          if (em) em.style.transform = `translate3d(${(k * (wide ? 90 : 28)).toFixed(1)}px, ${(-k * 10).toFixed(1)}px, 0)`;
+          if (stage) stage.style.transform = `scale(${(1 - k * .06).toFixed(3)}) rotate(${(k * -4).toFixed(2)}deg)`;
+        };
+        const onScroll = () => { if (!raf) raf = requestAnimationFrame(move); };
+        addEventListener('scroll', onScroll, { passive: true });
+        addEventListener('hashchange', () => removeEventListener('scroll', onScroll), { once: true });
+      }
+      // büdcə pilləkəni
+      const rail = root.querySelector('#rail'), pill = root.querySelector('#tierPill'), info = root.querySelector('#railInfo'), all = root.querySelector('#railAll'), tabs = root.querySelector('#tiers');
+      const pick = (id) => {
+        const t = TIERS.find((x) => x.id === id), list = P.filter((p) => p.price >= t.min && p.price <= t.max);
+        tabs.querySelectorAll('button').forEach((b) => b.setAttribute('aria-selected', b.dataset.t === id));
+        const btn = tabs.querySelector(`[data-t="${id}"]`);
+        pill.style.width = btn.offsetWidth + 'px'; pill.style.transform = `translateX(${btn.offsetLeft}px)`;
+        rail.innerHTML = list.map((p, i) => card(p, i)).join('');
+        info.textContent = `${t.label} aralığında ${list.length} buket`;
+        all.href = `#/magaza?min=${t.min}&max=${Math.min(t.max, 500)}`;
+      };
+      tabs.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) { pick(b.dataset.t); b.scrollIntoView({ inline: 'nearest', block: 'nearest', behavior: 'smooth' }); } });
+      requestAnimationFrame(() => pick('t3'));
+      addEventListener('resize', () => { const s = tabs.querySelector('[aria-selected="true"]'); if (s) { pill.style.width = s.offsetWidth + 'px'; pill.style.transform = `translateX(${s.offsetLeft}px)`; } });
+      // imza lenti: yazı lent boyunca yavaşca axır
+      const tp = root.querySelector('#rbText');
+      if (tp && !still) { let o = 0; const step = () => { if (!tp.isConnected) return; o = (o - .04) % 50; tp.setAttribute('startOffset', o + '%'); requestAnimationFrame(step); }; requestAnimationFrame(step); }
+    },
+    about: {
+      title: 'Bakının <em>cənnət buketləri</em>',
+      paragraphs: [
+        'Cənnət Flowers Həzi Aslanov metrosunun yuxarı çıxışında, KFC ilə üzbəüz yerləşən gül butikidir. Hər gün təzə güllərdən buketlər, səbətlər və kompozisiyalar yığırıq.',
+        'Kiçik jestlərdən gəlin buketlərinə və “I Love You” kimi möhtəşəm sürprizlərə qədər, hər büdcə üçün buketimiz var. Bakı daxilində çatdırırıq.',
+      ],
+      images: ['img/i-love-you.jpg', 'img/bordo-cehrayi.jpg'],
+    },
+    finaleTitle: 'Bu gün kimisə <em>sevindirin</em>',
+  };
+})();
+</script>
+<script src="../shared/site.js?v=8"></script>
+</body>
+</html>

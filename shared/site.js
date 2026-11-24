@@ -66,7 +66,7 @@
   <a class="skip" href="#main">Əsas məzmuna keç</a>
   <div class="demo-bar"><span><b>Demo sayt.</b> <a href="https://www.instagram.com/sitestudio.az/" target="_blank" rel="noopener">sitestudio.az</a> tərəfindən ${esc(S.name)} üçün təklif kimi hazırlanıb. Qiymətlər nümunədir.</span></div>
   <header class="hdr" id="top">
-    <a class="logo" href="#/" aria-label="${esc(S.name)}, ana səhifə"><img src="${S.logo}" alt="${esc(S.name)}" width="${S.logoW}" height="${S.logoH}"></a>
+    <a class="logo" href="#/" aria-label="${esc(S.name)}, ana səhifə">${S.logoHtml || `<img src="${S.logo}" alt="${esc(S.name)}" width="${S.logoW}" height="${S.logoH}">`}</a>
     <nav class="nav" id="nav" aria-label="Əsas menyu">
       <a href="#/" data-nav="home">Ana səhifə</a>
       <a href="#/magaza" data-nav="shop">Mağaza</a>
@@ -83,7 +83,7 @@
   <main id="main" tabindex="-1"></main>
   <footer class="ftr">
     <div class="ftr-grid">
-      <div class="ftr-brand"><img src="${S.logo}" alt="${esc(S.name)}" width="${S.logoW}" height="${S.logoH}"><p>${esc(S.footerLine)}</p></div>
+      <div class="ftr-brand">${S.footerLogoHtml || S.logoHtml || `<img src="${S.logo}" alt="${esc(S.name)}" width="${S.logoW}" height="${S.logoH}">`}<p>${esc(S.footerLine)}</p></div>
       <div><h3>Mağaza</h3>${S.categories.filter((c) => P.some((p) => p.cats.includes(c.id))).map((c) => `<a href="#/magaza?k=${c.id}">${esc(c.label)}</a>`).join('')}</div>
       <div><h3>Əlaqə</h3>${S.phones.map((p) => `<a href="tel:${p.replace(/[^\d+]/g, '')}">${esc(p)}</a>`).join('')}<span>${esc(S.address)}</span><span>${esc(S.hours)}</span></div>
       <div><h3>Bizi izləyin</h3><a href="https://www.instagram.com/${S.instagram}/" target="_blank" rel="noopener">${I.ig} @${esc(S.instagram)}</a><a href="${wa('Salam!')}" target="_blank" rel="noopener">${I.wa} WhatsApp</a></div>
