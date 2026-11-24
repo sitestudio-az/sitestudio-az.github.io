@@ -391,3 +391,5 @@ body[data-page="checkout"] .wa-float, body[data-page="cart"] .wa-float { display
   .toast span { flex: 1; }
 }
 @media (pointer: coarse) { .radio, .sw { min-height: 44px; } }
+
+body.dm .wa-float { background: radial-gradient(circle at 30% 110%, #FDCB52 0%, #FD5949 40%, #D6249F 65%, #285AEB 100%); }

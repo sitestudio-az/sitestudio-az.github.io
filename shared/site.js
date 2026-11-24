@@ -8,12 +8,17 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const money = (n) => `${Math.round(n)} ₼`;
-  const wa = (text) => `https://wa.me/${S.whatsapp}?text=${encodeURIComponent(text)}`;
+  // WhatsApp yoxdursa (yalnız DM ilə sifariş alan dükanlar), bütün söhbət düymələri Instagram DM-ə yönəlir
+  const DM = !S.whatsapp;
+  const wa = (text) => DM ? `https://ig.me/m/${S.instagram}` : `https://wa.me/${S.whatsapp}?text=${encodeURIComponent(text)}`;
+  const CHAT = DM ? 'Instagram DM' : 'WhatsApp';
+  const CHAT_LOC = DM ? 'Instagram DM-də' : 'WhatsApp-da';
   const store = {
     get(k, d) { try { const v = localStorage.getItem(S.key + k); return v ? JSON.parse(v) : d; } catch { return d; } },
     set(k, v) { try { localStorage.setItem(S.key + k, JSON.stringify(v)); } catch { /* yaddaş bağlıdır: səhifə yaddaşsız da işləyir */ } },
   };
   const P = S.products;
+  const L = P.filter((p) => !p.hidden); // vitrində görünən məhsullar (gizli olanlar yalnız səbət üçündür)
   const byId = (id) => P.find((p) => p.id === id);
   const SIZES = S.sizes || [{ id: 'std', label: 'Standart', k: 1 }, { id: 'big', label: 'Böyük', k: 1.35 }, { id: 'lux', label: 'Lüks', k: 1.7 }];
   const sizePrice = (p, sid) => Math.round((p.price * (SIZES.find((s) => s.id === sid) || SIZES[0]).k) / 5) * 5;
@@ -72,7 +77,7 @@
       <a href="#/magaza" data-nav="shop">Mağaza</a>
       <a href="#/#haqqimizda" data-nav="about">Haqqımızda</a>
       <a href="#/#elaqe" data-nav="contact">Əlaqə</a>
-      <a class="nav-wa" href="${wa('Salam! Sifariş vermək istəyirəm.')}" target="_blank" rel="noopener">${I.wa} WhatsApp</a>
+      <a class="nav-wa" href="${wa('Salam! Sifariş vermək istəyirəm.')}" target="_blank" rel="noopener">${DM ? I.ig : I.wa} ${CHAT}</a>
     </nav>
     <div class="hdr-actions">
       <a class="icon-btn" id="favBtn" href="#/sevimliler" aria-label="Sevimlilər">${I.heart}<span class="badge" id="favN">0</span></a>
@@ -84,16 +89,17 @@
   <footer class="ftr">
     <div class="ftr-grid">
       <div class="ftr-brand">${S.footerLogoHtml || S.logoHtml || `<img src="${S.logo}" alt="${esc(S.name)}" width="${S.logoW}" height="${S.logoH}">`}<p>${esc(S.footerLine)}</p></div>
-      <div><h3>Mağaza</h3>${S.categories.filter((c) => P.some((p) => p.cats.includes(c.id))).map((c) => `<a href="#/magaza?k=${c.id}">${esc(c.label)}</a>`).join('')}</div>
+      <div><h3>Mağaza</h3>${S.categories.filter((c) => L.some((p) => p.cats.includes(c.id))).map((c) => `<a href="#/magaza?k=${c.id}">${esc(c.label)}</a>`).join('')}</div>
       <div><h3>Əlaqə</h3>${S.phones.map((p) => `<a href="tel:${p.replace(/[^\d+]/g, '')}">${esc(p)}</a>`).join('')}<span>${esc(S.address)}</span><span>${esc(S.hours)}</span></div>
-      <div><h3>Bizi izləyin</h3><a href="https://www.instagram.com/${S.instagram}/" target="_blank" rel="noopener">${I.ig} @${esc(S.instagram)}</a><a href="${wa('Salam!')}" target="_blank" rel="noopener">${I.wa} WhatsApp</a></div>
+      <div><h3>Bizi izləyin</h3><a href="https://www.instagram.com/${S.instagram}/" target="_blank" rel="noopener">${I.ig} @${esc(S.instagram)}</a><a href="${wa('Salam!')}" target="_blank" rel="noopener">${DM ? I.ig : I.wa} ${CHAT}</a></div>
     </div>
     <p class="ftr-bottom">© 2026 ${esc(S.name)} · Demo: <a href="https://www.instagram.com/sitestudio.az/" target="_blank" rel="noopener">sitestudio.az</a></p>
   </footer>
-  <a class="wa-float" href="${wa('Salam! Sifariş vermək istəyirəm.')}" target="_blank" rel="noopener" aria-label="WhatsApp ilə yazın">${I.wa}</a>
+  <a class="wa-float" href="${wa('Salam! Sifariş vermək istəyirəm.')}" target="_blank" rel="noopener" aria-label="${CHAT} ilə yazın">${DM ? I.ig : I.wa}</a>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>`;
 
   const main = $('#main');
+  document.body.classList.toggle('dm', DM);
   function updateBadge() { const n = cartCount(); const b = $('#cartN'); b.textContent = n; b.classList.toggle('on', n > 0); }
   function updateFav() { likes = likes.filter((id) => byId(id)); const b = $('#favN'); b.textContent = likes.length; b.classList.toggle('on', likes.length > 0); }
   updateBadge(); updateFav();
@@ -137,7 +143,7 @@
   const pages = {};
 
   pages.home = () => {
-    const top = P.filter((p) => p.featured).slice(0, 4);
+    const top = L.filter((p) => p.featured).slice(0, 4);
     main.innerHTML = `
     ${S.heroHtml(I, wa)}
     <section class="sec">
@@ -165,17 +171,17 @@
             <li>${I.clock}<span>${esc(S.hours)}</span></li>
           </ul></div>
         <div class="finale-cta"><a class="btn btn-lg" href="#/magaza">Buket seç ${I.arrow}</a>
-          <a class="btn btn-ghost btn-lg" href="${wa('Salam! Sifariş vermək istəyirəm.')}" target="_blank" rel="noopener">${I.wa}<span>WhatsApp-da yazın</span></a></div>
+          <a class="btn btn-ghost btn-lg" href="${wa('Salam! Sifariş vermək istəyirəm.')}" target="_blank" rel="noopener">${DM ? I.ig : I.wa}<span>${CHAT_LOC} yazın</span></a></div>
       </div>
     </section>`;
-    if (S.onHome) S.onHome(main, { P, card, money, wa, I });
+    if (S.onHome) S.onHome(main, { P: L, all: P, card, money, wa, I, addToCart });
   };
 
   pages.shop = (q) => {
     const st = {
       k: q.get('k') || 'all', min: Math.max(0, +q.get('min') || 0), max: Math.min(S.priceMax, +q.get('max') || S.priceMax), colors: [], sort: 'std',
     };
-    const usedCats = S.categories.filter((c) => P.some((p) => p.cats.includes(c.id)));
+    const usedCats = S.categories.filter((c) => L.some((p) => p.cats.includes(c.id)));
     main.innerHTML = `
     <section class="sec shop">
       <nav class="crumbs" aria-label="Səhifə yolu"><a href="#/">Ana səhifə</a><span>/</span><span>Mağaza</span></nav>
@@ -189,7 +195,7 @@
         <aside class="filters" id="filters" aria-label="Filtrlər">
           <div class="filters-head"><h2>Filtrlər</h2><button class="icon-btn" id="fClose" aria-label="Filtrləri bağla">${I.close}</button></div>
           <fieldset><legend>Kateqoriya</legend>${[{ id: 'all', label: 'Hamısı' }, ...usedCats].map((c) => `
-            <label class="radio"><input type="radio" name="k" value="${c.id}"><span>${esc(c.label)}</span><em>${c.id === 'all' ? P.length : P.filter((p) => p.cats.includes(c.id)).length}</em></label>`).join('')}</fieldset>
+            <label class="radio"><input type="radio" name="k" value="${c.id}"><span>${esc(c.label)}</span><em>${c.id === 'all' ? L.length : L.filter((p) => p.cats.includes(c.id)).length}</em></label>`).join('')}</fieldset>
           <fieldset><legend>Qiymət aralığı</legend>
             <div class="range" id="range"><div class="range-track"><i id="rFill"></i></div>
               <input type="range" id="rMin" min="0" max="${S.priceMax}" step="5" value="${st.min}" aria-label="Minimum qiymət">
@@ -203,14 +209,14 @@
           <div class="active-chips" id="chips"></div>
           <div class="pgrid pgrid-3" id="grid"></div>
           <div class="empty" id="empty" hidden><p>Bu filtrlərə uyğun buket tapılmadı.</p><button class="btn btn-ghost btn-sm" id="eReset">Filtrləri sıfırla</button>
-            <a class="btn btn-sm" href="${wa('Salam! Xüsusi buket sifariş etmək istəyirəm.')}" target="_blank" rel="noopener">${I.wa}<span>Fərdi sifariş</span></a></div>
+            <a class="btn btn-sm" href="${wa('Salam! Xüsusi buket sifariş etmək istəyirəm.')}" target="_blank" rel="noopener">${DM ? I.ig : I.wa}<span>Fərdi sifariş</span></a></div>
         </div>
       </div>
       <div class="filters-bg" id="fBg"></div>
     </section>`;
     const grid = $('#grid'), rMin = $('#rMin'), rMax = $('#rMax');
     const apply = () => {
-      let list = P.filter((p) => (st.k === 'all' || p.cats.includes(st.k)) && p.price >= st.min && p.price <= st.max
+      let list = L.filter((p) => (st.k === 'all' || p.cats.includes(st.k)) && p.price >= st.min && p.price <= st.max
         && (!st.colors.length || st.colors.some((c) => p.colors.includes(c))));
       if (st.sort === 'asc') list = [...list].sort((a, b) => a.price - b.price);
       if (st.sort === 'desc') list = [...list].sort((a, b) => b.price - a.price);
@@ -261,7 +267,7 @@
   pages.product = (id) => {
     const p = byId(id); if (!p) return pages.notFound();
     let size = 'std', qty = 1;
-    const related = P.filter((x) => x.id !== p.id && x.cats.some((c) => p.cats.includes(c))).concat(P.filter((x) => x.id !== p.id)).filter((x, i, a) => a.indexOf(x) === i).slice(0, 4);
+    const related = L.filter((x) => x.id !== p.id && x.cats.some((c) => p.cats.includes(c))).concat(L.filter((x) => x.id !== p.id)).filter((x, i, a) => a.indexOf(x) === i).slice(0, 4);
     main.innerHTML = `
     <section class="sec product">
       <nav class="crumbs" aria-label="Səhifə yolu"><a href="#/">Ana səhifə</a><span>/</span><a href="#/magaza">Mağaza</a><span>/</span><span>${esc(p.name)}</span></nav>
@@ -436,7 +442,7 @@
         ${o.disc ? `<div><span>Promokod</span><b>−${money(o.disc)}</b></div>` : ''}<div><span>Çatdırılma</span><b>${o.del ? money(o.del) : o.type === 'pickup' ? 'Mağazadan' : 'Pulsuz'}</b></div>
         <div class="total"><span>Yekun</span><b>${money(o.total)}</b></div></div>
       <p class="demo-note">Bu, demo saytdır: sifariş heç yerə göndərilmədi. Real saytda sifariş admin panelə və sahibkarın telefonuna dərhal düşür.</p>
-      <div class="center-row"><a class="btn btn-lg" href="${wa(msg)}" target="_blank" rel="noopener">${I.wa}<span>WhatsApp-da təsdiqlə</span></a><a class="btn btn-ghost btn-lg" href="#/">Ana səhifə</a></div>
+      <div class="center-row"><a class="btn btn-lg" href="${wa(msg)}" target="_blank" rel="noopener">${DM ? I.ig : I.wa}<span>${CHAT_LOC} təsdiqlə</span></a><a class="btn btn-ghost btn-lg" href="#/">Ana səhifə</a></div>
     </section>`;
   };
 
