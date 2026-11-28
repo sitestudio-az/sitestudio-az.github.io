@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Calla Flo · Bakı</title>
+<meta name="description" content="Calla Flo üçün sitestudio.az tərəfindən hazırlanmış demo onlayn mağaza.">
+<meta name="theme-color" content="#FBF4F4">
+<!-- DEPLOY STEP: og:url canlı ünvanla yenilənir -->
+<meta property="og:title" content="Calla Flo · Bakı">
+<meta property="og:description" content="Buketlər 45–75 ₼, gəlin buketləri, bürc qutuları və kompozisiyalar. Demo onlayn mağaza.">
+<meta property="og:image" content="media/hero.jpg">
+<meta property="og:url" content="https://sitestudio-az.github.io/calla/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%238E1F43'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-size='34' fill='%23FFFFFF' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="media/hero.jpg">
+<link rel="stylesheet" href="../shared/site.css?v=10">
+<style>
+  :root {
+    --bg: #FBF4F4; --surface: #FFFFFF; --soft: #F3E1E3; --ink: #2E1A22; --muted: #7B6269;
+    --line: #F0DCDF; --line-strong: #E2C2C8; --sale: #C2185B; --ok: #3C9A62;
+    --accent: #8E1F43; --accent-ink: #FFFFFF; --accent-text: #8E1F43;
+    --hi: #C77D92; --hi2: #E9B6C3;
+    --f-head: 'Italiana', Georgia, serif; --f-body: 'Manrope', system-ui, sans-serif; --f-label: 'Manrope', sans-serif;
+    --w-head: 400; --ls-head: 0;
+    --r-card: 24px; --r-btn: 40px; --r-img: 24px; --r-big: 36px;
+    --hdr-bg: rgba(251,244,244,.9); --demo-bg: #2E1A22;
+    --finale-bg: #8E1F43; --finale-ink: #FBF4F4; --finale-accent: #C77D92; --finale-btn: #FBF4F4; --finale-btn-ink: #8E1F43;
+    --card-shadow: 0 34px 70px -40px rgba(142,31,67,.35);
+  }
+  .eyebrow, .pcat, .nav, .ftr h3, .filters legend, .sizes legend { font-family: var(--f-label); letter-spacing: .22em; }
+  .eyebrow { color: var(--hi); }
+  h1 em, h2 em { font-style: italic; color: var(--accent-text); }
+  .sec-head h2 { font-size: clamp(36px, 4.8vw, 70px); line-height: 1.02; }
+  .btn { font-family: var(--f-label); letter-spacing: .1em; text-transform: uppercase; font-size: 12px; }
+  .chip.on, .cat-pills button[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .pbadge-bestseller { background: var(--hi); color: #fff; }
+  .azn { font-family: var(--f-body); font-weight: 400; font-size: .62em; margin-left: .06em; }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .x-logo { display: grid; line-height: 1; color: var(--ink); text-align: left; }
+  .x-logo b { font-family: var(--f-head); font-weight: 500; font-size: 30px; letter-spacing: .06em;  }
+  .x-logo small { font-family: var(--f-label); font-size: 9px; letter-spacing: .5em; text-transform: uppercase; color: var(--muted); margin-top: 5px; }
+  .cats { --cat-cols: 4; }
+  .cat-img { border-radius: 999px 999px 24px 24px; aspect-ratio: 3/4; }
+  .about-media img { border-radius: 30px; }
+  .finale-card { border-radius: var(--r-big); }
+
+  /* ===== HERO variants ===== */
+  .xh { position: relative; overflow: hidden; isolation: isolate; }
+  .xh .lead { max-width: 44ch; font-size: 18px; color: var(--muted); }
+  .xh h1 { font-weight: var(--w-head); letter-spacing: -.03em; }
+  .xh h1 .w { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .08em; }
+  .xh h1 .w > span { display: inline-block; transform: translateY(108%); animation: xr 1.15s var(--ease) forwards; animation-delay: calc(.2s + var(--i) * 95ms); }
+  @keyframes xr { to { transform: none; } }
+  .xh .fx { opacity: 0; animation: xf .9s var(--ease) forwards; animation-delay: var(--d, 1s); }
+  @keyframes xf { to { opacity: 1; } }
+  .xh-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .xh-facts { display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 44px); margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line-strong); font-size: 13px; color: var(--muted); }
+  .xh-facts b { display: block; font-family: var(--f-head); font-weight: var(--w-head); font-size: 30px; color: var(--ink); line-height: 1.05; font-variant-numeric: lining-nums; }
+  .xh video, .xh .vimg { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .xh-tag { position: absolute; z-index: 3; display: grid; gap: 2px; padding: 14px 18px; border-radius: 16px; background: rgba(255,255,255,.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); font-size: 13px; color: var(--muted); box-shadow: 0 24px 50px -28px rgba(0,0,0,.6); transition: transform .4s var(--ease); }
+  .xh-tag i { font-style: normal; font-family: var(--f-label); font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--hi); }
+  .xh-tag span { color: var(--ink); font-weight: 600; }
+  .xh-tag b { font-family: var(--f-head); font-weight: 500; font-size: 28px; color: var(--accent-text); line-height: 1.05; }
+  @media (hover: hover) { .xh-tag:hover { transform: translateY(-4px); } }
+  .xh-in { max-width: 1440px; margin: 0 auto; padding: clamp(28px, 5vh, 60px) var(--pad) clamp(44px, 7vh, 80px); display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(30px, 5vw, 90px); align-items: center; min-height: calc(100svh - 120px); }
+  .xh h1 { font-size: clamp(48px, 5.8vw, 100px); line-height: .98; margin: 16px 0 24px; }
+  .xh h1 em .w { padding-right: .18em; margin-right: -.12em; }
+  /* arch */
+  .xh-arch .media { position: relative; justify-self: center; width: min(100%, 440px, calc((100svh - 240px) * .6)); }
+  .xh-arch .frame { position: relative; aspect-ratio: 9/15; border-radius: 240px 240px 24px 24px; overflow: hidden; background: var(--soft) center / cover; box-shadow: 0 60px 100px -50px rgba(142,31,67,.35); opacity: 0; transform: translateY(30px); animation: xu 1.4s var(--ease) .3s forwards; }
+  @keyframes xu { to { opacity: 1; transform: none; } }
+  .xh-arch .media::before { content: ""; position: absolute; inset: -16px; border: 1px solid var(--hi); opacity: .5; border-radius: 256px 256px 32px 32px; }
+  .xh-arch .xh-tag { left: -60px; bottom: 46px; }
+  .xh-blob { position: absolute; z-index: -1; border-radius: 50%; filter: blur(70px); opacity: .5; animation: xd 16s ease-in-out infinite alternate; }
+  .xh-blob.b1 { width: 46vw; height: 46vw; left: -12vw; top: -14vw; background: var(--hi); opacity: .22; }
+  .xh-blob.b2 { width: 36vw; height: 36vw; right: -8vw; bottom: -12vw; background: var(--hi2); opacity: .22; animation-delay: -6s; }
+  @keyframes xd { to { transform: translate(6vw, 4vw) scale(1.12); } }
+  /* full-bleed */
+  .xh-full { height: 100svh; min-height: 620px; color: #F7F3EE; background: #0B0B0E; }
+  .xh-full .bg { position: absolute; inset: 0; z-index: -2; }
+  .xh-full .bg video, .xh-full .bg .vimg { transform: scale(1.12); animation: xs 3.2s var(--ease) forwards; }
+  @keyframes xs { to { transform: scale(1.03); } }
+  .xh-full::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(8,8,10,.55), rgba(8,8,10,.1) 28%, rgba(8,8,10,.45) 55%, rgba(8,8,10,.95)), radial-gradient(90% 70% at 15% 75%, rgba(8,8,10,.65), transparent 70%); }
+  .xh-full h1 em { color: #FFFFFF; } .xh-full .eyebrow { color: #fff; opacity: .85; }
+  .xh-full .in { position: absolute; left: 0; right: 0; bottom: 0; max-width: 1440px; margin: 0 auto; padding: 0 var(--pad) clamp(36px, 6vh, 70px); }
+  .xh-full h1 { color: #F7F3EE; font-size: clamp(56px, 8vw, 140px); }
+  .xh-full .lead { color: #DCD5CC; }
+  .xh-full .xh-facts { border-top-color: rgba(255,255,255,.25); color: #CFC7BD; } .xh-full .xh-facts b { color: #fff; }
+  .xh-full .btn-ghost { color: #fff; border-color: rgba(255,255,255,.45); background: rgba(0,0,0,.2); }
+  .xh-full .xh-tag { right: var(--pad); bottom: clamp(36px, 6vh, 70px); }
+  body[data-page="home"].xfull .hdr { background: linear-gradient(180deg, rgba(8,8,10,.6), rgba(8,8,10,0)); border-bottom-color: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; transition: background .4s; }
+  body[data-page="home"].xfull .hdr .logo, body[data-page="home"].xfull .hdr .nav a, body[data-page="home"].xfull .hdr .icon-btn, body[data-page="home"].xfull .hdr .x-logo, body[data-page="home"].xfull .hdr .x-logo small { color: #fff; }
+  body[data-page="home"].xfull.scrolled .hdr { background: var(--hdr-bg); border-bottom-color: var(--line); }
+  body[data-page="home"].xfull.scrolled .hdr .logo, body[data-page="home"].xfull.scrolled .hdr .nav a, body[data-page="home"].xfull.scrolled .hdr .icon-btn, body[data-page="home"].xfull.scrolled .hdr .x-logo { color: var(--ink); }
+  body[data-page="home"].xfull.scrolled .hdr .x-logo small { color: var(--muted); }
+  body[data-page="home"].xfull:not(.scrolled) .hdr .x-logo [style] { color: #fff !important; }
+  /* tilt cards */
+  .xh-tilt .media { position: relative; justify-self: center; width: min(100%, 400px, calc((100svh - 280px) * .58)); }
+  .xh-tilt .card { position: relative; aspect-ratio: 9/15; border-radius: 30px; overflow: hidden; background: var(--soft) center / cover; box-shadow: 0 50px 90px -40px rgba(0,0,0,.6); transform: rotate(3deg); opacity: 0; animation: xt 1.3s var(--ease) .25s forwards; }
+  @keyframes xt { from { opacity: 0; transform: rotate(9deg) translateY(60px); } to { opacity: 1; transform: rotate(3deg); } }
+  .xh-tilt .mini { position: absolute; left: -28%; bottom: 8%; width: 46%; aspect-ratio: 3/4; border-radius: 20px; overflow: hidden; border: 5px solid var(--bg); background: var(--soft) center / cover; transform: rotate(-7deg); box-shadow: 0 30px 60px -30px rgba(0,0,0,.7); opacity: 0; animation: xm 1.3s var(--ease) .6s forwards; }
+  .xh-tilt .mini2 { left: auto; right: -22%; bottom: auto; top: 6%; width: 38%; transform: rotate(8deg); animation-name: xm2; animation-delay: .8s; }
+  @keyframes xm { from { opacity: 0; transform: rotate(-16deg) translateX(-40px); } to { opacity: 1; transform: rotate(-7deg); } }
+  @keyframes xm2 { from { opacity: 0; transform: rotate(16deg) translateX(40px); } to { opacity: 1; transform: rotate(8deg); } }
+  .xh-tilt .mini img { width: 100%; height: 100%; object-fit: cover; }
+  .xh-tilt .xh-tag { right: -30px; bottom: 30px; }
+  /* mosaic (photo stack crossfade) */
+  .xh-mosaic .media { position: relative; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; height: min(calc(100svh - 230px), 680px); }
+  .xh-mosaic .tile { position: relative; border-radius: 24px; overflow: hidden; background: var(--soft); opacity: 0; transform: translateY(30px); animation: xu 1.2s var(--ease) forwards; }
+  .xh-mosaic .tile:nth-child(1) { grid-row: 1 / 3; animation-delay: .2s; } .xh-mosaic .tile:nth-child(2) { animation-delay: .4s; } .xh-mosaic .tile:nth-child(3) { animation-delay: .6s; }
+  .xh-mosaic .tile img, .xh-mosaic .tile video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 1.4s ease, transform 7s linear; }
+  .xh-mosaic .tile img.off { opacity: 0; } .xh-mosaic .tile img.on { transform: scale(1.08); }
+  .xh-mosaic .xh-tag { left: -40px; bottom: 30px; }
+  /* dark split: blurred ambient + arch */
+  .xh-amb { background: #0B0A0C; color: #F4EFE8; }
+  .xh-amb .amb { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; transform: scale(1.25); filter: blur(42px) brightness(.45) saturate(1.3); }
+  .xh-amb h1 { color: #F4EFE8; } .xh-amb .lead { color: #CFC6BB; } .xh-amb .xh-facts { color: #B9B0A5; border-top-color: rgba(255,255,255,.18); } .xh-amb .xh-facts b { color: #fff; }
+  .xh-amb .btn-ghost { color: #fff; border-color: rgba(255,255,255,.4); }
+  .xh-amb .media { position: relative; justify-self: center; width: min(100%, 430px, calc((100svh - 240px) * .58)); }
+  .xh-amb .frame { aspect-ratio: 9/15; border-radius: 240px 240px 8px 8px; overflow: hidden; background: #222 center / cover; box-shadow: 0 70px 120px -40px rgba(0,0,0,.95); opacity: 0; transform: translateY(30px); animation: xu 1.4s var(--ease) .4s forwards; }
+  .xh-amb .media::before { content: ""; position: absolute; inset: -18px; border: 1px solid var(--hi); opacity: .55; border-radius: 999px 999px 14px 14px; }
+  .xh-amb .xh-tag { left: -56px; bottom: 50px; }
+
+  .marq { overflow: hidden; border-block: 1px solid var(--line-strong); background: var(--surface); }
+  .marq div { display: flex; width: max-content; animation: xmq 36s linear infinite; }
+  .marq span { font-family: var(--f-head); font-style: italic; font-size: clamp(20px, 2.3vw, 30px); padding: 15px 0; white-space: nowrap; color: var(--ink); }
+  .marq span::after { content: "✦"; font-style: normal; font-size: .5em; color: var(--hi); margin: 0 32px; vertical-align: middle; }
+  @keyframes xmq { to { transform: translateX(-50%); } }
+
+  /* ===== SIGNATURES ===== */
+  .reels { display: grid; grid-template-columns: repeat(var(--n, 3), 1fr); gap: clamp(16px, 3vw, 36px); }
+  .reel { position: relative; display: block; border-radius: 34px; overflow: hidden; aspect-ratio: 9/16; background: var(--soft) center / cover; box-shadow: var(--card-shadow); }
+  .reel:nth-child(2) { margin-top: 56px; }
+  .reel video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .reel-cap { position: absolute; left: 12px; right: 12px; bottom: 12px; padding: 13px 15px; border-radius: 16px; background: rgba(255,255,255,.9); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: flex; justify-content: space-between; align-items: baseline; gap: 10px; color: var(--ink); font-weight: 600; font-size: 14px; }
+  .reel-cap b { font-family: var(--f-head); font-weight: 500; font-size: 22px; color: var(--accent-text); white-space: nowrap; }
+  /* tiers: price-range chips that filter a live grid */
+  .tiers-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+  .tiers-bar button { padding: 12px 18px; border-radius: 40px; border: 1.5px solid var(--line-strong); background: var(--surface); color: var(--ink); font: 600 15px var(--f-body); cursor: pointer; transition: background .2s, color .2s, border-color .2s, transform .2s var(--ease); font-variant-numeric: tabular-nums; }
+  .tiers-bar button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  @media (hover: hover) { .tiers-bar button:hover { transform: translateY(-2px); } }
+  .tiers-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; min-height: 200px; }
+  .tiers-grid .pcard { animation: xu .6s var(--ease) both; }
+  .tiers-note { margin-top: 18px; color: var(--muted); font-size: 14px; }
+  /* budget slider */
+  .budget { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(24px, 4vw, 60px); align-items: start; }
+  .budget-ctl { position: sticky; top: 110px; padding: 30px; border-radius: var(--r-big); background: var(--surface); border: 1px solid var(--line); }
+  .budget-ctl output { display: block; font-family: var(--f-head); font-size: clamp(52px, 6vw, 86px); line-height: 1; color: var(--accent-text); font-variant-numeric: tabular-nums lining-nums; margin: 10px 0 18px; }
+  .budget-ctl input[type=range] { width: 100%; accent-color: var(--accent); }
+  .budget-ctl p { color: var(--muted); font-size: 14px; margin: 14px 0 0; }
+  .budget-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  /* message on wrap */
+  .msg { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 5vw, 80px); align-items: center; padding: clamp(24px, 4vw, 56px); border-radius: var(--r-big); background: var(--surface); border: 1px solid var(--line-strong); }
+  .msg-prev { position: relative; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: url() center / cover; box-shadow: 0 40px 90px -30px rgba(0,0,0,.6); display: grid; place-items: center; }
+  .msg-prev::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle, rgba(255,255,255,.08), rgba(255,255,255,.28)); }
+  .msg-text { position: relative; max-width: 78%; text-align: center; font-family: 'Great Vibes', cursive; font-size: clamp(40px, 6vw, 74px); line-height: 1.05; color: #fff; text-shadow: 0 2px 2px rgba(0,0,0,.35), 0 0 22px rgba(255,255,255,.45); transform: rotate(-6deg); word-break: break-word; }
+  .msg-form { display: grid; gap: 20px; }
+  .msg-form label > span, .msg-form legend { display: block; font-family: var(--f-label); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+  .msg-form input[type=text] { width: 100%; padding: 16px 18px; font: 500 18px var(--f-body); border-radius: 14px; border: 1px solid var(--line-strong); background: var(--bg); color: var(--ink); }
+  .seg { display: flex; flex-wrap: wrap; gap: 8px; border: 0; padding: 0; margin: 0; min-width: 0; }
+  .seg label { position: relative; } .seg input { position: absolute; opacity: 0; }
+  .seg span { display: block; padding: 11px 17px; border-radius: 40px; border: 1.5px solid var(--line-strong); cursor: pointer; font-weight: 600; font-size: 14px; transition: background .2s, color .2s, border-color .2s; }
+  .seg span small { font-weight: 400; opacity: .7; margin-left: 4px; }
+  .seg input:checked + span { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .seg input:focus-visible + span { outline: 2px solid var(--hi); outline-offset: 2px; }
+  .sum { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 26px; padding-top: 18px; border-top: 1px solid var(--line-strong); }
+  .sum b { font-family: var(--f-head); font-size: clamp(36px, 4vw, 54px); font-weight: 500; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .sum small { display: block; color: var(--muted); font-size: 13px; margin-top: 4px; }
+  /* calc (credit / xonca) box */
+  .calc { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(28px, 5vw, 80px); align-items: center; padding: clamp(24px, 4vw, 60px); border-radius: var(--r-big); background: var(--ink); color: var(--bg); }
+  .calc h2 { color: inherit; font-size: clamp(36px, 4.6vw, 66px); line-height: 1; margin: 10px 0 14px; }
+  .calc .lead { color: inherit; opacity: .75; }
+  .calc .seg span { border-color: rgba(255,255,255,.25); }
+  .calc .seg span small { opacity: .85; }
+  .calc .seg input:checked + span { background: var(--hi); border-color: var(--hi); color: #fff; }
+  .calc legend { font-family: var(--f-label); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; opacity: .7; margin-bottom: 10px; }
+  .calc .sum { border-top-color: rgba(255,255,255,.2); } .calc .sum b { color: inherit; } .calc .sum small { color: inherit; opacity: .7; }
+  .calc .btn { background: var(--hi); color: #fff; border-color: var(--hi); justify-self: start; }
+  .calc-media { position: relative; border-radius: 34px; overflow: hidden; aspect-ratio: 9/14; background: #222 center / cover; }
+  .calc-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .calc-form { display: grid; gap: 20px; }
+  .ptable { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+  .ptable button { padding: 14px 10px; border-radius: 16px; border: 1.5px solid rgba(255,255,255,.25); background: transparent; color: inherit; cursor: pointer; text-align: center; font: 500 13px var(--f-body); transition: background .2s, border-color .2s; }
+  .ptable button b { display: block; font-family: var(--f-head); font-size: 26px; font-weight: 500; }
+  .ptable button[aria-pressed="true"] { background: var(--hi); border-color: var(--hi); color: #fff; }
+  /* occasions */
+  .occ-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
+  .occ-tabs button { padding: 12px 20px; border-radius: 40px; border: 1.5px solid var(--line-strong); background: transparent; color: var(--ink); font: 600 15px var(--f-body); cursor: pointer; }
+  .occ-tabs button[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .occ-panel { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(24px, 4vw, 60px); align-items: center; }
+  .occ-big { position: relative; aspect-ratio: 4/5; border-radius: var(--r-big); overflow: hidden; background: var(--soft); }
+  .occ-big img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; animation: xu .7s var(--ease); }
+  .occ-txt h3 { font-family: var(--f-head); font-weight: var(--w-head); font-size: clamp(36px, 4vw, 56px); line-height: 1; margin: 8px 0 14px; }
+  .occ-txt p { color: var(--muted); max-width: 44ch; }
+  .occ-thumbs { display: flex; gap: 10px; margin: 22px 0; }
+  .occ-thumbs a { width: 84px; aspect-ratio: 3/4; border-radius: 12px; overflow: hidden; display: block; }
+  .occ-thumbs img { width: 100%; height: 100%; object-fit: cover; }
+  /* open-now badge */
+  .live { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 40px; background: rgba(60,154,98,.14); color: #3C9A62; font-weight: 700; font-size: 14px; }
+  .live i { width: 9px; height: 9px; border-radius: 50%; background: #3C9A62; box-shadow: 0 0 0 0 rgba(60,154,98,.6); animation: xp 1.8s infinite; }
+  @keyframes xp { to { box-shadow: 0 0 0 12px rgba(60,154,98,0); } }
+  .xh-full .live { background: rgba(255,255,255,.14); color: #fff; } .xh-full .live i { background: #6EE7A8; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .xh h1 .w > span, .xh .fx, .xh-arch .frame, .xh-tilt .card, .xh-tilt .mini, .xh-mosaic .tile, .xh-amb .frame { opacity: 1 !important; transform: none !important; animation: none !important; }
+    .xh-full .bg video, .xh-full .bg .vimg, .xh-blob, .marq div, .live i { animation: none !important; }
+  }
+  @media (max-width: 1000px) { .tiers-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .budget-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 900px) {
+    .xh-in { grid-template-columns: 1fr; min-height: 0; padding-top: 24px; gap: 26px; }
+    .xh h1 { font-size: clamp(44px, 12.5vw, 72px); }
+    .xh-arch .media, .xh-amb .media { order: -1; width: calc(100% + 2 * var(--pad)); margin: 0 calc(-1 * var(--pad)); }
+    .xh-arch .media::before, .xh-amb .media::before { display: none; }
+    .xh-arch .frame, .xh-amb .frame { aspect-ratio: auto; height: 64svh; border-radius: 0 0 34px 34px; }
+    .xh-arch .xh-tag, .xh-amb .xh-tag { left: 16px; bottom: 16px; padding: 10px 14px; } .xh-tag b { font-size: 22px; }
+    .xh-tilt .media { order: -1; width: min(74%, 310px); margin-left: 16%; } .xh-tilt .xh-tag { right: -10px; }
+    .xh-mosaic .media { order: -1; height: 56svh; } .xh-mosaic .xh-tag { left: 10px; bottom: 10px; }
+    .xh-full .xh-tag { display: none; }
+    .xh-facts { gap: 18px; margin-top: 28px; } .xh-facts b { font-size: 24px; }
+    .reels { grid-template-columns: repeat(var(--n, 3), 72vw); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 calc(-1 * var(--pad)); padding: 0 var(--pad) 10px; scroll-padding-inline: var(--pad); }
+    .reels::-webkit-scrollbar { display: none; } .reel { scroll-snap-align: start; } .reel:nth-child(2) { margin-top: 0; }
+    .budget, .msg, .calc, .occ-panel { grid-template-columns: 1fr; } .budget-ctl { position: static; }
+    .msg-prev { width: min(100%, 340px); justify-self: center; }
+    .calc-media { width: min(70%, 300px); justify-self: center; }
+    .x-logo b { font-size: 26px; }
+  }
+h1 em, h2 em { font-style: normal; } .xh-facts b, .xh-tag b, .reel-cap b, .sum b { font-family: var(--f-body); font-weight: 400; letter-spacing: -.02em; } .marq span { font-family: var(--f-body); font-weight: 300; font-style: normal; }</style>
+</head>
+<body>
+<noscript>Bu sayt JavaScript tələb edir.</noscript>
+<script>
+(function () {
+  const LOGO = "<span class=\"x-logo\"><b lang=\"en\">Calla<span style=\"color:#C77D92\">_</span>flo</b><small>Gənclik · Bakı</small></span>";
+  const P = [{"id":"qutu-lila","name":"Lila kompozisiya, qutuda","cats":["kompozisiya"],"colors":["benovseyi","cehrayi"],"price":250,"desc":"Lila kompozisiya, qutuda, Calla lentli qablaşdırmada.","featured":true,"image":"img/qutu-lila.jpg"},{"id":"qutu-pastel","name":"Pastel kompozisiya, qutuda","cats":["kompozisiya"],"colors":["cehrayi","ag"],"price":240,"desc":"Pastel kompozisiya, qutuda, Calla lentli qablaşdırmada.","image":"img/qutu-pastel.jpg"},{"id":"eqreb-burc","name":"Əqrəb bürcü qutusu","cats":["burc","kompozisiya"],"colors":["cehrayi","benovseyi"],"price":230,"desc":"Əqrəb bürcü qutusu, Calla lentli qablaşdırmada.","featured":true,"image":"img/eqreb-burc.jpg"},{"id":"qutu-ag-lilya","name":"Ağ lilya qutusu","cats":["kompozisiya"],"colors":["ag","cehrayi"],"price":230,"desc":"Ağ lilya qutusu, Calla lentli qablaşdırmada.","image":"img/qutu-ag-lilya.jpg"},{"id":"lilya-qutu","name":"Lilyalı qutu","cats":["kompozisiya"],"colors":["cehrayi","ag"],"price":220,"desc":"Lilyalı qutu, Calla lentli qablaşdırmada.","image":"img/lilya-qutu.jpg"},{"id":"yeni-il-qutu","name":"Yeni il qutusu","cats":["kompozisiya"],"colors":["qirmizi","cehrayi"],"price":220,"desc":"Yeni il qutusu, Calla lentli qablaşdırmada.","image":"img/yeni-il-qutu.jpg"},{"id":"qutu-lilya-pastel","name":"Pastel lilya qutusu","cats":["kompozisiya"],"colors":["cehrayi"],"price":210,"desc":"Pastel lilya qutusu, Calla lentli qablaşdırmada.","image":"img/qutu-lilya-pastel.jpg"},{"id":"qutu-qirmizi-ag","name":"Qırmızı-ağ qutu","cats":["kompozisiya"],"colors":["qirmizi","ag"],"price":200,"desc":"Qırmızı-ağ qutu, Calla lentli qablaşdırmada.","image":"img/qutu-qirmizi-ag.jpg"},{"id":"qutu-lilya-qirmizi","name":"Qırmızı lilya qutusu","cats":["kompozisiya"],"colors":["qirmizi","ag"],"price":190,"desc":"Qırmızı lilya qutusu, Calla lentli qablaşdırmada.","image":"img/qutu-lilya-qirmizi.jpg"},{"id":"yeni-il-krem","name":"Yeni il, krem","cats":["kompozisiya"],"colors":["ag","sari"],"price":180,"desc":"Yeni il, krem, Calla lentli qablaşdırmada.","image":"img/yeni-il-krem.jpg"},{"id":"qirmizi-urek-qutu","name":"Qırmızı qızılgül qutusu","cats":["kompozisiya"],"colors":["qirmizi"],"price":170,"desc":"Qırmızı qızılgül qutusu, Calla lentli qablaşdırmada.","image":"img/qirmizi-urek-qutu.jpg"},{"id":"gelin-ag","name":"Gəlin buketi, ağ","cats":["gelin"],"colors":["ag"],"price":150,"desc":"Gəlin buketi, ağ, Calla lentli qablaşdırmada.","featured":true,"image":"img/gelin-ag.jpg"},{"id":"gelin-yasil","name":"Gəlin buketi, yaşıl","cats":["gelin"],"colors":["ag","yasil"],"price":120,"desc":"Gəlin buketi, yaşıl, Calla lentli qablaşdırmada.","image":"img/gelin-yasil.jpg"},{"id":"gelin-ag-lilya","name":"Gəlin buketi, lilya","cats":["gelin"],"colors":["ag"],"price":110,"desc":"Gəlin buketi, lilya, Calla lentli qablaşdırmada.","image":"img/gelin-ag-lilya.jpg"},{"id":"gelin-lilya","name":"Gəlin buketi, pastel","cats":["gelin"],"colors":["cehrayi","ag"],"price":90,"desc":"Gəlin buketi, pastel, Calla lentli qablaşdırmada.","image":"img/gelin-lilya.jpg"},{"id":"ag-xrizantema","name":"Ağ xrizantema","cats":["gelin"],"colors":["ag"],"price":65,"desc":"Ağ xrizantema, Calla lentli qablaşdırmada.","image":"img/ag-xrizantema.jpg"},{"id":"pastel-lilya","name":"Pastel lilya","cats":["buket"],"colors":["cehrayi","ag"],"price":80,"desc":"Pastel lilya, Calla lentli qablaşdırmada.","featured":true,"image":"img/pastel-lilya.jpg"},{"id":"saftali-bordo","name":"Şaftalı və bordo","cats":["buket"],"colors":["narinci","bordo"],"price":75,"desc":"Şaftalı və bordo, Calla lentli qablaşdırmada.","image":"img/saftali-bordo.jpg"},{"id":"lilya-hortenziya","name":"Lilya və hortenziya","cats":["buket"],"colors":["cehrayi","ag"],"price":75,"desc":"Lilya və hortenziya, Calla lentli qablaşdırmada.","image":"img/lilya-hortenziya.jpg"},{"id":"bordo-lilya","name":"Bordo və lilya","cats":["buket"],"colors":["bordo","cehrayi"],"price":75,"desc":"Bordo və lilya, Calla lentli qablaşdırmada.","image":"img/bordo-lilya.jpg"},{"id":"qirmizi-buket","name":"Qırmızı buket","cats":["buket"],"colors":["qirmizi"],"price":75,"desc":"Qırmızı buket, Calla lentli qablaşdırmada.","image":"img/qirmizi-buket.jpg"},{"id":"bordo-lilya-2","name":"Bordo lilya","cats":["buket"],"colors":["bordo"],"price":75,"desc":"Bordo lilya, Calla lentli qablaşdırmada.","image":"img/bordo-lilya-2.jpg"},{"id":"mavi-ag-buket","name":"Mavi və ağ","cats":["buket"],"colors":["mavi","ag"],"price":75,"desc":"Mavi və ağ, Calla lentli qablaşdırmada.","image":"img/mavi-ag-buket.jpg"},{"id":"cehrayi-neheng","name":"Çəhrayı böyük buket","cats":["buket"],"colors":["cehrayi"],"price":75,"desc":"Çəhrayı böyük buket, Calla lentli qablaşdırmada.","image":"img/cehrayi-neheng.jpg"},{"id":"qirmizi-palma","name":"Qırmızı, palmalı","cats":["buket"],"colors":["qirmizi","bordo"],"price":75,"desc":"Qırmızı, palmalı, Calla lentli qablaşdırmada.","image":"img/qirmizi-palma.jpg"},{"id":"saftali-lilya","name":"Şaftalı və lilya","cats":["buket"],"colors":["narinci","ag"],"price":75,"desc":"Şaftalı və lilya, Calla lentli qablaşdırmada.","image":"img/saftali-lilya.jpg"},{"id":"mavi-xrizantema","name":"Mavi və xrizantema","cats":["buket"],"colors":["mavi","ag"],"price":75,"desc":"Mavi və xrizantema, Calla lentli qablaşdırmada.","image":"img/mavi-xrizantema.jpg"},{"id":"ag-lilya","name":"Ağ lilya","cats":["buket"],"colors":["ag"],"price":75,"desc":"Ağ lilya, Calla lentli qablaşdırmada.","image":"img/ag-lilya.jpg"},{"id":"pastel-neheng","name":"Pastel böyük","cats":["buket"],"colors":["cehrayi","benovseyi"],"price":75,"desc":"Pastel böyük, Calla lentli qablaşdırmada.","image":"img/pastel-neheng.jpg"},{"id":"anturium-lila","name":"Anturium və lila","cats":["buket"],"colors":["benovseyi","yasil"],"price":75,"desc":"Anturium və lila, Calla lentli qablaşdırmada.","image":"img/anturium-lila.jpg"},{"id":"cehrayi-lilya","name":"Çəhrayı lilya","cats":["buket"],"colors":["cehrayi"],"price":75,"desc":"Çəhrayı lilya, Calla lentli qablaşdırmada.","image":"img/cehrayi-lilya.jpg"},{"id":"bordo-anturium","name":"Bordo anturium","cats":["buket"],"colors":["bordo","qirmizi"],"price":75,"desc":"Bordo anturium, Calla lentli qablaşdırmada.","image":"img/bordo-anturium.jpg"},{"id":"anturium-yasil","name":"Anturium və yaşıl","cats":["buket"],"colors":["cehrayi","yasil"],"price":70,"desc":"Anturium və yaşıl, Calla lentli qablaşdırmada.","image":"img/anturium-yasil.jpg"},{"id":"yasil-hortenziya","name":"Yaşıl hortenziya","cats":["buket"],"colors":["yasil","bordo"],"price":70,"desc":"Yaşıl hortenziya, Calla lentli qablaşdırmada.","image":"img/yasil-hortenziya.jpg"},{"id":"anturium-bordo","name":"Anturium və bordo","cats":["buket"],"colors":["bordo","benovseyi"],"price":70,"desc":"Anturium və bordo, Calla lentli qablaşdırmada.","image":"img/anturium-bordo.jpg"},{"id":"pion-cehrayi","name":"Çəhrayı pion","cats":["buket"],"colors":["cehrayi"],"price":70,"desc":"Çəhrayı pion, Calla lentli qablaşdırmada.","image":"img/pion-cehrayi.jpg"},{"id":"bordo-hortenziya","name":"Bordo hortenziya","cats":["buket"],"colors":["bordo","cehrayi"],"price":70,"desc":"Bordo hortenziya, Calla lentli qablaşdırmada.","image":"img/bordo-hortenziya.jpg"},{"id":"yeni-il-qirmizi","name":"Yeni il buketi","cats":["buket"],"colors":["qirmizi","ag"],"price":70,"desc":"Yeni il buketi, Calla lentli qablaşdırmada.","image":"img/yeni-il-qirmizi.jpg"},{"id":"fusya-xrizantema","name":"Fuksiya xrizantema","cats":["buket"],"colors":["cehrayi","benovseyi"],"price":70,"desc":"Fuksiya xrizantema, Calla lentli qablaşdırmada.","image":"img/fusya-xrizantema.jpg"},{"id":"payiz-buket","name":"Payız buketi","cats":["buket"],"colors":["bordo","narinci"],"price":70,"desc":"Payız buketi, Calla lentli qablaşdırmada.","image":"img/payiz-buket.jpg"},{"id":"lila-pastel","name":"Lila pastel","cats":["buket"],"colors":["benovseyi","cehrayi"],"price":70,"desc":"Lila pastel, Calla lentli qablaşdırmada.","image":"img/lila-pastel.jpg"},{"id":"lilya-cehrayi","name":"Lilya və çəhrayı","cats":["buket"],"colors":["cehrayi","ag"],"price":70,"desc":"Lilya və çəhrayı, Calla lentli qablaşdırmada.","image":"img/lilya-cehrayi.jpg"},{"id":"yasil-bordo","name":"Yaşıl və bordo","cats":["buket"],"colors":["yasil","bordo"],"price":70,"desc":"Yaşıl və bordo, Calla lentli qablaşdırmada.","image":"img/yasil-bordo.jpg"},{"id":"pastel-lilya-2","name":"Pastel və lilya","cats":["buket"],"colors":["cehrayi","ag"],"price":70,"desc":"Pastel və lilya, Calla lentli qablaşdırmada.","image":"img/pastel-lilya-2.jpg"},{"id":"krem-lilya","name":"Krem və lilya","cats":["buket"],"colors":["ag","cehrayi"],"price":70,"desc":"Krem və lilya, Calla lentli qablaşdırmada.","image":"img/krem-lilya.jpg"},{"id":"anturium-pastel","name":"Anturium pastel","cats":["buket"],"colors":["yasil","cehrayi"],"price":70,"desc":"Anturium pastel, Calla lentli qablaşdırmada.","image":"img/anturium-pastel.jpg"},{"id":"pastel-delfinium","name":"Pastel delfinium","cats":["buket"],"colors":["cehrayi","ag"],"price":70,"desc":"Pastel delfinium, Calla lentli qablaşdırmada.","image":"img/pastel-delfinium.jpg"},{"id":"bordo-pion-2","name":"Bordo pion, böyük","cats":["buket"],"colors":["bordo","cehrayi"],"price":70,"desc":"Bordo pion, böyük, Calla lentli qablaşdırmada.","image":"img/bordo-pion-2.jpg"},{"id":"fusya-qizilgul","name":"Fuksiya qızılgül","cats":["buket"],"colors":["cehrayi"],"price":70,"desc":"Fuksiya qızılgül, Calla lentli qablaşdırmada.","image":"img/fusya-qizilgul.jpg"},{"id":"pastel-mix","name":"Pastel mix","cats":["buket"],"colors":["cehrayi","bordo"],"price":65,"desc":"Pastel mix, Calla lentli qablaşdırmada.","image":"img/pastel-mix.jpg"},{"id":"cehrayi-hortenziya","name":"Çəhrayı hortenziya","cats":["buket"],"colors":["cehrayi","ag"],"price":65,"desc":"Çəhrayı hortenziya, Calla lentli qablaşdırmada.","image":"img/cehrayi-hortenziya.jpg"},{"id":"bordo-pion","name":"Bordo pion","cats":["buket"],"colors":["bordo","cehrayi"],"price":65,"desc":"Bordo pion, Calla lentli qablaşdırmada.","image":"img/bordo-pion.jpg"},{"id":"lila-xrizantema","name":"Lila xrizantema","cats":["buket"],"colors":["benovseyi","ag"],"price":65,"desc":"Lila xrizantema, Calla lentli qablaşdırmada.","image":"img/lila-xrizantema.jpg"},{"id":"lila-krem","name":"Lila və krem","cats":["buket"],"colors":["benovseyi","ag"],"price":65,"desc":"Lila və krem, Calla lentli qablaşdırmada.","image":"img/lila-krem.jpg"},{"id":"bordo-pastel","name":"Bordo pastel","cats":["buket"],"colors":["bordo","cehrayi"],"price":65,"desc":"Bordo pastel, Calla lentli qablaşdırmada.","image":"img/bordo-pastel.jpg"},{"id":"cehrayi-pion","name":"Çəhrayı pion, kiçik","cats":["buket"],"colors":["cehrayi"],"price":65,"desc":"Çəhrayı pion, kiçik, Calla lentli qablaşdırmada.","image":"img/cehrayi-pion.jpg"},{"id":"fusya-pion","name":"Fuksiya pion","cats":["buket"],"colors":["cehrayi"],"price":65,"desc":"Fuksiya pion, Calla lentli qablaşdırmada.","image":"img/fusya-pion.jpg"},{"id":"xrizantema-qirmizi","name":"Xrizantema və qırmızı","cats":["buket"],"colors":["ag","qirmizi"],"price":65,"desc":"Xrizantema və qırmızı, Calla lentli qablaşdırmada.","image":"img/xrizantema-qirmizi.jpg"},{"id":"ag-hortenziya","name":"Ağ hortenziya","cats":["buket"],"colors":["ag"],"price":65,"desc":"Ağ hortenziya, Calla lentli qablaşdırmada.","image":"img/ag-hortenziya.jpg"},{"id":"pastel-krem","name":"Pastel krem","cats":["buket"],"colors":["cehrayi","ag"],"price":65,"desc":"Pastel krem, Calla lentli qablaşdırmada.","image":"img/pastel-krem.jpg"},{"id":"yeni-il-ag","name":"Yeni il, ağ","cats":["buket"],"colors":["ag","cehrayi"],"price":63,"desc":"Yeni il, ağ, Calla lentli qablaşdırmada.","image":"img/yeni-il-ag.jpg"},{"id":"xrizantema-pastel","name":"Xrizantema pastel","cats":["buket"],"colors":["ag","cehrayi"],"price":60,"desc":"Xrizantema pastel, Calla lentli qablaşdırmada.","image":"img/xrizantema-pastel.jpg"},{"id":"cehrayi-xrizantema","name":"Çəhrayı xrizantema","cats":["buket"],"colors":["cehrayi"],"price":60,"desc":"Çəhrayı xrizantema, Calla lentli qablaşdırmada.","image":"img/cehrayi-xrizantema.jpg"},{"id":"cehrayi-krem","name":"Çəhrayı və krem","cats":["buket"],"colors":["cehrayi","ag"],"price":60,"desc":"Çəhrayı və krem, Calla lentli qablaşdırmada.","image":"img/cehrayi-krem.jpg"},{"id":"lila-qizilgul","name":"Lila qızılgül","cats":["buket"],"colors":["benovseyi"],"price":55,"desc":"Lila qızılgül, Calla lentli qablaşdırmada.","image":"img/lila-qizilgul.jpg"},{"id":"pastel-xrizantema","name":"Pastel xrizantema","cats":["buket"],"colors":["cehrayi","ag"],"price":55,"desc":"Pastel xrizantema, Calla lentli qablaşdırmada.","image":"img/pastel-xrizantema.jpg"}];
+  const H = {"type":"arch","video":"media/hero.mp4","poster":"media/hero.jpg","alt":"Çəhrayı Calla qutusunda lilyalar","eyebrow":"<span lang=\"en\">Calla_flo</span> · Gənclik","h1":[["Qoy gül"],["sənin yerinə",true],["danışsın"]],"lead":"Lilyalar, anturiumlar və pion qızılgüllər, bordo məxmər Calla qutularında. Buketlər 45 manatdan, gəlin buketləri, bürc qutuları və böyük kompozisiyalar.","cta2":["Qiymətə görə seç","#tiers"],"facts":[["21K","Instagram ailəsi"],["45 ₼","-dən buketlər"],["5.8K","paylaşım"]],"tag":{"href":"#/mehsul/lilya-qutu","eyebrow":"Kompozisiya","name":"Lilyalı qutu","price":220},"marquee":["Buketlər 45–75 ₼","Gəlin 65–180 ₼","Bürclər 110–250 ₼","Kompozisiya 170–350 ₼","Bolt Food-da da"]};
+  const SIG = [{"type":"tiers","eyebrow":"Qiymət aralıqları","title":"Instagram-dakı <em>qiymətlər, bir toxunuşda</em>","start":0,"tiers":[[45,75,"Buket · 45–75 ₼"],[65,180,"Gəlin · 65–180 ₼"],[110,250,"Bürclər · 110–250 ₼"],[170,350,"Kompozisiya · 170–350 ₼"]]},{"type":"reels","eyebrow":"Instagram-dan","title":"Videoda gördünüz, <em>sifariş edin</em>","items":[{"video":"media/ag.mp4","poster":"media/ag.jpg","name":"Ağ buket","price":"75 ₼","href":"#/mehsul/ag-lilya"},{"video":"media/anturium.mp4","poster":"media/anturium.jpg","name":"Anturium və lila","price":"75 ₼","href":"#/mehsul/anturium-lila"},{"video":"media/yasil.mp4","poster":"media/yasil.jpg","name":"Yaşıl hortenziya","price":"70 ₼","href":"#/mehsul/yasil-hortenziya"}]}];
+  const still = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const words = (t, i0 = 0) => { let i = i0; return t.split(' ').map((w) => '<span class="w"><span style="--i:' + (i++) + '">' + w + '</span></span>').join(' '); };
+  const vid = (src, poster, attrs = '') => still() ? '<img class="vimg" src="' + poster + '" alt="">' : '<video src="' + src + '" poster="' + poster + '" autoplay muted loop playsinline preload="auto" ' + attrs + '></video>';
+  const lazyVid = (src, poster, label) => '<video data-src="' + src + '" poster="' + poster + '" muted loop playsinline preload="none" aria-label="' + label + '"></video>';
+  const money = (n) => n + ' <span class="azn">₼</span>';
+  window.SITE = {
+    key: "calla-", name: "Calla Flo", tagline: 'Bakı',
+    logoHtml: LOGO, footerLogoHtml: LOGO,
+    instagram: "calla_flo", whatsapp: "994558388797", phones: ["+994 55 838 87 97"],
+    address: "Gənclik, Bakı", mapQuery: "Calla Flo Genclik Baku",
+    hours: "Hər gün, çatdırılma ödənişlidir", hoursShort: "Hər gün çatdırılma",
+    deliveryLine: "Bakı daxili çatdırılma", footerLine: "“Qoy gül sənin yerinə danışsın.” Gənclikdə gül studiyası, Bolt Food-da da varıq.",
+    freeDeliveryFrom: 150, deliveryFee: 6, priceMax: 260, slotFrom: 9, slotTo: 23,
+    sizes: [{"id":"std","label":"Standart","k":1,"note":"Şəkildəki kimi"},{"id":"big","label":"Böyük","k":1.35,"note":"Daha dolğun"},{"id":"lux","label":"Lüks","k":1.7,"note":"Premium qablaşdırma"}],
+    categories: [{"id":"buket","label":"Buketlər","image":"img/pastel-lilya.jpg"},{"id":"kompozisiya","label":"Kompozisiyalar","image":"img/qutu-lila.jpg"},{"id":"gelin","label":"Gəlin","image":"img/gelin-ag.jpg"},{"id":"burc","label":"Bürclər","image":"img/eqreb-burc.jpg"}],
+    colors: [{"id":"cehrayi","label":"Çəhrayı","hex":"#EE9BB5"},{"id":"qirmizi","label":"Qırmızı","hex":"#C21F2E"},{"id":"bordo","label":"Bordo","hex":"#6E1C33"},{"id":"ag","label":"Ağ","hex":"#F4F0E6"},{"id":"narinci","label":"Şaftalı","hex":"#F2A274"},{"id":"sari","label":"Sarı","hex":"#F2C94C"},{"id":"benovseyi","label":"Bənövşəyi","hex":"#9C7CC7"},{"id":"mavi","label":"Mavi","hex":"#5D8FD4"},{"id":"yasil","label":"Yaşıl","hex":"#7FA35A"}],
+    products: P,
+    featuredEyebrow: "Ən çox seçilənlər", featuredTitle: "Bu həftə <em>studiyada</em>",
+    perks: [{"icon":"truck","title":"Çatdırılma","text":"Bakı daxili, hər gün"},{"icon":"card","title":"Onlayn ödəniş","text":"Kartla, saytda"},{"icon":"gift","title":"Calla qutusu","text":"Bordo məxmər qutular"},{"icon":"store","title":"Bolt Food","text":"Orada da varıq"}],
+    heroHtml: (I, wa) => {
+      const facts = '<div class="xh-facts fx" style="--d:1.35s">' + H.facts.map((f) => '<span><b>' + f[0] + '</b>' + f[1] + '</span>').join('') + '</div>';
+      const cta = '<div class="xh-cta fx" style="--d:1.15s"><a class="btn btn-lg" href="#/magaza">Kolleksiyaya bax ' + I.arrow + '</a>' + (H.cta2 ? '<a class="btn btn-ghost btn-lg" href="' + H.cta2[1] + '">' + H.cta2[0] + '</a>' : '<a class="btn btn-ghost btn-lg" href="' + wa('Salam! Buket sifariş etmək istəyirəm.') + '" target="_blank" rel="noopener">' + I.wa + '<span>WhatsApp</span></a>') + '</div>';
+      const tag = H.tag ? '<a class="xh-tag" href="' + H.tag.href + '"><i>' + H.tag.eyebrow + '</i><span>' + H.tag.name + '</span><b>' + money(H.tag.price) + '</b></a>' : '';
+      const live = H.live ? '<p class="fx" style="--d:1.5s;margin-top:22px"><span class="live" id="xLive"><i></i>' + H.live + '</span></p>' : '';
+      const text = '<div><p class="eyebrow fx" style="--d:.1s">' + H.eyebrow + '</p><h1>' + H.h1.map((l, k) => (k ? '<br>' : '') + (l[1] ? '<em>' + words(l[0], k * 3) + '</em>' : words(l[0], k * 3))).join('') + '</h1><p class="lead fx" style="--d:.95s">' + H.lead + '</p>' + cta + facts + live + '</div>';
+      let out = '';
+      if (H.type === 'full') {
+        out = '<section class="xh xh-full" aria-label="Giriş"><div class="bg">' + vid(H.video, H.poster, 'aria-hidden="true"') + '</div><div class="in">' + text + '</div>' + tag + '</section>';
+      } else if (H.type === 'arch') {
+        out = '<section class="xh xh-arch" aria-label="Giriş"><span class="xh-blob b1" aria-hidden="true"></span><span class="xh-blob b2" aria-hidden="true"></span><div class="xh-in">' + text + '<figure class="media" style="margin:0"><div class="frame" style="background-image:url(' + H.poster + ')">' + vid(H.video, H.poster, 'aria-label="' + H.alt + '"') + '</div>' + tag + '</figure></div></section>';
+      } else if (H.type === 'amb') {
+        out = '<section class="xh xh-amb" aria-label="Giriş">' + (still() ? '<img class="amb" src="' + H.poster + '" alt="">' : '<video class="amb" src="' + H.video + '" poster="' + H.poster + '" autoplay muted loop playsinline aria-hidden="true"></video>') + '<div class="xh-in">' + text + '<figure class="media" style="margin:0"><div class="frame" style="background-image:url(' + H.poster + ')">' + vid(H.video, H.poster, 'aria-label="' + H.alt + '"') + '</div>' + tag + '</figure></div></section>';
+      } else if (H.type === 'tilt') {
+        out = '<section class="xh xh-tilt" aria-label="Giriş"><span class="xh-blob b1" aria-hidden="true"></span><div class="xh-in">' + text + '<div class="media"><div class="card" style="background-image:url(' + H.poster + ')">' + vid(H.video, H.poster, 'aria-label="' + H.alt + '"') + '</div><div class="mini" style="background-image:url(' + H.minis[0] + ')"></div><div class="mini mini2" style="background-image:url(' + H.minis[1] + ')"></div>' + tag + '</div></div></section>';
+      } else if (H.type === 'mosaic') {
+        const t = H.tiles.map((list, k) => '<div class="tile" data-k="' + k + '">' + (list.video && !still() ? '<video src="' + list.video + '" poster="' + list.poster + '" autoplay muted loop playsinline aria-hidden="true"></video>' : list.imgs.map((s, j) => '<img src="' + s + '" alt="" class="' + (j ? 'off' : 'on') + '">').join('')) + '</div>').join('');
+        out = '<section class="xh xh-mosaic" aria-label="Giriş"><span class="xh-blob b1" aria-hidden="true"></span><div class="xh-in">' + text + '<div class="media" style="position:relative">' + t + tag + '</div></div></section>';
+      }
+      if (H.marquee) out += '<div class="marq" aria-hidden="true"><div>' + Array(2).fill(H.marquee.map((m) => '<span>' + m + '</span>').join('')).join('') + '</div></div>';
+      return out;
+    },
+    categoriesHtml: () => '<section class="sec"><div class="sec-head"><p class="eyebrow">Kolleksiyalar</p><h2>' + "Nə üçün <em>baxırsınız?</em>" + '</h2></div><div class="cats">' + window.SITE.categories.map((c) => '<a class="cat" href="#/magaza?k=' + c.id + '"><span class="cat-img"><img src="' + c.image + '" alt="" loading="lazy" width="440" height="586"></span><span class="cat-label">' + c.label + '<small>' + P.filter((x) => x.cats.includes(c.id)).length + ' məhsul</small></span></a>').join('') + '</div></section>',
+    signatureHtml: (I, wa) => SIG.map((s) => {
+      if (s.type === 'reels') return '<section class="sec sig"><div class="sec-head row"><div><p class="eyebrow">' + s.eyebrow + '</p><h2>' + s.title + '</h2></div><a class="link-arrow" href="https://www.instagram.com/' + "calla_flo" + '/reels/" target="_blank" rel="noopener">@' + "calla_flo" + ' ' + I.arrow + '</a></div><div class="reels" style="--n:' + s.items.length + '">' + s.items.map((r) => '<a class="reel" href="' + r.href + '" style="background-image:url(' + r.poster + ')">' + lazyVid(r.video, r.poster, r.name) + '<span class="reel-cap">' + r.name + (r.price ? '<b>' + r.price + '</b>' : '') + '</span></a>').join('') + '</div></section>';
+      if (s.type === 'tiers') return '<section class="sec sig" id="tiers"><div class="sec-head"><p class="eyebrow">' + s.eyebrow + '</p><h2>' + s.title + '</h2></div><div class="tiers-bar" role="group" aria-label="Qiymət aralığı">' + s.tiers.map((t, k) => '<button type="button" data-min="' + t[0] + '" data-max="' + t[1] + '" aria-pressed="' + (k === (s.start || 0)) + '">' + t[2] + '</button>').join('') + '</div><div class="tiers-grid" id="tiersGrid" aria-live="polite"></div><p class="tiers-note" id="tiersNote"></p></section>';
+      if (s.type === 'budget') return '<section class="sec sig" id="budget"><div class="budget"><div class="budget-ctl"><p class="eyebrow">' + s.eyebrow + '</p><h2 style="font-size:clamp(30px,3.4vw,46px);margin:8px 0 0">' + s.title + '</h2><output id="bOut" for="bRange">' + s.start + ' ₼</output><label class="visually-hidden" for="bRange">Büdcə</label><input type="range" id="bRange" min="' + s.min + '" max="' + s.max + '" step="' + (s.step || 5) + '" value="' + s.start + '"><p id="bNote"></p></div><div class="budget-grid" id="bGrid" aria-live="polite"></div></div></section>';
+      if (s.type === 'msg') return '<section class="sec sig" id="mesaj"><div class="sec-head"><p class="eyebrow">' + s.eyebrow + '</p><h2>' + s.title + '</h2></div><div class="msg"><div class="msg-prev"><span class="msg-text" id="mText">Love is…</span></div><form class="msg-form" id="mForm"><label><span>Qablaşdırmada yazı</span><input type="text" id="mIn" maxlength="28" value="Love is…" autocomplete="off"></label><fieldset class="seg"><legend>Ölçü</legend>' + s.sizes.map((z, k) => '<label><input type="radio" name="sz" value="' + z[0] + '" data-p="' + z[1] + '"' + (k === 1 ? ' checked' : '') + '><span>' + z[0] + ' <small>' + z[1] + ' ₼</small></span></label>').join('') + '</fieldset><div class="sum"><div><b id="mPrice"></b><small>yazı pulsuz, şəffaf örtüklə</small></div></div><a class="btn btn-lg" id="mOrder" href="#" target="_blank" rel="noopener">' + I.wa + '<span>WhatsApp-da sifariş et</span></a></form></div></section>';
+      if (s.type === 'calc') return '<section class="sec sig" id="' + s.id + '"><div class="calc"><div class="calc-media" style="background-image:url(' + s.poster + ')">' + lazyVid(s.video, s.poster, s.alt) + '</div><form class="calc-form" id="cForm"><div><p class="eyebrow">' + s.eyebrow + '</p><h2>' + s.title + '</h2><p class="lead">' + s.lead + '</p></div>' + s.groups.map((g) => '<fieldset class="seg"><legend>' + g.label + '</legend>' + g.opts.map((o, k) => '<label><input type="radio" name="' + g.name + '" value="' + o[0] + '" data-t="' + o[1] + '"' + (k === (g.start || 0) ? ' checked' : '') + '><span>' + o[1] + (o[2] ? ' <small>' + o[2] + '</small>' : '') + '</span></label>').join('') + '</fieldset>').join('') + '<div class="sum" aria-live="polite">' + s.out.map((o) => '<div><b id="' + o[0] + '"></b><small>' + o[1] + '</small></div>').join('') + '</div><a class="btn btn-lg" id="cOrder" href="#" target="_blank" rel="noopener">' + I.wa + '<span>' + s.btn + '</span></a></form></div></section>';
+      if (s.type === 'occ') return '<section class="sec sig" id="occ"><div class="sec-head"><p class="eyebrow">' + s.eyebrow + '</p><h2>' + s.title + '</h2></div><div class="occ-tabs" role="tablist">' + s.items.map((o, k) => '<button type="button" role="tab" aria-selected="' + (k === 0) + '" data-k="' + k + '">' + o.label + '</button>').join('') + '</div><div class="occ-panel" id="occPanel"></div></section>';
+      if (s.type === 'html') return s.html;
+      return '';
+    }).join(''),
+    onHome: (root, { card, wa, I }) => {
+      const IO = 'IntersectionObserver' in window, st = still();
+      const off = []; addEventListener('hashchange', () => { off.forEach((f) => f()); document.body.classList.remove('scrolled', 'xfull'); }, { once: true });
+      if (H.type === 'full') {
+        document.body.classList.add('xfull');
+        const hdr = document.querySelector('.hdr'), hero = root.querySelector('.xh-full');
+        const fit = () => { hero.style.marginTop = '-' + hdr.offsetHeight + 'px'; }; fit();
+        const sc = () => document.body.classList.toggle('scrolled', scrollY > 40); sc();
+        addEventListener('resize', fit); addEventListener('scroll', sc, { passive: true });
+        off.push(() => { removeEventListener('resize', fit); removeEventListener('scroll', sc); hero.style.marginTop = ''; });
+      }
+      const hv = [...root.querySelectorAll('.xh video')]; const kick = () => hv.forEach((v) => v.paused && v.play().catch(() => {}));
+      document.addEventListener('touchstart', kick, { passive: true, once: true }); document.addEventListener('click', kick, { once: true });
+      const vids = [...root.querySelectorAll('video[data-src]')];
+      if (!st && IO) { const vio = new IntersectionObserver((es) => es.forEach((e) => { const v = e.target; if (e.isIntersecting) { if (!v.src) v.src = v.dataset.src; v.play().catch(() => {}); } else if (v.src) v.pause(); }), { rootMargin: '150px' }); vids.forEach((v) => vio.observe(v)); }
+      // mosaic crossfade
+      if (H.type === 'mosaic' && !st) { const tiles = [...root.querySelectorAll('.xh-mosaic .tile')]; let n = 0; const tm = setInterval(() => { if (!root.isConnected) return clearInterval(tm); const t = tiles[n++ % tiles.length], im = [...t.querySelectorAll('img')]; if (im.length < 2) return; const c = im.findIndex((x) => x.classList.contains('on')); im[c].classList.replace('on', 'off'); im[(c + 1) % im.length].classList.replace('off', 'on'); }, 2600); }
+      // live "open now"
+      const lv = root.querySelector('#xLive'); if (lv && H.liveFn) { /* always open 24/7 */ }
+      const bindAdd = (el) => el; // cards come from engine card()
+      // tiers
+      const tg = root.querySelector('#tiersGrid');
+      if (tg) { const s = SIG.find((x) => x.type === 'tiers'), bar = root.querySelector('.tiers-bar'), note = root.querySelector('#tiersNote');
+        const show = (b) => { bar.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', x === b)); const lo = +b.dataset.min, hi = +b.dataset.max; const list = P.filter((p) => !p.hidden && p.price >= lo && p.price <= hi).sort((a, b) => a.price - b.price); tg.innerHTML = list.slice(0, 8).map(card).join(''); note.innerHTML = list.length ? list.length + ' buket bu aralıqda · <a class="link-arrow" href="#/magaza?min=' + lo + '&max=' + hi + '">Hamısına bax ' + '</a>' : 'Bu aralıqda hazır buket yoxdur, WhatsApp-da yazın, xüsusi yığaq.'; };
+        bar.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) show(b); }); show(bar.querySelector('[aria-pressed="true"]')); }
+      // budget
+      const br = root.querySelector('#bRange');
+      if (br) { const out = root.querySelector('#bOut'), g = root.querySelector('#bGrid'), note = root.querySelector('#bNote');
+        const upd = () => { const v = +br.value; out.textContent = v + ' ₼'; const list = P.filter((p) => !p.hidden && p.price <= v).sort((a, b) => b.price - a.price); g.innerHTML = list.slice(0, 6).map(card).join(''); note.textContent = list.length + ' buket ' + v + ' ₼-ə qədər'; };
+        br.addEventListener('input', upd); upd(); }
+      // message
+      const mf = root.querySelector('#mForm');
+      if (mf) { const inp = root.querySelector('#mIn'), tx = root.querySelector('#mText'), pr = root.querySelector('#mPrice'), ord = root.querySelector('#mOrder');
+        const upd = () => { const t = inp.value.trim() || 'Love is…'; tx.textContent = t; const z = mf.querySelector('input[name=sz]:checked'); pr.textContent = z.dataset.p + ' ₼'; ord.href = wa('Salam! Yazılı buket istəyirəm: “' + t + '”, ' + z.value + ' (' + z.dataset.p + ' AZN).'); };
+        mf.addEventListener('input', upd); mf.addEventListener('submit', (e) => e.preventDefault()); upd(); }
+      // calc
+      const cf = root.querySelector('#cForm');
+      if (cf) { const s = SIG.find((x) => x.type === 'calc'); const fn = new Function('v', 'wa', s.fn);
+        const upd = () => { const v = {}; cf.querySelectorAll('input:checked').forEach((i) => { v[i.name] = i.value; v[i.name + 'T'] = i.dataset.t; }); const r = fn(v, wa); Object.entries(r.out).forEach(([k, val]) => { const el = root.querySelector('#' + k); if (el) el.textContent = val; }); root.querySelector('#cOrder').href = r.href; };
+        cf.addEventListener('change', upd); cf.addEventListener('submit', (e) => e.preventDefault()); upd(); }
+      // occasions
+      const op = root.querySelector('#occPanel');
+      if (op) { const s = SIG.find((x) => x.type === 'occ'), tabs = root.querySelector('.occ-tabs');
+        const show = (k) => { const o = s.items[k]; tabs.querySelectorAll('button').forEach((b) => b.setAttribute('aria-selected', +b.dataset.k === k)); const items = P.filter((p) => p.cats.includes(o.cat)); op.innerHTML = '<div class="occ-big"><img src="' + o.img + '" alt="' + o.label + '"></div><div class="occ-txt"><p class="eyebrow">' + o.label + '</p><h3>' + o.title + '</h3><p>' + o.text + '</p><div class="occ-thumbs">' + items.slice(0, 4).map((p) => '<a href="#/mehsul/' + p.id + '"><img src="' + p.image + '" alt="' + p.name + '"></a>').join('') + '</div><a class="btn btn-lg" href="#/magaza?k=' + o.cat + '">' + items.length + ' kompozisiyaya bax ' + I.arrow + '</a></div>'; };
+        tabs.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) show(+b.dataset.k); }); show(0); }
+      
+    },
+    about: {"title":"Gənclikdə <em>Calla</em>","paragraphs":["Calla_flo Gənclikdə gül studiyasıdır. Lilya, anturium və pion qızılgüllərlə işləyir, kompozisiyalarımızı bordo məxmər Calla qutularında təqdim edirik.","Buketlər 45–75 manat, gəlin buketləri 65–180, bürc qutuları 110–250, böyük kompozisiyalar 170–350 manat. Bizi Bolt Food-da da tapa bilərsiniz."],"images":["img/qutu-lila.jpg","img/pastel-lilya.jpg"]},
+    finaleTitle: "Bu gün kimisə <em>sevindirin</em>",
+  };
+
+})();
+</script>
+<script src="../shared/site.js?v=10"></script>
+</body>
+</html>
