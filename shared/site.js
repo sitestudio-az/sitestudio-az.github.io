@@ -67,6 +67,31 @@
 
   /* ---------- karkas ---------- */
   document.title = `${S.name} · ${S.tagline}`;
+  /* ---------- SEO: başlıq, təsvir, canonical, strukturlaşdırılmış data ---------- */
+  const HOME_TITLE = S.seoTitle || `${S.name} · Bakıda gül çatdırılması`;
+  const HOME_DESC = (document.querySelector('meta[name="description"]') || {}).content || '';
+  const BASE = location.origin + location.pathname;
+  const metaTag = (sel, attr, val) => { let m = document.head.querySelector(sel); if (!m) { m = document.createElement('meta'); const [k, v] = sel.match(/\[(\w+(?::\w+)?)="([^"]+)"\]/).slice(1); m.setAttribute(k, v); document.head.append(m); } m.setAttribute(attr, val); };
+  function seo(title, desc) {
+    document.title = title || HOME_TITLE;
+    const d = desc || S.seoDesc || HOME_DESC;
+    if (d) { metaTag('meta[name="description"]', 'content', d); metaTag('meta[property="og:description"]', 'content', d); }
+    metaTag('meta[property="og:title"]', 'content', document.title);
+  }
+  (() => {
+    const prices = P.map((p) => p.price);
+    const ld = {
+      '@context': 'https://schema.org', '@type': S.schemaType || 'Florist', name: S.name, url: BASE,
+      image: new URL((document.querySelector('meta[property="og:image"]') || {}).content || P[0].image, BASE).href,
+      description: HOME_DESC || undefined, telephone: S.phones && S.phones[0], priceRange: `${Math.min(...prices)}–${Math.max(...prices)} AZN`,
+      currenciesAccepted: 'AZN', paymentAccepted: 'Nağd, Kart',
+      address: { '@type': 'PostalAddress', streetAddress: S.address, addressLocality: 'Bakı', addressCountry: 'AZ' },
+      areaServed: { '@type': 'City', name: 'Bakı' },
+      sameAs: [`https://www.instagram.com/${S.instagram}/`],
+      hasMap: S.mapEmbed ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(S.mapEmbed)}` : undefined,
+    };
+    const el = document.createElement('script'); el.type = 'application/ld+json'; el.textContent = JSON.stringify(ld); document.head.append(el);
+  })();
   document.body.innerHTML = `
   <a class="skip" href="#main">Əsas məzmuna keç</a>
   <div class="demo-bar"><span><b>Demo sayt.</b> <a href="https://www.instagram.com/sitestudio.az/" target="_blank" rel="noopener">sitestudio.az</a> tərəfindən ${esc(S.name)} üçün təklif kimi hazırlanıb. Qiymətlər nümunədir.</span></div>
@@ -157,7 +182,7 @@
       ${S.perks.map((k) => `<div class="perk">${I[k.icon] || I.gift}<div><b>${esc(k.title)}</b><span>${esc(k.text)}</span></div></div>`).join('')}
     </section>
     <section class="sec about" id="haqqimizda">
-      <div class="about-media">${S.about.images.map((src) => `<img src="${src}" alt="" loading="lazy" width="600" height="800">`).join('')}</div>
+      <div class="about-media">${S.about.images.map((src, k) => `<img src="${src}" alt="${esc(S.name)}, buket ${k + 1}" loading="lazy" width="600" height="800">`).join('')}</div>
       <div class="about-txt"><p class="eyebrow">Haqqımızda</p><h2>${S.about.title}</h2>
         ${S.about.paragraphs.map((t) => `<p class="lead">${esc(t)}</p>`).join('')}
         <a class="btn btn-ghost" href="https://www.instagram.com/${S.instagram}/" target="_blank" rel="noopener">${I.ig}<span>@${esc(S.instagram)}</span></a></div>
@@ -167,13 +192,20 @@
         <div><p class="eyebrow">Əlaqə</p><h2>${S.finaleTitle}</h2>
           <ul class="contact-list">
             ${S.phones.map((p) => `<li>${I.phone}<a href="tel:${p.replace(/[^\d+]/g, '')}">${esc(p)}</a></li>`).join('')}
-            <li>${I.pin}<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(S.mapQuery)}" target="_blank" rel="noopener">${esc(S.address)}</a></li>
+            <li>${I.pin}<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(S.mapEmbed || S.mapQuery)}" target="_blank" rel="noopener">${esc(S.address)}</a></li>
             <li>${I.clock}<span>${esc(S.hours)}</span></li>
           </ul></div>
         <div class="finale-cta"><a class="btn btn-lg" href="#/magaza">Buket seç ${I.arrow}</a>
           <a class="btn btn-ghost btn-lg" href="${wa('Salam! Sifariş vermək istəyirəm.')}" target="_blank" rel="noopener">${DM ? I.ig : I.wa}<span>${CHAT_LOC} yazın</span></a></div>
       </div>
-    </section>`;
+    </section>
+    ${S.mapEmbed ? `<section class="sec map-sec" id="unvan" aria-label="Ünvan və xəritə">
+      <div class="map-frame"><iframe title="${esc(S.name)} xəritədə" src="https://maps.google.com/maps?q=${encodeURIComponent(S.mapEmbed)}&z=16&hl=az&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+      <div class="map-info"><p class="eyebrow">Ünvan</p><h2>${esc(S.mapTitle || 'Bizi tapın')}</h2>
+        <p class="lead">${esc(S.address)}</p><p class="muted">${esc(S.hours)}</p>
+        <div class="map-btns"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(S.mapEmbed)}" target="_blank" rel="noopener">${I.pin}<span>Yol göstər</span></a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(S.mapEmbed)}" target="_blank" rel="noopener">Google Xəritədə aç</a></div></div>
+    </section>` : ''}`;
     if (S.onHome) S.onHome(main, { P: L, all: P, card, money, wa, I, addToCart });
   };
 
@@ -476,6 +508,8 @@
     document.body.dataset.page = name;
     $$('[data-nav]').forEach((a) => a.classList.toggle('on', (a.dataset.nav === 'home' && name === 'home' && !anchor) || (a.dataset.nav === 'shop' && ['shop', 'product'].includes(name))));
     pages[name](name === 'product' ? seg[1] : q);
+    { const pr = name === 'product' ? byId(seg[1]) : null; const T = { shop: 'Mağaza', cart: 'Səbət', favs: 'Sevimlilər', checkout: 'Sifariş', success: 'Sifariş qəbul olundu', notFound: 'Səhifə tapılmadı' };
+      if (name === 'home') seo(); else if (pr) seo(`${pr.name}, ${pr.price} ₼ · ${S.name}`, `${pr.desc} Qiymət ${pr.price} ₼. ${S.deliveryLine}.`); else seo(`${T[name] || ''} · ${S.name}`); }
     reveal();
     if (anchor) { const t = document.getElementById(anchor); if (t) { t.scrollIntoView(); return; } }
     window.scrollTo(0, 0);

@@ -10,8 +10,9 @@
 <!-- DEPLOY STEP: og:url canlı ünvanla yenilənir -->
 <meta property="og:title" content="Mono · Baku Flowers">
 <meta property="og:description" content="Studiyada yığılan buketlər, qızılı qutular və Yeni il kompozisiyaları. 09:00–23:00 çatdırılma, onlayn ödəniş. Demo onlayn mağaza.">
-<meta property="og:image" content="media/mavi-qizilgul.jpg">
+<meta property="og:image" content="https://sitestudio-az.github.io/mono/media/mavi-qizilgul.jpg">
 <meta property="og:url" content="https://sitestudio-az.github.io/mono/">
+<link rel="canonical" href="https://sitestudio-az.github.io/mono/">
 <link rel="icon" href="img/logo-sage.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -197,6 +198,7 @@
 (function () {
   const p = (id, name, cats, colors, price, desc, extra = {}) => ({ id, name, cats, colors, price, image: `img/${id}.jpg`, desc, ...extra });
   window.SITE = {
+    mapEmbed: "Mono Baku, İnşaatçılar prospekti 3, Bakı",
     key: 'mon-', name: 'Mono Baku Flowers', tagline: 'Florist',
     logo: 'img/logo-sage.png', logoW: 102, logoH: 74,
     logoHtml: '<span class="m-logo"><img src="img/logo-cream.png" alt="Mono" width="102" height="74"><span>Baku<br>Flowers</span></span>',
@@ -424,6 +426,6 @@
   };
 })();
 </script>
-<script src="../shared/site.js?v=10"></script>
+<script src="../shared/site.js?v=11"></script>
 </body>
 </html>

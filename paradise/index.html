@@ -10,14 +10,15 @@
 <!-- DEPLOY STEP: og:url canlı ünvanla yenilənir -->
 <meta property="og:title" content="Paradise Flowers · Bakı">
 <meta property="og:description" content="Art qutular, Paradise qutuları və buketlər. White City, 08:00–01:00 çatdırılma, onlayn ödəniş. Demo onlayn mağaza.">
-<meta property="og:image" content="media/albali-qutu.jpg">
+<meta property="og:image" content="https://sitestudio-az.github.io/paradise/media/albali-qutu.jpg">
 <meta property="og:url" content="https://sitestudio-az.github.io/paradise/">
+<link rel="canonical" href="https://sitestudio-az.github.io/paradise/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237A1730'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-size='36' fill='%23FBF6F3' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="media/albali-qutu.jpg">
-<link rel="stylesheet" href="../shared/site.css?v=10">
+<link rel="stylesheet" href="../shared/site.css?v=11">
 <style>
   :root {
     --bg: #FBF6F3; --surface: #FFFFFF; --soft: #F5E8E6; --ink: #2A1B1F; --muted: #7A666B;
@@ -149,6 +150,7 @@
   const p = (id, name, cats, colors, price, desc, extra = {}) => ({ id, name, cats, colors, price, image: `img/${id}.jpg`, desc, ...extra });
   const LOGO = '<span class="p-logo" aria-label="Paradise Flowers"><b>PARADISE</b><small>FLOWERS</small></span>';
   window.SITE = {
+    mapEmbed: "Paradise Flowers, Füzuli Əliyev 1B, Bakı",
     key: 'par-', name: 'Paradise Flowers', tagline: 'Bakı',
     logoHtml: LOGO, footerLogoHtml: LOGO,
     instagram: 'paradise_aze', whatsapp: '994516666767', phones: ['+994 51 666 67 67'],
@@ -326,6 +328,6 @@
   };
 })();
 </script>
-<script src="../shared/site.js?v=10"></script>
+<script src="../shared/site.js?v=11"></script>
 </body>
 </html>
