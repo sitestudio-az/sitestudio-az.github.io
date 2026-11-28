@@ -13,12 +13,12 @@
 <meta property="og:image" content="https://sitestudio-az.github.io/cosmic/media/magaza.jpg">
 <meta property="og:url" content="https://sitestudio-az.github.io/cosmic/">
 <link rel="canonical" href="https://sitestudio-az.github.io/cosmic/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307081A'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%23FF7FB0'/%3E%3Cellipse cx='32' cy='32' rx='24' ry='8' fill='none' stroke='%235B7CFF' stroke-width='3' transform='rotate(-20 32 32)'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="media/magaza.jpg">
-<link rel="stylesheet" href="../shared/site.css?v=11">
+<link rel="stylesheet" href="../shared/site.css?v=12">
 <style>
   :root {
     --bg: #07081A; --surface: #0F1130; --soft: #171A40; --ink: #EEF0FF; --muted: #9DA3CC;
@@ -134,7 +134,7 @@
 <script>
 (function () {
   const p = (id, name, cats, colors, price, desc, extra = {}) => ({ id, name, cats, colors, price, image: `img/${id}.jpg`, desc, ...extra });
-  const LOGO = '<span class="c-logo"><i aria-hidden="true"></i>COSMIC</span>';
+  const LOGO = '<span class="c-logo"><img class="x-av" src="img/logo.png" alt="Cosmic Flowers loqosu" width="48" height="48">COSMIC</span>';
   window.SITE = {
     mapEmbed: "Cosmic Flowers - Ağ Şəhər, Bakı",
     key: 'cos-', name: 'Cosmic Flowers', tagline: 'Bakı',
@@ -321,6 +321,6 @@
   };
 })();
 </script>
-<script src="../shared/site.js?v=11"></script>
+<script src="../shared/site.js?v=12"></script>
 </body>
 </html>

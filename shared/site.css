@@ -403,3 +403,9 @@ body.dm .wa-float { background: radial-gradient(circle at 30% 110%, #FDCB52 0%, 
 .map-btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 .map-btns .btn svg { width: 18px; height: 18px; }
 @media (max-width: 900px) { .map-sec { grid-template-columns: 1fr; } .map-frame { aspect-ratio: 4 / 3; } }
+
+/* dükanın öz loqosu: dairəvi nişan + ad */
+.x-brand { display: inline-flex; align-items: center; gap: 12px; }
+.x-av { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex: none; box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 6px 14px -8px rgba(0,0,0,.5); background: #fff; }
+.ftr .x-av { width: 56px; height: 56px; }
+@media (max-width: 900px) { .x-av { width: 40px; height: 40px; } .x-brand { gap: 9px; } }
